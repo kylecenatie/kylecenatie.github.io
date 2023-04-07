@@ -32,7 +32,8 @@ const Home = () => {
     <header className="App-header">
       <div>My name is Kyle Cenatiempo </div>
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
-      <p>This is the reason why i chose to be a software engineer.</p>
+      <p>This is the reason why i choose to be a software engineer.</p>
+      <p>This page is currently under development!</p>
     </header>
     {/* <Card singleCard={card} />
      */}
