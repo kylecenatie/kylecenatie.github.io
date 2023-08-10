@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table"
+import Container from "react-bootstrap/Container"
 
 
 
@@ -30,41 +31,53 @@ const PremierLeague = () => {
             console.log(err);
         });
     }
-  }, []);
+  }, [standings]);
+
+  const displayTeam =event=>{
+    console.log(event.target.parentElement.id)
+  }
 
         return (
-            <Table responsive>
-              <thead>
+            <Container>
+            <Table bordered hover responsive>
+              <thead className="test-align center">
                 <tr>
                   <th>Rank</th>
                     <th>Team</th>
-                    <th>Points</th>
-                    <th>Goal Diff</th>
                     <th>Played</th>
-                    <th>Total Wins</th>
-                    <th>Total Losses</th>
+                    <th>Win</th>
+                    <th>Loss</th>
+                    <th>Draw</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                    <th>Points</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-align center">
               {standings && standings.map(team => (
-                      <tr key={team.rank}>
+                      <tr key={team.rank} id={team.team.id} style={{cursor:'pointer'}} onClick={displayTeam}>
                          <td>{team.rank}</td>
-                        <td style={{ height: '3.75rem' }}>
+                        <td >
                             <img src={team.team.logo}
-                            width="80"
-                            height="80"
-                            className="d-inline-block align-top" />
-                            {team.team.name}
+                            width="40"
+                            height="40"
+                            className="d-inline-block align-middle" />
+                            &emsp;{team.team.name}
                         </td>
-                        <td>{team.points}</td>
-                        <td>{team.goalsDiff}</td>
                         <td>{team.all.played}</td>
                         <td>{team.all.win}</td>
                         <td>{team.all.lose}</td>
+                        <td>{team.all.draw}</td>
+                        <td>{team.all.goals.for}</td>
+                        <td>{team.all.goals.against}</td>
+                        <td>{team.goalsDiff}</td>
+                        <td>{team.points}</td>
                       </tr>
                     ))}
               </tbody>
             </Table>
+            </Container>
           );
 }
 

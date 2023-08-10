@@ -2,11 +2,13 @@ import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './Pages/Home';
 import Fun from './Pages/Fun';
-import WarHome from './Pages/WarHome';
-import PremierLeague from './sports/PremierLeague';
+import SportsHome from './sports/SportsHome';
 import About from './Pages/About';
 import Header from './components/Header';
 import './App.css'
+import PremLeague from './sports/PremLeague';
+import Nba from './sports/Nba';
+import NhlStandings from './sports/NhlStandings';
 
 
 const App = () => {
@@ -15,10 +17,12 @@ const App = () => {
 <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/About' element={<About />} />
-        <Route path='/Fun' element={<Fun />} />
-        <Route path='/premier-league-standings' element={<PremierLeague />} />
-        {/* <Route path='/War' element={<WarHome />} /> */}
+        <Route path='about' element={<About />} />
+        <Route path='fun' element={<Fun />} />
+        <Route path='sports' element={<SportsHome />} />
+        <Route path='/pl' element={<PremLeague />} />
+        <Route path='/nba' element={<Nba />} />
+        <Route path='/nhl' element={<NhlStandings />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
+import Skills from '../components/Skills'
 import styled from 'styled-components';
 
 
@@ -37,6 +38,7 @@ const Home = () => {
     </header>
     {/* <Card singleCard={card} />
      */}
+     <Skills />
   </AppBodyContainer>
     );
 }
