@@ -1,6 +1,7 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
 import Skills from '../components/Skills'
+import ImageSlider from '../components/ImageSlider'
 import styled from 'styled-components';
 
 
@@ -11,7 +12,7 @@ const AppBodyContainer = styled(Container).attrs({
 })`
   min-height: 100vh;
   & .container {
-    flex-grow: 1;
+    flex-grow: 3;
     border: solid black;
   }
 `;
@@ -35,7 +36,9 @@ const Home = () => {
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <p>This is the reason why i choose to be a software engineer.</p>
       <p>This page is currently under development!</p>
+      <ImageSlider /> 
     </header>
+    
     {/* <Card singleCard={card} />
      */}
      <Skills />
