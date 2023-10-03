@@ -42,8 +42,8 @@ const Home = () => {
       <p>I am a software engineer.</p>
       <ImageSlider images={sliderImages} wid={600} high={650}/> 
       <div>
-      <Link to={`/about`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="home_to_about"> Check out more information about me.</Button></span></Link>
-        
+      {/* <Link to={`/about`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="home_to_about"> Check out more information about me.</Button></span></Link> */}
+      <Button href="/about" id="home_to_about">  Check out more information about me.</Button>
          
         </div>
     </header>
