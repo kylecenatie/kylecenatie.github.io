@@ -3,9 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Skills from '../components/Skills'
 import ImageSlider from '../components/ImageSlider'
 import styled from 'styled-components';
-import Modal  from "../components/Modal";
 import Button from "react-bootstrap/button"
-
+import im1 from "../images/prof_pic.jpg";
+import im2 from "../images/asugrad.jpeg";
+import im3 from "../images/ky_jul.jpeg";
 
 
 const AppBodyContainer = styled(Container).attrs({
@@ -20,34 +21,29 @@ const AppBodyContainer = styled(Container).attrs({
 `;
 
 const Home = () => {
-  // const [card, setCard] = useState(false);
-  // useEffect(()=>{
-  //   const min = Math.ceil(52);
-  //   const max = Math.floor(0);
-  //   const cardindex = Math.floor(Math.random() * (max - min) + min); 
-  //   const c = cardDeck.deck();
-  //   const p = c[cardindex]
-  //   console.log(p);
-  //   setCard(p);
-  // }, []);
+  const sliderImages = [
+    {
+       url: im1,
+    },
+    {
+       url: im2,
+    },
+    {
+      url: im3,
+   }
+ ];
 
     return(
     <AppBodyContainer>
     <header className="App-header">
-      <div>My name is Kyle Cenatiempo </div>
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
-      <p>This is the reason why i choose to be a software engineer.</p>
-      <ImageSlider /> 
+      <div id="introduction">My name is Kyle Cenatiempo </div>
+      <p>I am a software engineer.</p>
+      <ImageSlider images={sliderImages} wid={600} high={650}/> 
       <div>
-      {/* <Link to={`/pl`}><span className="tite" ><SiPremierleague size={200} style={{ 'border': 'solid black 2px', padding: "20px", margin: "auto", cursor: "pointer" }} /> </span></Link> */}
-        <Button href="about"> Check out more information about me.</Button>
+         <Button id="home_to_about" href="about"> Check out more information about me.</Button>
         </div>
     </header>
-    <Modal />
-    
-    
-    {/* <Card singleCard={card} />
-     */}
+    {/* <Modal /> */}
      <Skills />
   </AppBodyContainer>
     );

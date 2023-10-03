@@ -14,12 +14,3 @@ root.render(<React.StrictMode>
   <App />
 </React.StrictMode>);
 
-// During an update, there's no need to pass the container again.
-// root.render(<App tab="profile" />);
-// ReactDOM.creatRoot(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-

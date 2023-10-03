@@ -38,4 +38,3 @@ const Skills = ()=>{
 
 export default Skills;
 
-// 5J8TC1H31PL003203   --

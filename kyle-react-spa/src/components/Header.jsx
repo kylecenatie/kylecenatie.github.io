@@ -12,6 +12,7 @@ import { AiOutlineMail} from "react-icons/ai"
 
 
 import './header.css'
+import { NavbarText } from 'react-bootstrap';
 
 
 export default function Header() {
@@ -28,17 +29,15 @@ export default function Header() {
           />
  <span className="coloredtext">YLE CENATIEMPO</span> 
         </Navbar.Brand>
+        <NavbarText>CSE565 Project 3</NavbarText>
         <div className='left'>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className='justify-content-end'>
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/">Home</Nav.Link>
             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
-            <Nav.Link as={NavLink} to="/fun">Games</Nav.Link>
-            <Nav.Link as={NavLink} to="/sports">Sports</Nav.Link>
-            {/* <NavDropdown title="Sports" id="collasible-nav-dropdown">
-            <NavDropdown.Item> <Nav.Link as={NavLink} to="/premier-league-standings"><SiPremierleague /> &emsp;Premier League</Nav.Link></NavDropdown.Item>
-            </NavDropdown> */}
+            <Nav.Link as={NavLink} to="/education">Education</Nav.Link>
+            <Nav.Link as={NavLink} to="/hobbies">Hobbies</Nav.Link>
             <NavDropdown title="Contact" id="collasible-nav-dropdown">
               <NavDropdown.Item href="mailto:cenatiempo.kyle@gmail.com"><AiOutlineMail /> &emsp;Email</NavDropdown.Item>
               <NavDropdown.Item href="https://www.linkedin.com/in/kyle-cena/"><AiFillLinkedin /> &emsp;LinkedIn
