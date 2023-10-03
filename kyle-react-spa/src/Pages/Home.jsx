@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Skills from '../components/Skills'
 import ImageSlider from '../components/ImageSlider'
 import styled from 'styled-components';
+import Modal  from "../components/Modal";
+import Button from "react-bootstrap/button"
 
 
 
@@ -35,9 +37,14 @@ const Home = () => {
       <div>My name is Kyle Cenatiempo </div>
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <p>This is the reason why i choose to be a software engineer.</p>
-      <p>This page is currently under development!</p>
       <ImageSlider /> 
+      <div>
+      {/* <Link to={`/pl`}><span className="tite" ><SiPremierleague size={200} style={{ 'border': 'solid black 2px', padding: "20px", margin: "auto", cursor: "pointer" }} /> </span></Link> */}
+        <Button href="about"> Check out more information about me.</Button>
+        </div>
     </header>
+    <Modal />
+    
     
     {/* <Card singleCard={card} />
      */}

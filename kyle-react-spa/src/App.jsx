@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './Pages/Home';
+import School from './Pages/School';
 import Fun from './Pages/Fun';
 import SportsHome from './sports/SportsHome';
 import About from './Pages/About';
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='fun' element={<Fun />} />
+        <Route path='school' element={<School />} />
         <Route path='sports' element={<SportsHome />} />
         <Route path='/pl' element={<PremLeague />} />
         <Route path='/nba' element={<Nba />} />

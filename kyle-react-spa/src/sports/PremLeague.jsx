@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import SportsHeader from "./SportsHeader";
 import SportsStandings from "./SportsStandings";
+import { Modal } from "bootstrap";
 
 
 const PremLeague = () => {
@@ -51,6 +52,7 @@ const PremLeague = () => {
             <>
             <SportsHeader logo={logo} title='Premier League Standings' />
                 <SportsStandings statHeaders={premLeagueHeaders} standings={standings} />
+                <Modal />
             </>)
     }
 }

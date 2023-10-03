@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Modal() {
+function Mod() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,7 +11,7 @@ function Modal() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+        Tell me about you. 
       </Button>
 
       <Modal
@@ -38,4 +38,4 @@ function Modal() {
   );
 }
 
-export default Modal;
+export default Mod;

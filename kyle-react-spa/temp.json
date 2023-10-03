@@ -1,0 +1,87 @@
+[{
+    "position": 1,
+    "stage": "NBA",
+    "group": {
+        "name": "Western Conference",
+        "points": 0
+    },
+    "team": {
+        "id": 139,
+        "name": "Denver Nuggets",
+        "logo": "https://media-2.api-sports.io/basketball/teams/139.png"
+    },
+    "league": {
+        "id": 12,
+        "name": "NBA",
+        "type": "League",
+        "season": "2022-2023",
+        "logo": "https://media-2.api-sports.io/basketball/leagues/12.png"
+    },
+    "country": {
+        "id": 5,
+        "name": "USA",
+        "code": "US",
+        "flag": "https://media-3.api-sports.io/flags/us.svg"
+    },
+    "games": {
+        "played": 81,
+        "win": {
+            "total": 52,
+            "percentage": "0.642"
+        },
+        "lose": {
+            "total": 29,
+            "percentage": "0.358"
+        }
+    },
+    "points": {
+        "for": 9386,
+        "against": 9127
+    },
+    "form": null,
+    "description": "Promotion - NBA (Play Offs: 1/8-finals)"
+},
+{
+    "position": 1,
+    "stage": "NBA",
+    "group": {
+        "name": "Western Conference",
+        "points": 0
+    },
+    "team": {
+        "id": 139,
+        "name": "Denver Nuggets",
+        "logo": "https://media-2.api-sports.io/basketball/teams/139.png"
+    },
+    "league": {
+        "id": 12,
+        "name": "NBA",
+        "type": "League",
+        "season": "2022-2023",
+        "logo": "https://media-2.api-sports.io/basketball/leagues/12.png"
+    },
+    "country": {
+        "id": 5,
+        "name": "USA",
+        "code": "US",
+        "flag": "https://media-3.api-sports.io/flags/us.svg"
+    },
+    "games": {
+        "played": 81,
+        "win": {
+            "total": 52,
+            "percentage": "0.642"
+        },
+        "lose": {
+            "total": 29,
+            "percentage": "0.358"
+        }
+    },
+    "points": {
+        "for": 9386,
+        "against": 9127
+    },
+    "form": null,
+    "description": "Promotion - NBA (Play Offs: 1/8-finals)"
+}
+]
