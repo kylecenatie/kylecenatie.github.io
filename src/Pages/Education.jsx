@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import EmailModal from "../components/EmailModal";
 import Row from "react-bootstrap/row"
 import Col from "react-bootstrap/col"
@@ -55,7 +57,9 @@ const Education = () => {
                 </Row>
                 <Row>
                     <Col> 
-                    <Button href="hobbies" id="education_to_hobbies"> Check out my hobbies.</Button>               
+            <Link to={`/hobbies`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="education_to_hobbies"> Check out my hobbies.</Button></span></Link>
+
+             
     </Col>
                 </Row>
             </center>

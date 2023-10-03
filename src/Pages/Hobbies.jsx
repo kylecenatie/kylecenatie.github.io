@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import Container from 'react-bootstrap/Container';
 // import Skills from '../components/Skills'
 import ImageSlider from '../components/ImageSlider'
@@ -70,7 +72,8 @@ const Hobbies = () => {
                         }
 
                         <div style={{ paddingTop: "300px", paddingLeft: "100px" }}>
-                            <Button id="hobbies_to_home" href="/"> Thanks for checking out my website.</Button>
+            <Link to={`/`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="hobbies_to_home"> Thanks for checking out my website.</Button></span></Link>
+                           
                         </div>
                     </Col>
                 </Row>

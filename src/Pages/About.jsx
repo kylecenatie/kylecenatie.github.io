@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/button"
 import Row from "react-bootstrap/row"
 import Col from "react-bootstrap/col"
@@ -93,7 +94,8 @@ const About = () => {
                 </Col>
             </Row>
             <Row><Col>
-                <Button href="education" id="about_to_education"> Learn about my education.</Button>
+            <Link to={`/education`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="about_to_education">  Learn about my education.</Button></span></Link>
+                
             </Col>
             </Row>
         </center>

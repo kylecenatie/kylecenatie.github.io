@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Container from 'react-bootstrap/Container';
 import Skills from '../components/Skills'
 import ImageSlider from '../components/ImageSlider'
@@ -40,7 +42,9 @@ const Home = () => {
       <p>I am a software engineer.</p>
       <ImageSlider images={sliderImages} wid={600} high={650}/> 
       <div>
-         <Button id="home_to_about" href="about"> Check out more information about me.</Button>
+      <Link to={`/about`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="home_to_about"> Check out more information about me.</Button></span></Link>
+        
+         
         </div>
     </header>
     {/* <Modal /> */}
