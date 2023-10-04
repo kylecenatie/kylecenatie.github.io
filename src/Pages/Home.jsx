@@ -38,17 +38,18 @@ const Home = () => {
     return(
     <AppBodyContainer>
     <header className="App-header">
-      <div id="introduction">My name is Kyle Cenatiempo </div>
-      <p className="soft_eng">I am a software engineer.</p>
-      <ImageSlider images={sliderImages} wid={600} high={650}/> 
-      <div>
-      <Link to="/about">< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="nav_about" className="to_about"> Check out more information about me.</Button></span></Link>
-        
-         
-        </div>
+    <div>
+      <Link to="/education">< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer", float:"inline-end" }} > <Button id="nav_about" style={{margin: "15px"}} className="to_about"> Check out more information about me.</Button></span></Link>
+     </div>  <ImageSlider images={sliderImages} wid={300} high={350}/> 
+       
+      <div id="introduction" style={{fontFamily:"fantasy", fontSize:"100px"}}>My name is Kyle Cenatiempo </div>
+      <p className="soft_eng" style={{fontFamily:"fantasy", fontSize:"15px"}}>I am a software engineer.</p>
+      
+      
     </header>
     {/* <Modal /> */}
      <Skills />
+     
   </AppBodyContainer>
     );
 }

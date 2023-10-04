@@ -41,23 +41,18 @@ const Hobbies = () => {
         <AppBodyContainer>
             <header className="App-header">
                 <Row>
-                    <Col>
+                    <Col> 
+                    <div> <center><h2 className="hobbie_title">Hobbies</h2></center></div>
                         <ul className="what_i_like">
-                            <li style={{ fontSize: "x-large" }}>I love to golf.</li>
-                            <li style={{ fontSize: "x-large" }}>My favorite team sport is soccer.</li>
-                            <li style={{ fontSize: "x-large" }}>I have been playing soccer since I was 4 years old.</li>
-                            <li style={{ fontSize: "x-large" }}>Favorite club is Manchester City.</li>
-                            <li style={{ fontSize: "x-large" }}>I enjoy snowboarding.</li>
-                            <li style={{ fontSize: "x-large" }}>I like paintballing.</li>
-                            <li style={{ fontSize: "x-large" }}>I like pretty much anything that is outdoors.</li>
+                            <li style={{ fontSize: "small" }}>I love to golf.</li>
+                            <li style={{ fontSize: "small" }}>My favorite team sport is soccer.</li>
+                            <li style={{ fontSize: "small" }}>I have been playing soccer since I was 4 years old.</li>
+                            <li style={{ fontSize: "small" }}>Favorite club is Manchester City.</li>
+                            <li style={{ fontSize: "small" }}>I enjoy snowboarding.</li>
+                            <li style={{ fontSize: "small" }}>I like paintballing.</li>
+                            <li style={{ fontSize: "small" }}>I like pretty much anything that is outdoors.</li>
                         </ul>
-                    </Col>
-                    <Col>
-                        <div> <center><h2 className="hobbie_title">Hobbies</h2></center></div>
-
-                        <ImageSlider images={sliderImages} wid={600} high={650} />
-                    </Col>
-                    <Col>
+                   
                         {viz &&
                             <><Form style={{ fontSize: "medium" }}>
                                 <Form.Group className="mb-3" controlId="basic-name">
@@ -71,10 +66,14 @@ const Hobbies = () => {
                             <div className="hobbie_mess">Nice I really need to check out that hobbie!</div>
                         }
 
-                        <div style={{ paddingTop: "300px", paddingLeft: "100px" }}>
-            <Link to={`/`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="nav_home"> Thanks for checking out my website.</Button></span></Link>
+                        <div style={{ paddingTop: "50px", paddingLeft: "100px" }}>
+            <Link to={`/about`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="nav_about"> Check out more about me.</Button></span></Link>
                            
                         </div>
+                    </Col>  <Col>
+                       
+
+                        <ImageSlider images={sliderImages} wid={240} high={300} />
                     </Col>
                 </Row>
 

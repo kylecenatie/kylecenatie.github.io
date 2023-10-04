@@ -30,25 +30,10 @@ const About = () => {
 
     return (
         <AppBodyContainer className="App-header"><center>
-            <Row>
-                <h3><u className='about_title'>About Me</u></h3>
-
-
+<Row>
                 <Col>
-                    <ul><li>
-                        Born in Riverside California.
-                    </li>
-                        <li>Middle child of five.</li>
-                        <li>Three brothers and one sister.</li>
-                        <li>Moved to Mesa Arizona in 2002.</li>
-                        <li><b>I love California!</b> </li>
-                    </ul>
-                    <img src={im2} alt="family photo" width="440" id="family_image" height="350"></img>
-                    <label id="family_image_label">Family Photo</label>
-                    
-                </Col>
-                <Col><img src={im} alt="California" id="cal_image" width="450" height="600"></img>
-                    {!message ?
+                <Row>
+                    <Col> <h3><u className='about_title'>About Me</u></h3>{!message ?
                         <Form>
                             <Form.Check.Label id="ca_fan">Fan of CA?</Form.Check.Label>
                             <Form.Check
@@ -60,9 +45,22 @@ const About = () => {
                             /></Form>
                         :
                         <h3 style={{paddingTop:"30px"}} id="sec_mess">{message}</h3>
-                    }</Col>
+                    }<img src={im} alt="California" id="cal_image" width="250" height="300"></img>
+                    </Col><Col><ul style={{fontSize:"15px"}}><li>
+                        Born in Riverside California.
+                    </li>
+                        <li>Middle child of five.</li>
+                        <li>Three brothers and one sister.</li>
+                        <li>Moved to Mesa Arizona in 2002.</li>
+                        <li><b>I love California!</b> </li>
+                    </ul>
+                    <img src={im2} alt="family photo" width="220" id="family_image" height="175"></img>
+                    <label id="family_image_label">Family Photo</label>
+                    </Col></Row>
+                </Col>
+              
                 <Col>
-                    {viz &&
+                   {viz &&
                         <><Form id="u_born" style={{paddingRight:'40px'}}>
                             <Form.Label>Where were you born?</Form.Label>
                             <Form.Group className="mb-3" controlId="basic-name">
@@ -92,12 +90,10 @@ const About = () => {
                         <div id="message_to_input">Greetings {name} from {city}, {state} {country}! Thanks for visiting my site</div>
                     }
                 </Col>
+                <Col xs={1}> <Link to={`/`}>< span className="tite" style={{  padding: "0px", margin: "auto", cursor: "pointer" }} > <Button id="nav_home"> Thanks for checking out my website.</Button></span></Link>
+                </Col>
             </Row>
-            <Row><Col>
-            <Link to={`/education`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="nav_education">  Learn about my education.</Button></span></Link>
-                
-            </Col>
-            </Row>
+          
         </center>
 
         </AppBodyContainer>
