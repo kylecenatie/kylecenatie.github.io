@@ -8,7 +8,7 @@ import Form from "react-bootstrap/form"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import styled from 'styled-components';
-import Mod from "../components/Mod";
+
 import Button from "react-bootstrap/button";
 import im1 from "../images/golf.jpeg";
 import im2 from "../images/snowboard.jpeg";
@@ -42,7 +42,7 @@ const Hobbies = () => {
             <header className="App-header">
                 <Row>
                     <Col>
-                        <ul>
+                        <ul className="what_i_like">
                             <li style={{ fontSize: "x-large" }}>I love to golf.</li>
                             <li style={{ fontSize: "x-large" }}>My favorite team sport is soccer.</li>
                             <li style={{ fontSize: "x-large" }}>I have been playing soccer since I was 4 years old.</li>
@@ -53,7 +53,7 @@ const Hobbies = () => {
                         </ul>
                     </Col>
                     <Col>
-                        <div> <center><h2>Hobbies</h2></center></div>
+                        <div> <center><h2 className="hobbie_title">Hobbies</h2></center></div>
 
                         <ImageSlider images={sliderImages} wid={600} high={650} />
                     </Col>
@@ -63,16 +63,16 @@ const Hobbies = () => {
                                 <Form.Group className="mb-3" controlId="basic-name">
                                     <Form.Label>I want to hear about your favorite hobbie.</Form.Label>
 
-                                    <Form.Control as="textarea" rows={3} placeholder="Whats your favorite hobbie?" onChange={(e) => setFave(e.target.value)} />
+                                    <Form.Control as="textarea" rows={3} id="hobbie_input" placeholder="Whats your favorite hobbie?" onChange={(e) => setFave(e.target.value)} />
                                 </Form.Group>
-                            </Form><Button variant="primary" type="submit" onClick={() => setViz(false)}> Send</Button></>
+                            </Form><Button variant="primary" type="submit" id="send_hobbie" onClick={() => setViz(false)}> Send</Button></>
                         }
                         {!viz &&
-                            <div>Nice I really need to check out that hobbie!</div>
+                            <div className="hobbie_mess">Nice I really need to check out that hobbie!</div>
                         }
 
                         <div style={{ paddingTop: "300px", paddingLeft: "100px" }}>
-            <Link to={`/`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="hobbies_to_home"> Thanks for checking out my website.</Button></span></Link>
+            <Link to={`/`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="nav_home"> Thanks for checking out my website.</Button></span></Link>
                            
                         </div>
                     </Col>

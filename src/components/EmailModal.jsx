@@ -11,7 +11,7 @@ function EmailModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} id={props.id}>
         {props.buttonName}
       </Button>
 
@@ -27,12 +27,13 @@ function EmailModal(props) {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>{props.description}</Form.Label>
-              <Form.Control as="textarea"  autoFocus rows={3} />
+              <Form.Control as="textarea" id="text_area_mod"  autoFocus rows={3} />
             </Form.Group>
           </Form>  
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Your Email address</Form.Label>
               <Form.Control
+              id='email_area_mod'
                 type="email"
                 placeholder="name@example.com"
               />
@@ -42,7 +43,7 @@ function EmailModal(props) {
           {/* <Button variant="secondary" onClick={handleClose}>
             Close
           </Button> */}
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" id="send_but" onClick={handleClose}>
             Send
           </Button>
         </Modal.Footer>

@@ -35,9 +35,9 @@ export default function Header() {
         <Navbar.Collapse className='justify-content-end'>
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+            {/* <Nav.Link as={NavLink} to="/about">About</Nav.Link>
             <Nav.Link as={NavLink} to="/education">Education</Nav.Link>
-            <Nav.Link as={NavLink} to="/hobbies">Hobbies</Nav.Link>
+            <Nav.Link as={NavLink} to="/hobbies">Hobbies</Nav.Link> */}
             <NavDropdown title="Contact" id="collasible-nav-dropdown">
               <NavDropdown.Item href="mailto:cenatiempo.kyle@gmail.com"><AiOutlineMail /> &emsp;Email</NavDropdown.Item>
               <NavDropdown.Item href="https://www.linkedin.com/in/kyle-cena/"><AiFillLinkedin /> &emsp;LinkedIn

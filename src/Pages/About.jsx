@@ -31,7 +31,7 @@ const About = () => {
     return (
         <AppBodyContainer className="App-header"><center>
             <Row>
-                <h3><u>About Me</u></h3>
+                <h3><u className='about_title'>About Me</u></h3>
 
 
                 <Col>
@@ -50,7 +50,7 @@ const About = () => {
                 <Col><img src={im} alt="California" id="cal_image" width="450" height="600"></img>
                     {!message ?
                         <Form>
-                            <Form.Check.Label>Fan of CA?</Form.Check.Label>
+                            <Form.Check.Label id="ca_fan">Fan of CA?</Form.Check.Label>
                             <Form.Check
                             style={{fontSize:"large", color:"black", backgroundColor:"gold"}}
                                 type='checkbox'
@@ -59,42 +59,42 @@ const About = () => {
                                 onChange={() => setMessage("I knew you were pretty cool.")}
                             /></Form>
                         :
-                        <h3 style={{paddingTop:"30px"}}>{message}</h3>
+                        <h3 style={{paddingTop:"30px"}} id="sec_mess">{message}</h3>
                     }</Col>
                 <Col>
                     {viz &&
-                        <><Form style={{paddingRight:'40px'}}>
+                        <><Form id="u_born" style={{paddingRight:'40px'}}>
                             <Form.Label>Where were you born?</Form.Label>
                             <Form.Group className="mb-3" controlId="basic-name">
-                                <Form.Label>Name</Form.Label>
+                                <Form.Label fontSize="medium" className="u_name">Name</Form.Label>
                                 <Form.Control type="text" id="u_name" placeholder="Enter name" onChange={(e) => setName(e.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="basic-city">
-                                <Form.Label>City</Form.Label>
+                                <Form.Label fontSize="medium" className="u_city">City</Form.Label>
                                 <Form.Control type="text" id="u_city" placeholder="Enter city" onChange={(e) => setCity(e.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="basic-state">
-                                <Form.Label>State</Form.Label>
+                                <Form.Label fontSize="medium" className="u_state">State</Form.Label>
                                 <Form.Control type="text" id="u_state" placeholder="Enter state" onChange={(e) => setState(e.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="basic-state">
-                                <Form.Label>Country</Form.Label>
+                                <Form.Label fontSize="medium" className="u_country">Country</Form.Label>
                                 <Form.Control type="text" id="u_country" placeholder="Enter country" onChange={(e) => setCountry(e.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="basic-state">
-                                <Form.Label>Big Family?</Form.Label>
+                                <Form.Label fontSize="medium" className="u_fam">Big Family?</Form.Label>
                                 <Form.Check type="radio" id="u_fam_yes" label="YES" />
                                 <Form.Check type="radio" id="u_fam_no" label="NO" />
                             </Form.Group>
                         </Form><Button variant="primary" id="submit_button" type="submit" onClick={() => setViz(false)}> Send</Button></>
                     }
                     {!viz &&
-                        <div id="message_to_input">Greetings <b>{name}</b> from {city}, {state} {country}!<br />Thanks for visiting my site</div>
+                        <div id="message_to_input">Greetings {name} from {city}, {state} {country}! Thanks for visiting my site</div>
                     }
                 </Col>
             </Row>
             <Row><Col>
-            <Link to={`/education`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="about_to_education">  Learn about my education.</Button></span></Link>
+            <Link to={`/education`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="nav_education">  Learn about my education.</Button></span></Link>
                 
             </Col>
             </Row>

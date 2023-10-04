@@ -10,7 +10,7 @@ import im from "../images/asu_seal.png";
 
 
 const Education = () => {
-    const [viz, setViz] = useState(true);
+   // const [viz, setViz] = useState(true);
 
     return (<Container
     style = {{
@@ -23,13 +23,14 @@ const Education = () => {
     }} >
             <center>
                 <Row>
-                    <h3><u>Education</u></h3>
+                    <h3><u id="ed_head">Education</u></h3>
 
 
                     <Col>
-                        <ul style={{color: "black", fontWeight: "bold", fontSize:"large"}}><li>
+                        <ul className="ed_bullets" style={{color: "black", fontWeight: "bold", fontSize:"large"}}>
+                            <li>
                             Went to Arizona State University in the Ira Fulton Schools of Engineering
-                        </li>
+                            </li>
                             <li>Graduated undergrad in 2022.</li>
                             <li>Recieved a bachelors degree in science focusing on Software Engineering</li>
                             <li>Started graduate program for the school of Computing and Augmented Intelligence as ASU </li>
@@ -48,16 +49,16 @@ const Education = () => {
                             </ol>
                             </form></Col>
                     <Col>
-                    <img src={im} alt="asu seal" width="400" height="400"></img>
+                    <img src={im} alt="asu seal" className="asu_seal" width="400" height="400"></img>
                     </Col>
                     <Col>
-                        <p>I would like to know more about you! If you care to share click the button to send me an email.</p>
-                        <EmailModal title="Tell me about your school" buttonName="Tell me where you went to school" description="I would love to hear about where you went to school and what was your favorite class" />
+                        <p id="know_more" style={{color:"maroon", fontWeight:"bolder"}} >I would like to know more about you! If you care to share click the button to send me an email.</p>
+                        <EmailModal id="u_school" title="Tell me about your school" buttonName="Tell me where you went to school" description="I would love to hear about where you went to school and what was your favorite class" />
                     </Col>
                 </Row>
                 <Row>
                     <Col> 
-            <Link to={`/hobbies`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="education_to_hobbies"> Check out my hobbies.</Button></span></Link>
+            <Link to={`/hobbies`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="nav_hobbies"> Check out my hobbies.</Button></span></Link>
 
              
     </Col>
