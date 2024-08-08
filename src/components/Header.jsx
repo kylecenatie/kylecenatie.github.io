@@ -27,9 +27,9 @@ export default function Header() {
             height="80"
             className="d-inline-block align-top"
           />
- <span className="coloredtext">YLE CENATIEMPO</span> 
+ <span className="coloredtext">YLE SJOBERG</span> 
         </Navbar.Brand>
-        <NavbarText>CSE565 Project 3</NavbarText>
+       
         <div className='left'>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className='justify-content-end'>

@@ -1,26 +1,29 @@
 .skills {
-	background: #090909;
-	min-height: 200px;
+	background: #0909092c;
+	min-height: 270px;
 	width: 100%;
 	overflow: hidden;
-	padding-bottom: 10%;
+	padding-bottom: 0%;
 }
 .skills-tile {
-	background-color: transparentize(#F8F5F4, 0.95);
-	padding: 10px 10px 5px 10px;
-	width: 100px;
-	margin: 5px 0 5px 0;
-	border-radius: 8px;
+	/* background-color: transparentize(#F8F5F4, 0.95); */
+	background-color: #F8F5F4;
+	border:2px solid black;
+	/* padding: 10px 10px 5px 10px; */
+	width: 120px;
+	margin: 0px 0 0px 0;
+	border-radius: 40px;
+	font-size: 220%;
 }
 .skill-icon {
-	font-size: 180%;
+
 	color: rgb(5, 5, 69);
 	text-align: center;
 	position: relative;
 }
 .section-title {
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding: 1%;
+	padding-bottom: 1%;
 	font: 18px/24px 'opensans-bold', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 3px;

@@ -9,6 +9,7 @@ import Button from "react-bootstrap/button"
 import im1 from "../images/prof_pic.jpg";
 import im2 from "../images/asugrad.jpeg";
 import im3 from "../images/ky_jul.jpeg";
+import Typewriter from "../components/Typewriter";
 
 
 const AppBodyContainer = styled(Container).attrs({
@@ -38,12 +39,11 @@ const Home = () => {
     return(
     <AppBodyContainer>
     <header className="App-header">
-      <div id="introduction">My name is Kyle Cenatiempo </div>
-      <p>I am a software engineer.</p>
+      <div id="introduction"> 
+      <Typewriter></Typewriter></div>
       <ImageSlider images={sliderImages} wid={600} high={650}/> 
       <div>
-      <Link to="/about">< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="home_to_about" className="to_about"> Check out more information about me.</Button></span></Link>
-        
+     
          
         </div>
     </header>
