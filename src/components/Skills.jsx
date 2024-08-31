@@ -9,7 +9,7 @@ const Skills = ()=>{
         <div className="col-md-12">
           <div className="col-md-12">
             <h1 className="section-title">
-              <span className="text-black">Experienced</span>
+              <span className="text-black">SKILLS</span>
             </h1>
           </div>
           <div className="col-md-12 text-center">

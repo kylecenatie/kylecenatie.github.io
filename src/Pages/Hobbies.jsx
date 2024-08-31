@@ -41,7 +41,7 @@ const Hobbies = () => {
         <AppBodyContainer>
             <header className="App-header">
                 <Row>
-                    <Col>
+                    {/* <Col>
                         <ul>
                             <li style={{ fontSize: "x-large" }}>I love to golf.</li>
                             <li style={{ fontSize: "x-large" }}>My favorite team sport is soccer.</li>
@@ -51,14 +51,14 @@ const Hobbies = () => {
                             <li style={{ fontSize: "x-large" }}>I like paintballing.</li>
                             <li style={{ fontSize: "x-large" }}>I like pretty much anything that is outdoors.</li>
                         </ul>
-                    </Col>
+                    </Col> */}
                     <Col>
                         <div> <center><h2>Hobbies</h2></center></div>
 
                         <ImageSlider images={sliderImages} wid={600} high={650} />
                     </Col>
                     <Col>
-                        {viz &&
+                        {/* {viz &&
                             <><Form style={{ fontSize: "medium" }}>
                                 <Form.Group className="mb-3" controlId="basic-name">
                                     <Form.Label>I want to hear about your favorite hobbie.</Form.Label>
@@ -69,12 +69,9 @@ const Hobbies = () => {
                         }
                         {!viz &&
                             <div>Nice I really need to check out that hobbie!</div>
-                        }
+                        } */}
 
-                        <div style={{ paddingTop: "300px", paddingLeft: "100px" }}>
-            <Link to={`/`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="hobbies_to_home"> Thanks for checking out my website.</Button></span></Link>
-                           
-                        </div>
+                        
                     </Col>
                 </Row>
 
