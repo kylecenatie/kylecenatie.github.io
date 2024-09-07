@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-const words = ['My name is Kyle Sjoberg', 'I am a software engineer.'];
-const Typewriter = ()=>{
+// const words = ['My name is Kyle Sjoberg', 'I am a software engineer.'];
+
+const Typewriter = (props)=>{
+  const words = props.words;
 const [wordIndex, setWordIndex] = useState(0);
 const [text, setText] = useState('');
 const [isDeleting, setIsDeleting] = useState(false);
 
 function type() {
-      // Current word
+      // Current wordx
       const currentWord = words[wordIndex];
       // Determine the function to be performed
       const shouldDelete = isDeleting ? 1 : -1;
+      
       // Create the new text
       setText(current => currentWord.substring(0, current.length - shouldDelete));
       // Determine if this word is complete
@@ -30,7 +33,7 @@ function type() {
         }, [wordIndex, isDeleting, text]);
         
         return (
-            <h1>{text}</h1>
+            <div style={{fontFamily:"Lucida Console", color:"grey", height: "100%" , display: "grid", fontSize: "30px", placeContent: "center"}}>{text}</div>
         );
 }
 export default Typewriter;

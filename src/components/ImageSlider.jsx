@@ -4,7 +4,7 @@ import SimpleImageSlider from "react-simple-image-slider";
 const ImageSlider = (props) => {
    const [imageNum, setImageNum] = useState(1);
    return (
-      <span>
+      <span style={{padding: "20px"}}>
          <SimpleImageSlider
             width={props.wid}
             height={props.high}

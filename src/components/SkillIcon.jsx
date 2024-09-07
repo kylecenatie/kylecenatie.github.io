@@ -15,45 +15,45 @@ import { FaDocker } from "react-icons/fa";
 
 const SkillIcon = (props) => {
     var type = props.type;
-    if (type == "NodeJS") {
+    if (type === "NodeJS") {
         return <FaNode />;
     }
-    if (type == "JavaScript") {
+    if (type === "JavaScript") {
         return <SiJavascript />
     }
-    if (type == "Java") {
+    if (type === "Java") {
         return <FaJava /> }
-    if (type == "Python") {
+    if (type === "Python") {
         return <FaPython />
     }
-    if (type == "React"){
+    if (type === "React"){
         return <FaReact />
     }    
-    if (type == "AWS"){
+    if (type === "AWS"){
         return <FaAws />
     }
-    if (type == "Angular"){
+    if (type === "Angular"){
         return <FaAngular />
     }
-    if (type == "Bootstrap"){
+    if (type === "Bootstrap"){
         return <FaBootstrap />
     }
-    if (type == "MySql"){
+    if (type === "MySql"){
         return <SiMysql />
     }
-    if (type == "HTML 5"){
+    if (type === "HTML 5"){
         return <FaHtml5 />
     }
-    if (type == "CSS 3"){
+    if (type === "CSS 3"){
         return <FaCss3Alt />
     }
-    if (type== "Kubernetes"){
+    if (type=== "Kubernetes"){
         return <SiKubernetes />
     }
-    if (type== "Docker"){
+    if (type=== "Docker"){
         return <FaDocker />
     }
 
 }
-
+    
 export default SkillIcon;
