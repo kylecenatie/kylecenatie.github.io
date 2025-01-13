@@ -24,48 +24,28 @@ const Hobbies = () => {
 
     const sliderImages = [{ url: im1 }, { url: im2 }, { url: im3 }, { url: im4 }, { url: im5 }, { url: im6 }];
     return (
-        // <Container
-        // style={{
-        //     height: "100%",
-        //     width: "100%",
-        //     // backgroundImage: im2,
-        //     // backgroundColor: "black",
-            
-        //     position: "relative",
-        //     fontFamily: "ariel-bold",
-
-        // }} >
             <header className="App-header-hobby">
                 <Row>
                     <Col >
-                        <ul style={{textAlign: "left"}}>
-                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I love to golf.</li>
-                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>My favorite team sport is soccer.</li>
-                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I have been playing soccer since I was 4 years old.</li>
-                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Favorite club is Manchester City.</li>
-                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I enjoy snowboarding.</li>
-                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I like paintballing.</li>
-                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I like pretty much anything that is outdoors.</li>
+                        <ul style={{textAlign: "left", padding:'60px'}}>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Golf.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Soccer.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Snowboard.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Staying in shape.</li>
                         </ul>
                     </Col>
                     <Col>
-                        <div> <center><h2>Hobbies</h2></center></div>
+                        <div> <center><h2 style={{color:'whitesmoke', paddingTop: '20px', fontFamily:'serif'}}>Hobbies</h2></center></div>
 
                         <ImageSlider images={sliderImages} wid={600} high={650} />
                     </Col>
                     <Col>
-                        {/* {viz &&
-                            <><Form style={{ fontSize: "medium" }}>
-                                <Form.Group className="mb-3" controlId="basic-name">
-                                    <Form.Label>I want to hear about your favorite hobbie.</Form.Label>
-
-                                    <Form.Control as="textarea" rows={3} placeholder="Whats your favorite hobbie?" onChange={(e) => setFave(e.target.value)} />
-                                </Form.Group>
-                            </Form><Button variant="primary" type="submit" onClick={() => setViz(false)}> Send</Button></>
-                        }
-                        {!viz &&
-                            <div>Nice I really need to check out that hobbie!</div>
-                        } */}
+                    <ul style={{textAlign: "left", padding:'60px'}}>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>Golfing for a few years.</li>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>Favorite club is Manchester City.</li>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>Love to shred.</li>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>I like pretty much anything that is outdoors.</li>
+                        </ul>
 
                         
                     </Col>

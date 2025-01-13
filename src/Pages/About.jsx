@@ -36,6 +36,7 @@ const About = () => {
 
 
                 <Col>
+                <div style= {{paddinTop:'150px'}}>
                     <ul style={{color:"white"}}>
                         <li>
                         Born in Riverside California.
@@ -46,6 +47,7 @@ const About = () => {
                     </ul>
                     <img src={im} alt="California" id="cal_image"  height="350"></img>
                     <label id="family_image_label">Family Photo</label>
+                    </div>
 
                 </Col>
                 <Col><img src={im} alt="California" id="cal_image" width="450" height="600"></img>
