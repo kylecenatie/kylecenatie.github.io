@@ -18,40 +18,36 @@ import im5 from "../images/paintball.jpeg";
 import im6 from "../images/young_soccer.jpeg";
 
 
-
-
-
-const AppBodyContainer = styled(Container).attrs({
-    fluid: true,
-    className: 'px-0 d-flex flex-column',
-})`
-  min-height: 100vh;
-  & .container {
-    flex-grow: 3;
-    border: solid black;
-  }
-`;
-
 const Hobbies = () => {
     const [viz, setViz] = useState(true);
     const [fave, setFave] = useState(true);
 
     const sliderImages = [{ url: im1 }, { url: im2 }, { url: im3 }, { url: im4 }, { url: im5 }, { url: im6 }];
     return (
-        <AppBodyContainer>
-            <header className="App-header">
+        // <Container
+        // style={{
+        //     height: "100%",
+        //     width: "100%",
+        //     // backgroundImage: im2,
+        //     // backgroundColor: "black",
+            
+        //     position: "relative",
+        //     fontFamily: "ariel-bold",
+
+        // }} >
+            <header className="App-header-hobby">
                 <Row>
-                    {/* <Col>
-                        <ul>
-                            <li style={{ fontSize: "x-large" }}>I love to golf.</li>
-                            <li style={{ fontSize: "x-large" }}>My favorite team sport is soccer.</li>
-                            <li style={{ fontSize: "x-large" }}>I have been playing soccer since I was 4 years old.</li>
-                            <li style={{ fontSize: "x-large" }}>Favorite club is Manchester City.</li>
-                            <li style={{ fontSize: "x-large" }}>I enjoy snowboarding.</li>
-                            <li style={{ fontSize: "x-large" }}>I like paintballing.</li>
-                            <li style={{ fontSize: "x-large" }}>I like pretty much anything that is outdoors.</li>
+                    <Col >
+                        <ul style={{textAlign: "left"}}>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I love to golf.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>My favorite team sport is soccer.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I have been playing soccer since I was 4 years old.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Favorite club is Manchester City.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I enjoy snowboarding.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I like paintballing.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>I like pretty much anything that is outdoors.</li>
                         </ul>
-                    </Col> */}
+                    </Col>
                     <Col>
                         <div> <center><h2>Hobbies</h2></center></div>
 
@@ -76,7 +72,7 @@ const Hobbies = () => {
                 </Row>
 
             </header>
-        </AppBodyContainer>
+        // </Container>
     );
 }
 

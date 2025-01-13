@@ -9,16 +9,16 @@ import Form from "react-bootstrap/Form"
 import im from "../images/california.png";
 import im2 from "../images/family.jpeg";
 
-const AppBodyContainer = styled(Container).attrs({
-    fluid: true,
-    className: 'px-0 d-flex flex-column',
-  })`
-    min-height: 100vh;
-    & .container {
-      flex-grow: 3;
-      border: solid black;
-    }
-  `;
+// const AppBodyContainer = styled(Container).attrs({
+//     fluid: true,
+//     className: 'px-0 d-flex flex-column',
+// })`
+//     min-height: 100vh;
+//     & .container {
+//       flex-grow: 3;
+//       border: solid black;
+//     }
+//   `;
 
 const About = () => {
     const [viz, setViz] = useState(true);
@@ -29,41 +29,42 @@ const About = () => {
     const [country, setCountry] = useState(false);
 
     return (
-        <AppBodyContainer className="App-header"><center>
-            <Row>
-                <h3><u>About Me</u></h3>
+    <>
+        <Container className="App-header"><center>
+            <h2 style={{color:"white"}}><u>About Me</u></h2><Row>
+                
 
 
                 <Col>
-                    <ul><li>
+                    <ul style={{color:"white"}}>
+                        <li>
                         Born in Riverside California.
                     </li>
-                        <li>Middle child of five.</li>
-                        <li>Three brothers and one sister.</li>
-                        <li>Moved to Mesa Arizona in 2002.</li>
+                    <li>Moved to Arizona for School</li>
+                    <li>Currently live in Seattle WA</li>                    
                         <li><b>I love California!</b> </li>
                     </ul>
-                    <img src={im2} alt="family photo" width="440" id="family_image" height="350"></img>
+                    <img src={im} alt="California" id="cal_image"  height="350"></img>
                     <label id="family_image_label">Family Photo</label>
-                    
+
                 </Col>
                 <Col><img src={im} alt="California" id="cal_image" width="450" height="600"></img>
                     {!message ?
                         <Form>
                             <Form.Check.Label>Fan of CA?</Form.Check.Label>
                             <Form.Check
-                            style={{fontSize:"large", color:"black", backgroundColor:"gold"}}
+                                style={{ fontSize: "large", color: "black", backgroundColor: "gold" }}
                                 type='checkbox'
                                 label='Check the box if you like California.'
                                 id='like_ca'
                                 onChange={() => setMessage("I knew you were pretty cool.")}
                             /></Form>
                         :
-                        <h3 style={{paddingTop:"30px"}}>{message}</h3>
+                        <h3 style={{ paddingTop: "30px" }}>{message}</h3>
                     }</Col>
                 <Col>
                     {viz &&
-                        <><Form style={{paddingRight:'40px'}}>
+                        <><Form style={{ paddingRight: '40px' }}>
                             <Form.Label>Where were you born?</Form.Label>
                             <Form.Group className="mb-3" controlId="basic-name">
                                 <Form.Label>Name</Form.Label>
@@ -94,13 +95,14 @@ const About = () => {
                 </Col>
             </Row>
             <Row><Col>
-            <Link to={`/education`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="about_to_education">  Learn about my education.</Button></span></Link>
-                
+                <Link to={`/education`}>< span className="tite" style={{ padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="about_to_education">  Learn about my education.</Button></span></Link>
+
             </Col>
             </Row>
         </center>
 
-        </AppBodyContainer>
+        </Container>
+        </>
     );
 }
 

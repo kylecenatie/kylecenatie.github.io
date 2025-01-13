@@ -17,7 +17,6 @@ const ImageSlider = (props) => {
             }}
                autoPlayDelay = {3}
          />
-       
       </span>
    );
 }

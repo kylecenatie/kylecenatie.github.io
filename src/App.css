@@ -16,7 +16,8 @@
 .App-header {
   /* background-color: #282c34; */
   background-color: #282c34;
-  min-height: 80vh;
+  min-height: 90vh;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +25,19 @@
   font-size: calc(10px + 2vmin);
 
 }
+.App-header-hobby {
+  /* background-color: #282c34; */
+  background-color: #282c34;
+  min-height: 90vh;
+  min-width: 100%;
+
+  flex-direction: left;
+  
+ 
+  font-size: calc(10px + 4vmin);
+
+}
+
 
 .App-link {
   color: #61dafb;
