@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e7c32272.css",
-    "main.js": "/static/js/main.bb1bc867.js",
+    "main.css": "/static/css/main.2466c05f.css",
+    "main.js": "/static/js/main.c4b03781.js",
     "static/media/paintball.jpeg": "/static/media/paintball.bfedece6debb1c876521.jpeg",
     "static/media/asu_seal.png": "/static/media/asu_seal.545babafae4b4edd7987.png",
     "static/media/snowboard.jpeg": "/static/media/snowboard.1ba5a6168aeeaa6581ca.jpeg",
@@ -12,13 +12,14 @@
     "static/media/asugrad.jpeg": "/static/media/asugrad.0286b177ee6453088c38.jpeg",
     "static/media/young_soccer.jpeg": "/static/media/young_soccer.1fea78e0b0c8ac15e6ae.jpeg",
     "static/media/ky_jul.jpeg": "/static/media/ky_jul.f57c26329f7a2fd7778e.jpeg",
+    "static/media/asu_fear.jpeg": "/static/media/asu_fear.34b20816a7479c709558.jpeg",
     "static/media/prof_pic.jpg": "/static/media/prof_pic.84f929791c026bb0259a.jpg",
     "index.html": "/index.html",
-    "main.e7c32272.css.map": "/static/css/main.e7c32272.css.map",
-    "main.bb1bc867.js.map": "/static/js/main.bb1bc867.js.map"
+    "main.2466c05f.css.map": "/static/css/main.2466c05f.css.map",
+    "main.c4b03781.js.map": "/static/js/main.c4b03781.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7c32272.css",
-    "static/js/main.bb1bc867.js"
+    "static/css/main.2466c05f.css",
+    "static/js/main.c4b03781.js"
   ]
 }
