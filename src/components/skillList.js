@@ -21,40 +21,36 @@ const skillList = [
     "level": "75"
   },
   {
-    "name": "Sass",
+    "name": "Angular",
     "class": "devicon-sass-original",
     "level": "80"
   },
-  {
-    "name": "Bootstrap",
-    "class": "devicon-bootstrap-plain",
-    "level": "80"
-  },
+
   {
     "name": "AWS",
     "class": "devicon-amazonwebservices-original",
     "level": "80"
   },
   {
-    "name": "React",
+    "name": "Kubernetes",
     "class": "devicon-react-original",
     "level": "65"
   },
   {
-    "name": "Express",
+    "name": "Docker",
     "class": "devicon-express-original",
     "level": "60"
   },
-  {
-    "name": "MySql",
-    "class": "devicon-mysql-plain",
-    "level": "60"
-  },
-  {
-    "name": "PostgreSQL",
-    "class": "devicon-postgresql-plain",
-    "level": "60"
-  },
+  // {
+  //   "name": "MySql",
+  //   "class": "devicon-mysql-plain",
+  //   "level": "60"
+  // },
+  // {
+  //   "name": "PostgreSQL",
+  //   "class": "devicon-postgresql-plain",
+  //   "level": "60"
+  // },
   {
     "name": "HTML 5",
     "class": "devicon-html5-plain",
@@ -64,6 +60,10 @@ const skillList = [
     "name": "CSS 3",
     "class": "devicon-css3-plain",
     "level": "95"
+  },  {
+    "name": "Bootstrap",
+    "class": "devicon-bootstrap-plain",
+    "level": "80"
   }
 ]
 const list = {

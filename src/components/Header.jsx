@@ -27,9 +27,9 @@ export default function Header() {
             height="80"
             className="d-inline-block align-top"
           />
- <span className="coloredtext">YLE CENATIEMPO</span> 
+ <span className="coloredtext">YLE SJOBERG</span> 
         </Navbar.Brand>
-        <NavbarText>CSE565 Project 3</NavbarText>
+       
         <div className='left'>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className='justify-content-end'>
@@ -38,6 +38,7 @@ export default function Header() {
             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
             <Nav.Link as={NavLink} to="/education">Education</Nav.Link>
             <Nav.Link as={NavLink} to="/hobbies">Hobbies</Nav.Link>
+            {/* <Nav.Link as={NavLink} to="/games">Solitare</Nav.Link> */}
             <NavDropdown title="Contact" id="collasible-nav-dropdown">
               <NavDropdown.Item href="mailto:cenatiempo.kyle@gmail.com"><AiOutlineMail /> &emsp;Email</NavDropdown.Item>
               <NavDropdown.Item href="https://www.linkedin.com/in/kyle-cena/"><AiFillLinkedin /> &emsp;LinkedIn

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Row from "react-bootstrap/row"
+import Col from "react-bootstrap/col"
 import Container from 'react-bootstrap/Container';
 import Skills from '../components/Skills'
 import ImageSlider from '../components/ImageSlider'
@@ -9,6 +10,7 @@ import Button from "react-bootstrap/button"
 import im1 from "../images/prof_pic.jpg";
 import im2 from "../images/asugrad.jpeg";
 import im3 from "../images/ky_jul.jpeg";
+import Typewriter from "../components/Typewriter";
 
 
 const AppBodyContainer = styled(Container).attrs({
@@ -25,32 +27,40 @@ const AppBodyContainer = styled(Container).attrs({
 const Home = () => {
   const sliderImages = [
     {
-       url: im1,
+      url: im1,
     },
     {
-       url: im2,
+      url: im2,
     },
     {
       url: im3,
-   }
- ];
+    }
+  ];
 
-    return(
-    <AppBodyContainer>
-    <header className="App-header">
-      <div id="introduction">My name is Kyle Cenatiempo </div>
-      <p>I am a software engineer.</p>
-      <ImageSlider images={sliderImages} wid={600} high={650}/> 
-      <div>
-      <Link to="/about">< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="home_to_about" className="to_about"> Check out more information about me.</Button></span></Link>
-        
-         
-        </div>
-    </header>
-    {/* <Modal /> */}
-     <Skills />
-  </AppBodyContainer>
-    );
+  return (
+    <><Row style={{ backgroundColor: "#282c34" }}>
+      <Col><Typewriter words={['My name is Kyle Sjoberg.', 'I am a software engineer.', 'I like to code.']}></Typewriter></Col>
+      <Col><ImageSlider images={sliderImages} wid={600} high={650} /></Col>
+      <Col></Col>
+
+    </Row>
+   
+      <Row> <Skills /></Row>
+    </>
+    //   <AppBodyContainer>
+    //   <header className="App-header">
+    //     <div id="introduction"> 
+    //     <Typewriter></Typewriter></div>
+    //     <ImageSlider images={sliderImages} wid={600} high={650}/> 
+    //     <div>
+
+
+    //       </div>
+    //   </header>
+    //   {/* <Modal /> */}
+    //    <Skills />
+    // </AppBodyContainer>
+  );
 }
 
 export default Home;

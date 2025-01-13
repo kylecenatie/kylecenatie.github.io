@@ -1,71 +1,122 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-import EmailModal from "../components/EmailModal";
+// import EmailModal from "../components/EmailModal";
 import Row from "react-bootstrap/row"
 import Col from "react-bootstrap/col"
 import Container from "react-bootstrap/Container"
-import Button from "react-bootstrap/Button"
+// import Button from "react-bootstrap/Button"
 import im from "../images/asu_seal.png";
+import im2 from "../images/asu_fear.jpeg";
+import './ed.css'
 
 
 const Education = () => {
-    const [viz, setViz] = useState(true);
+    return (
+        <>
+            <img style={{
+                position: "fixed", zIndex: "1", height: "100%",
+                width: "100%",
 
-    return (<Container
-    style = {{
-        height: "100vh",
-       width: "100%",
-       backgroundImage: 'url("https://www.mos.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fh1t3y2jud9xn%2F3X3ZXO3WAcLOOxcEmlkcM6%2F98ef3316ec6f0d0d5d9124f672e543e5%2Fimage2.png&w=2048&q=75")',
-       backgroundSize: "cover",
-       backgroundRepeat: "no-repeat",
-     
-    }} >
-            <center>
-                <Row>
-                    <h3><u>Education</u></h3>
+            }} src={im2} alt="asu seal"></img>
+            <div style={{ margin: "0px", paddingTop: "0px", zIndex: "2", textAlign: "center", textDecorationLine: "underline", fontFamily: "copperplate", fontSize: "40px", position: "relative", width: "100%", color: "black", backgroundColor: "gold", textShadow: "3px 3px 5px maroon" }}>ARIZONA STATE UNIVERSITY</div>
+
+            <Container
+                style={{
+                    height: "100%",
+                    width: "100%",
+                    // backgroundImage: im2,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    // backgroundColor: "black",
+                    zIndex: "2",
+                    position: "relative",
+                    fontFamily: "ariel-bold",
+
+                }} >
 
 
-                    <Col>
-                        <ul style={{color: "black", fontWeight: "bold", fontSize:"large"}}><li>
-                            Went to Arizona State University in the Ira Fulton Schools of Engineering
-                        </li>
-                            <li>Graduated undergrad in 2022.</li>
-                            <li>Recieved a bachelors degree in science focusing on Software Engineering</li>
-                            <li>Started graduate program for the school of Computing and Augmented Intelligence as ASU </li>
-                            <li>Plans to graduate in 2024.</li>
-                            <li>With a masters in science focusing on Computer Science</li>
-                            
-                            </ul>
-                            <div>
-                                Tell me what you think I should focus in:
+                <center>
+                    <Row>
+                        <Col>
+
+
+                            {/* <div style={{ borderColor: "black", backgroundColor: "maroon", borderStyle: "solid", padding: "15px", flex: "start", margin: "50px", textAnchor: "-moz-initial" }}>
+
+                                <ul style={{ color: "white", listStyleType: "none", alignContent: "left", fontWeight: "bold", fontFamily: "copperplate", textDecorationLine: "black", textShadow: "-2px -2px 0 #000", fontSize: "large" }}>
+
+                                    <li style={{ fontSize: ".8em" }}>Bachelor of Science in</li>
+                                    <li style={{ fontSize: "1.5em" }}>Software Engineering</li>
+                                    <li style={{ fontSize: ".6em" }}>IRA A FULTON SCHOOLS OF ENGINEERING</li>
+                                    <li style={{ fontSize: ".6em" }}>Arizona State University</li>
+                                    <li>Graduate in 2022</li>
+                                    <li>3.5  GPA</li>
+
+                                </ul></div>
+
+                            <div style={{ borderColor: "black", backgroundColor: "maroon", borderStyle: "solid", padding: "15px", flex: "start", margin: "50px", textAnchor: "-moz-initial" }}>
+
+                                <ul style={{ color: "white", listStyleType: "none", alignContent: "left", fontWeight: "bold", fontFamily: "copperplate", textDecorationLine: "black", textShadow: "-2px -2px 0 #000", fontSize: "large" }}>
+
+                                    <li style={{ fontSize: ".8em" }}>Master of</li>
+                                    <li style={{ fontSize: "1.5em" }}>Computer Science</li>
+                                    <li style={{ fontSize: ".6em" }}>School of Computing and Augmented Intelligence </li>
+                                    <li style={{ fontSize: ".6em" }}>Arizona State University</li>
+                                    <li>Graduate in 2025</li>
+                                    <li>3.5  GPA</li>
+
+
+                                </ul></div> */}
+                            <div style={{perspective: '1000px'}}>
+                                <div class="card" style={{ padding: "10px", margin: "150px",position: 'relative',transformStyle: 'preserve-3d',transition: 'all .9s ease-in'}}>
+                                    <div style={{ zIndex: '3', backfaceVisibility: 'hidden',borderColor: "black", backgroundColor: "maroon", borderStyle: "solid", padding: "25px", flex: "start", margin: "50px", textAnchor: "-moz-initial", width: '500px',    height: '150px' , position: 'absolute'   }}>
+
+                                        <ul style={{ color: "white", listStyleType: "none", alignContent: "left", fontWeight: "bold", fontFamily: "copperplate", textDecorationLine: "black", textShadow: "-2px -2px 0 #000", fontSize: "large" }}>
+                                            <li style={{ fontSize: ".8em" }}>Bachelor of Science in</li>
+                                            <li style={{ fontSize: "1.5em" }}>Software Engineering</li>
+                                            <li style={{ fontSize: ".6em" }}>IRA A FULTON SCHOOLS OF ENGINEERING</li>
+                                            <li style={{ fontSize: ".6em" }}>Arizona State University</li>
+                                        </ul>
+                                    </div>
+                                    <div style={{  zIndex: '3', backfaceVisibility: 'hidden', borderColor: "black", backgroundColor: "maroon", borderStyle: "solid", padding: "25px", flex: "start", margin: "50px", textAnchor: "-moz-initial", width: '500px', height: '150px', position: 'absolute' ,transform: 'rotateY(180deg)',   }}>
+                                        <ul style={{ color: "white", listStyleType: "none", alignContent: "left", fontWeight: "bold", fontFamily: "copperplate", textDecorationLine: "black", textShadow: "-2px -2px 0 #000", fontSize: "large" }}>
+                                            <li style={{ fontSize: ".5em" }}>Arizona State University</li>
+                                            <li style={{ fontSize: "1.5em" }}>Graduate in 2022</li>
+                                            <li style={{ fontSize: "1.5em" }}>3.5  GPA</li>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <form>
-                            <ol>
-                            <li>Big Data  &emsp;<input type="checkbox" id="bigdata" value="data"></input></li> 
-                            <li>Security  &emsp;<input type="checkbox" id="security" value="security"></input></li> 
-                            <li>Artificial Intelligence  &emsp;<input type="checkbox" id="ai"  value="ai"></input></li> 
-                            </ol>
-                            </form></Col>
-                    <Col>
-                    <img src={im} alt="asu seal" width="400" height="400"></img>
-                    </Col>
-                    <Col>
-                        <p>I would like to know more about you! If you care to share click the button to send me an email.</p>
-                        <EmailModal title="Tell me about your school" buttonName="Tell me where you went to school" description="I would love to hear about where you went to school and what was your favorite class" />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> 
-            <Link to={`/hobbies`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} ><Button id="education_to_hobbies"> Check out my hobbies.</Button></span></Link>
+                            <div style={{perspective: '1000px'}}>
+                                <div class="card" style={{ padding: "10px", margin: "150px",position: 'relative',transformStyle: 'preserve-3d',transition: 'all .9s ease-in'}}>
+                                    <div style={{ zIndex: '3', backfaceVisibility: 'hidden',borderColor: "black", backgroundColor: "maroon", borderStyle: "solid", padding: "25px", flex: "start", margin: "50px", textAnchor: "-moz-initial", width: '500px',    height: '150px' , position: 'absolute'   }}>
 
-             
-    </Col>
-                </Row>
-            </center>
-
+                                        <ul style={{ color: "white", listStyleType: "none", alignContent: "left", fontWeight: "bold", fontFamily: "copperplate", textDecorationLine: "black", textShadow: "-2px -2px 0 #000", fontSize: "large" }}>
+                                            <li style={{ fontSize: ".8em" }}>Master of</li>
+                                            <li style={{ fontSize: "1.5em" }}>Computer Science</li>
+                                            <li style={{ fontSize: ".6em" }}>School of Computing and Augmented Intelligence </li>
+                                            <li style={{ fontSize: ".6em" }}>Arizona State University</li>
+                                        </ul>
+                                    </div>
+                                    <div style={{  zIndex: '3', backfaceVisibility: 'hidden', borderColor: "black", backgroundColor: "maroon", borderStyle: "solid", padding: "25px", flex: "start", margin: "50px", textAnchor: "-moz-initial", width: '500px', height: '150px', position: 'absolute' ,transform: 'rotateY(180deg)',   }}>
+                                        <ul style={{ color: "white", listStyleType: "none", alignContent: "left", fontWeight: "bold", fontFamily: "copperplate", textDecorationLine: "black", textShadow: "-2px -2px 0 #000", fontSize: "large" }}>
+                                            <li style={{ fontSize: ".5em" }}>Arizona State University</li>
+                                            <li style={{ fontSize: "1.5em" }}>Graduate in 2025</li>
+                                            <li style={{ fontSize: "1.5em" }}>3.5  GPA</li>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col>
+                            <img src={im} alt="asu seal" width="400" height="400"></img>
+                        </Col>
+                    </Row>
+                </center>
             </Container>
-        
+        </>
     );
 }
 

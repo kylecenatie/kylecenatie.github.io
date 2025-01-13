@@ -1,13 +1,15 @@
 import React from "react";
 import list from "./skillList";
+import SkillIcon from "./SkillIcon";
+
 import './skills.css'
 const Skills = ()=>{
     return (
-      <div id="skills">
+      <div className="skills">
         <div className="col-md-12">
           <div className="col-md-12">
             <h1 className="section-title">
-              <span className="text-black">Skills</span>
+              <span className="text-black">SKILLS</span>
             </h1>
           </div>
           <div className="col-md-12 text-center">
@@ -16,20 +18,19 @@ const Skills = ()=>{
           <li className="list-inline-item mx-3" key={i}>
             <span>
               <div className="text-center skills-tile">
-              {/* <Icon icon={item.class} /> */}
-                <i className={item.class} style={{ fontSize: "220%" }}>
+                <SkillIcon type ={item.name} />
                   <p
                     className="text-center"
-                    style={{ fontSize: "30%", marginTop: "4px" }}
+                    style={{ fontSize: "45%", marginTop: "4px" }}
                   >
                     {item.name}
                   </p>
-                </i>
               </div>
             </span>
           </li>
         ))}
         </ul>
+  
           </div>
         </div>
       </div>

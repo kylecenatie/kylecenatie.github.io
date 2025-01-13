@@ -18,68 +18,41 @@ import im5 from "../images/paintball.jpeg";
 import im6 from "../images/young_soccer.jpeg";
 
 
-
-
-
-const AppBodyContainer = styled(Container).attrs({
-    fluid: true,
-    className: 'px-0 d-flex flex-column',
-})`
-  min-height: 100vh;
-  & .container {
-    flex-grow: 3;
-    border: solid black;
-  }
-`;
-
 const Hobbies = () => {
     const [viz, setViz] = useState(true);
     const [fave, setFave] = useState(true);
 
     const sliderImages = [{ url: im1 }, { url: im2 }, { url: im3 }, { url: im4 }, { url: im5 }, { url: im6 }];
     return (
-        <AppBodyContainer>
-            <header className="App-header">
+            <header className="App-header-hobby">
                 <Row>
-                    <Col>
-                        <ul>
-                            <li style={{ fontSize: "x-large" }}>I love to golf.</li>
-                            <li style={{ fontSize: "x-large" }}>My favorite team sport is soccer.</li>
-                            <li style={{ fontSize: "x-large" }}>I have been playing soccer since I was 4 years old.</li>
-                            <li style={{ fontSize: "x-large" }}>Favorite club is Manchester City.</li>
-                            <li style={{ fontSize: "x-large" }}>I enjoy snowboarding.</li>
-                            <li style={{ fontSize: "x-large" }}>I like paintballing.</li>
-                            <li style={{ fontSize: "x-large" }}>I like pretty much anything that is outdoors.</li>
+                    <Col >
+                        <ul style={{textAlign: "left", padding:'60px'}}>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Golf.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Soccer.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Snowboard.</li>
+                            <li style={{ fontSize: "x-large", fontFamily:"ariel-black", color:"white" }}>Staying in shape.</li>
                         </ul>
                     </Col>
                     <Col>
-                        <div> <center><h2>Hobbies</h2></center></div>
+                        <div> <center><h2 style={{color:'whitesmoke', paddingTop: '20px', fontFamily:'serif'}}>Hobbies</h2></center></div>
 
                         <ImageSlider images={sliderImages} wid={600} high={650} />
                     </Col>
                     <Col>
-                        {viz &&
-                            <><Form style={{ fontSize: "medium" }}>
-                                <Form.Group className="mb-3" controlId="basic-name">
-                                    <Form.Label>I want to hear about your favorite hobbie.</Form.Label>
+                    <ul style={{textAlign: "left", padding:'60px'}}>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>Golfing for a few years.</li>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>Favorite club is Manchester City.</li>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>Love to shred.</li>
+                            <li style={{ fontSize: "medium", fontFamily:"ariel-black", color:"white" }}>I like pretty much anything that is outdoors.</li>
+                        </ul>
 
-                                    <Form.Control as="textarea" rows={3} placeholder="Whats your favorite hobbie?" onChange={(e) => setFave(e.target.value)} />
-                                </Form.Group>
-                            </Form><Button variant="primary" type="submit" onClick={() => setViz(false)}> Send</Button></>
-                        }
-                        {!viz &&
-                            <div>Nice I really need to check out that hobbie!</div>
-                        }
-
-                        <div style={{ paddingTop: "300px", paddingLeft: "100px" }}>
-            <Link to={`/`}>< span className="tite" style={{  padding: "20px", margin: "auto", cursor: "pointer" }} > <Button id="hobbies_to_home"> Thanks for checking out my website.</Button></span></Link>
-                           
-                        </div>
+                        
                     </Col>
                 </Row>
 
             </header>
-        </AppBodyContainer>
+        // </Container>
     );
 }
 
