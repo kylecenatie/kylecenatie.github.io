@@ -377,7 +377,7 @@ export default function Header() {
                 to="/games"
                 onClick={closeNavbar}
               >
-                Hobbies
+                {/* Games
               </StyledNavLink>
               <StyledNavDropdown title="Contact" id="collapsible-nav-dropdown">
                 <NavDropdown.Item href="mailto:cenatiempo.kyle@gmail.com">
@@ -393,7 +393,7 @@ export default function Header() {
                   GitHub
                 </NavDropdown.Item>
               </StyledNavDropdown>
-            </StyledNav>
+            </StyledNav> */}
             
             {/* <SocialIcons>
               <SocialLink href="https://github.com/kylecenatie" className="github">
