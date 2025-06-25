@@ -1,25 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2466c05f.css",
-    "main.js": "/static/js/main.c4b03781.js",
-    "static/media/paintball.jpeg": "/static/media/paintball.bfedece6debb1c876521.jpeg",
-    "static/media/asu_seal.png": "/static/media/asu_seal.545babafae4b4edd7987.png",
-    "static/media/snowboard.jpeg": "/static/media/snowboard.1ba5a6168aeeaa6581ca.jpeg",
-    "static/media/mancity.jpeg": "/static/media/mancity.46e38ad5e558959ac6b2.jpeg",
-    "static/media/golf.jpeg": "/static/media/golf.d7da7213547e14c30034.jpeg",
-    "static/media/usa_soccer.jpeg": "/static/media/usa_soccer.f4813228be4c7c54a3e0.jpeg",
-    "static/media/family.jpeg": "/static/media/family.6305e2354672185cc0e9.jpeg",
-    "static/media/asugrad.jpeg": "/static/media/asugrad.0286b177ee6453088c38.jpeg",
-    "static/media/young_soccer.jpeg": "/static/media/young_soccer.1fea78e0b0c8ac15e6ae.jpeg",
-    "static/media/ky_jul.jpeg": "/static/media/ky_jul.f57c26329f7a2fd7778e.jpeg",
-    "static/media/asu_fear.jpeg": "/static/media/asu_fear.34b20816a7479c709558.jpeg",
-    "static/media/prof_pic.jpg": "/static/media/prof_pic.84f929791c026bb0259a.jpg",
+    "main.css": "/static/css/main.e2b9ad9b.css",
+    "main.js": "/static/js/main.7ab7f3b0.js",
+    "static/media/c_gorge.jpg": "/static/media/c_gorge.49d6ea324fcd4c6cffc3.jpg",
+    "static/media/e05.jpg": "/static/media/e05.720bacd4e4c268f8c26f.jpg",
     "index.html": "/index.html",
-    "main.2466c05f.css.map": "/static/css/main.2466c05f.css.map",
-    "main.c4b03781.js.map": "/static/js/main.c4b03781.js.map"
+    "main.e2b9ad9b.css.map": "/static/css/main.e2b9ad9b.css.map",
+    "main.7ab7f3b0.js.map": "/static/js/main.7ab7f3b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2466c05f.css",
-    "static/js/main.c4b03781.js"
+    "static/css/main.e2b9ad9b.css",
+    "static/js/main.7ab7f3b0.js"
   ]
 }
