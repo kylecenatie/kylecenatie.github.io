@@ -8,6 +8,7 @@ import {
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
   text-align: center;
+  padding-bottom: 20px;
   
 `;
 
