@@ -1,35 +1,39 @@
 /* ==========================================================================
    KYLE SJOBERG PORTFOLIO - GLOBAL STYLES
-   Nordic Frost: Deep slate with ice blue and silver accents
+   Warm Paper: Creamy beige with charcoal text and rust accent
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   DESIGN TOKENS
+   -------------------------------------------------------------------------- */
 :root {
-  /* Color Palette - Nordic Frost */
-  --color-void: #08090b;
-  --color-slate-deep: #0d1017;
-  --color-slate: #131921;
-  --color-slate-light: #1a2332;
-  --color-slate-lighter: #243044;
+  /* Color Palette - Warm Paper */
+  --color-paper: #f7f3ed;
+  --color-paper-light: #fffdf9;
+  --color-paper-dark: #ebe5db;
+  --color-paper-border: #e0d8cb;
   
-  --color-silver: #e8eaed;
-  --color-silver-dim: #b8bfc7;
-  --color-silver-muted: #7d8590;
+  --color-charcoal: #11100f;
+  --color-charcoal-light: #4a4540;
+  --color-charcoal-muted: #6b655d;
   
-  --color-ice: #7eb8c9;
-  --color-ice-light: #a3d4e3;
-  --color-ice-dim: #5a9aad;
+  --color-rust: #b5563a;
+  --color-rust-light: #c9705a;
+  --color-rust-dark: #964530;
   
-  --color-frost: #4a9ead;
-  --color-teal: #2d8a9c;
-  --color-steel: #4a5568;
+  --color-warm-gray: #8a8279;
+  --color-warm-gray-light: #a69f96;
   
-  --color-text-primary: #e8eaed;
-  --color-text-secondary: #9ca3af;
-  --color-text-muted: #5d6878;
+  --color-accent-subtle: #d4c4b0;
+  --color-ink: #090909;
+  
+  --color-text-primary: #12100e;
+  --color-text-secondary: #6b655d;
+  --color-text-muted: #8a8279;
 
   /* Typography */
-  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Libre Baskerville', 'Georgia', serif;
+  --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
   --text-xs: 0.75rem;
@@ -42,8 +46,9 @@
   --text-4xl: 2.5rem;
   --text-5xl: 3.5rem;
   --text-6xl: 4.5rem;
+  --text-7xl: 6rem;
   
-  /* Spacing */
+  /* Spacing Scale */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -56,8 +61,10 @@
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
+  --space-32: 8rem;
   
   /* Layout */
+  --max-width-prose: 65ch;
   --max-width-content: 1200px;
   --max-width-wide: 1400px;
   
@@ -67,11 +74,14 @@
   --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
   
   /* Border Radius */
-  --radius-sm: 4px;
+  --radius-sm: 3px;
   --radius-md: 6px;
-  --radius-lg: 8px;
+  --radius-lg: 10px;
 }
 
+/* --------------------------------------------------------------------------
+   RESET & BASE
+   -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -90,38 +100,46 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   color: var(--color-text-primary);
-  background-color: var(--color-slate-deep);
+  background-color: var(--color-paper);
 }
 
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY
+   -------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  color: var(--color-charcoal);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-fast);
+.body-large {
+  font-size: var(--text-lg);
+  line-height: 1.7;
 }
 
-a:hover {
-  color: var(--color-ice);
+.body-base {
+  font-size: var(--text-base);
+  line-height: 1.7;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* Text colors */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-rust { color: var(--color-rust); }
 
-/* Utilities */
+/* --------------------------------------------------------------------------
+   LAYOUT UTILITIES
+   -------------------------------------------------------------------------- */
 .container {
   width: 100%;
   max-width: var(--max-width-content);
@@ -129,9 +147,103 @@ a:hover {
   padding: 0 var(--space-6);
 }
 
-@media (max-width: 768px) {
-  .container { padding: 0 var(--space-4); }
+.section {
+  padding: var(--space-24) 0;
 }
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+.section-tight {
+  padding: var(--space-16) 0;
+}
+
+/* --------------------------------------------------------------------------
+   LINKS & BUTTONS
+   -------------------------------------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-rust);
+}
+
+/* --------------------------------------------------------------------------
+   ANIMATIONS
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* --------------------------------------------------------------------------
+   UTILITY CLASSES
+   -------------------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+.text-center { text-align: center; }
+
+/* --------------------------------------------------------------------------
+   MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --space-24: 4rem;
+    --space-16: 3rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   GOOGLE FONTS IMPORT
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');

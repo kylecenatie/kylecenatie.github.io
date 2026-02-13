@@ -1,46 +1,67 @@
 import styled, { css, keyframes } from 'styled-components';
 
 /* ==========================================================================
-   DESIGN TOKENS - Nordic Frost Theme
+   DESIGN TOKENS (JS)
+   Warm Paper Theme - Light beige with charcoal and rust
    ========================================================================== */
 export const tokens = {
   colors: {
-    void: '#08090b',
-    slateDeep: '#0d1017',
-    slate: '#131921',
-    slateLight: '#1a2332',
-    slateLighter: '#243044',
+    // Paper backgrounds
+    paper: '#f7f3ed',
+    paperLight: '#fffdf9',
+    paperDark: '#ebe5db',
+    paperBorder: '#e0d8cb',
     
-    silver: '#e8eaed',
-    silverDim: '#b8bfc7',
-    silverMuted: '#7d8590',
+    // Charcoal text
+    charcoal: '#2d2a26',
+    charcoalLight: '#4a4540',
+    charcoalMuted: '#6b655d',
     
-    ice: '#7eb8c9',
-    iceLight: '#a3d4e3',
-    iceDim: '#5a9aad',
+    // Rust accent
+    rust: '#b5563a',
+    rustLight: '#c9705a',
+    rustDark: '#964530',
     
-    frost: '#4a9ead',
-    teal: '#2d8a9c',
-    steel: '#4a5568',
+    // Warm grays
+    warmGray: '#8a8279',
+    warmGrayLight: '#a69f96',
     
-    textPrimary: '#e8eaed',
-    textSecondary: '#9ca3af',
-    textMuted: '#5d6878',
+    // Extras
+    accentSubtle: '#d4c4b0',
+    ink: '#1a1815',
+    
+    // Semantic
+    textPrimary: '#2d2a26',
+    textSecondary: '#6b655d',
+    textMuted: '#8a8279',
   },
   
   fonts: {
-    display: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-    body: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+    display: "'Libre Baskerville', Georgia, serif",
+    body: "'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif",
     mono: "'JetBrains Mono', 'Fira Code', monospace",
   },
   
   spacing: {
-    1: '0.25rem', 2: '0.5rem', 3: '0.75rem', 4: '1rem',
-    5: '1.25rem', 6: '1.5rem', 8: '2rem', 10: '2.5rem',
-    12: '3rem', 16: '4rem', 20: '5rem', 24: '6rem',
+    1: '0.25rem',
+    2: '0.5rem',
+    3: '0.75rem',
+    4: '1rem',
+    5: '1.25rem',
+    6: '1.5rem',
+    8: '2rem',
+    10: '2.5rem',
+    12: '3rem',
+    16: '4rem',
+    20: '5rem',
+    24: '6rem',
   },
   
-  radius: { sm: '4px', md: '6px', lg: '8px' },
+  radius: {
+    sm: '3px',
+    md: '6px',
+    lg: '10px',
+  },
   
   transitions: {
     fast: '150ms ease',
@@ -49,15 +70,23 @@ export const tokens = {
   },
 };
 
-/* Keyframes */
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
 export const fadeIn = keyframes`
   from { opacity: 0; }
   to { opacity: 1; }
 `;
 
 export const slideUp = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 `;
 
 /* ==========================================================================
@@ -65,7 +94,7 @@ export const slideUp = keyframes`
    ========================================================================== */
 export const PageWrapper = styled.div`
   min-height: 100vh;
-  background: ${tokens.colors.slateDeep};
+  background: ${tokens.colors.paper};
   color: ${tokens.colors.textPrimary};
   position: relative;
   overflow-x: hidden;
@@ -110,46 +139,45 @@ export const Flex = styled.div`
 `;
 
 /* ==========================================================================
-   TYPOGRAPHY
+   TYPOGRAPHY COMPONENTS
    ========================================================================== */
 export const DisplayTitle = styled.h1`
   font-family: ${tokens.fonts.display};
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: ${tokens.colors.silver};
+  letter-spacing: -0.02em;
+  color: ${tokens.colors.charcoal};
   
-  em, span.accent {
-    color: ${tokens.colors.ice};
-    font-style: normal;
+  em, i {
+    font-style: italic;
+    color: ${tokens.colors.rust};
   }
 `;
 
 export const Heading1 = styled.h1`
   font-family: ${tokens.fonts.display};
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: ${tokens.colors.silver};
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: ${tokens.colors.charcoal};
 `;
 
 export const Heading2 = styled.h2`
   font-family: ${tokens.fonts.display};
   font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: ${tokens.colors.silver};
+  color: ${tokens.colors.charcoal};
 `;
 
 export const Heading3 = styled.h3`
   font-family: ${tokens.fonts.display};
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.375rem;
+  font-weight: 400;
   line-height: 1.3;
-  color: ${tokens.colors.silver};
+  color: ${tokens.colors.charcoal};
 `;
 
 export const Heading4 = styled.h4`
@@ -157,14 +185,13 @@ export const Heading4 = styled.h4`
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
-  color: ${tokens.colors.silver};
+  color: ${tokens.colors.charcoal};
 `;
 
 export const BodyLarge = styled.p`
   font-family: ${tokens.fonts.body};
   font-size: 1.125rem;
   line-height: 1.7;
-  font-weight: 400;
   color: ${props => props.$muted ? tokens.colors.textSecondary : tokens.colors.textPrimary};
   max-width: ${props => props.$prose ? '60ch' : 'none'};
 `;
@@ -178,34 +205,38 @@ export const BodyText = styled.p`
 
 export const Label = styled.span`
   font-family: ${tokens.fonts.mono};
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: ${props => props.$accent ? tokens.colors.ice : tokens.colors.textMuted};
+  letter-spacing: 0.12em;
+  color: ${props => props.$accent ? tokens.colors.rust : tokens.colors.textMuted};
 `;
 
 /* ==========================================================================
    CARD COMPONENTS
    ========================================================================== */
 export const Card = styled.div`
-  background: ${tokens.colors.slate};
-  border: 1px solid ${tokens.colors.slateLight};
+  background: ${tokens.colors.paperLight};
+  border: 1px solid ${tokens.colors.paperBorder};
   border-radius: ${tokens.radius.md};
-  padding: ${props => props.$padding || tokens.spacing[6]};
+  padding: ${props => props.$padding || tokens.spacing[8]};
   transition: all ${tokens.transitions.base};
   
   ${props => props.$hoverable && css`
     &:hover {
-      background: ${tokens.colors.slateLight};
-      border-color: ${tokens.colors.slateLighter};
+      border-color: ${tokens.colors.accentSubtle};
+      box-shadow: 0 4px 20px rgba(45, 42, 38, 0.08);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
   `}
 `;
 
 export const CardAccent = styled(Card)`
-  border-left: 2px solid ${tokens.colors.ice};
+  border-left: 3px solid ${tokens.colors.rust};
+`;
+
+export const CardSubtle = styled(Card)`
+  background: ${tokens.colors.paper};
+  border-color: ${tokens.colors.paperDark};
 `;
 
 /* ==========================================================================
@@ -214,7 +245,8 @@ export const CardAccent = styled(Card)`
 export const Button = styled.button`
   font-family: ${tokens.fonts.body};
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   padding: ${tokens.spacing[3]} ${tokens.spacing[6]};
   border-radius: ${tokens.radius.sm};
   border: none;
@@ -225,23 +257,34 @@ export const Button = styled.button`
   gap: ${tokens.spacing[2]};
   
   ${props => props.$primary && css`
-    background: ${tokens.colors.ice};
-    color: ${tokens.colors.slateDeep};
+    background: ${tokens.colors.rust};
+    color: ${tokens.colors.paperLight};
     
     &:hover {
-      background: ${tokens.colors.iceLight};
+      background: ${tokens.colors.rustDark};
       transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(181, 86, 58, 0.25);
     }
   `}
   
   ${props => props.$secondary && css`
     background: transparent;
-    color: ${tokens.colors.silver};
-    border: 1px solid ${tokens.colors.slateLight};
+    color: ${tokens.colors.charcoal};
+    border: 1px solid ${tokens.colors.paperBorder};
     
     &:hover {
-      border-color: ${tokens.colors.ice};
-      color: ${tokens.colors.ice};
+      border-color: ${tokens.colors.charcoal};
+      background: ${tokens.colors.paperDark};
+    }
+  `}
+  
+  ${props => props.$ghost && css`
+    background: transparent;
+    color: ${tokens.colors.textSecondary};
+    padding: ${tokens.spacing[2]} ${tokens.spacing[3]};
+    
+    &:hover {
+      color: ${tokens.colors.rust};
     }
   `}
 `;
@@ -252,14 +295,14 @@ export const Button = styled.button`
 export const Divider = styled.hr`
   border: none;
   height: 1px;
-  background: ${tokens.colors.slateLight};
+  background: ${tokens.colors.paperBorder};
   margin: ${props => props.$spacing || tokens.spacing[12]} 0;
 `;
 
 export const AccentLine = styled.div`
-  width: ${props => props.$width || '40px'};
+  width: ${props => props.$width || '50px'};
   height: 2px;
-  background: ${tokens.colors.ice};
+  background: ${tokens.colors.rust};
 `;
 
 export const Tag = styled.span`
@@ -269,48 +312,68 @@ export const Tag = styled.span`
   letter-spacing: 0.08em;
   padding: ${tokens.spacing[1]} ${tokens.spacing[3]};
   border-radius: ${tokens.radius.sm};
-  background: ${tokens.colors.slateLight};
+  background: ${tokens.colors.paperDark};
   color: ${tokens.colors.textSecondary};
-  border: 1px solid ${tokens.colors.slateLighter};
+  border: 1px solid ${tokens.colors.paperBorder};
   transition: all ${tokens.transitions.fast};
   
   &:hover {
-    border-color: ${tokens.colors.ice};
-    color: ${tokens.colors.ice};
+    background: ${tokens.colors.accentSubtle};
+    color: ${tokens.colors.charcoal};
   }
 `;
 
 /* ==========================================================================
    LINK COMPONENTS
    ========================================================================== */
+export const LinkUnderline = styled.a`
+  position: relative;
+  display: inline-block;
+  color: ${tokens.colors.charcoal};
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: ${tokens.colors.rust};
+    transition: width ${tokens.transitions.base};
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+`;
+
 export const SocialLink = styled.a`
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: ${tokens.colors.textSecondary};
-  background: ${tokens.colors.slate};
-  border: 1px solid ${tokens.colors.slateLight};
+  border: 1px solid ${tokens.colors.paperBorder};
   border-radius: ${tokens.radius.sm};
   transition: all ${tokens.transitions.base};
   
   &:hover {
-    color: ${tokens.colors.ice};
-    border-color: ${tokens.colors.ice};
-    background: rgba(126, 184, 201, 0.1);
+    color: ${tokens.colors.rust};
+    border-color: ${tokens.colors.rust};
+    background: rgba(181, 86, 58, 0.05);
   }
 `;
 
 /* ==========================================================================
-   BACKGROUND
+   BACKGROUND COMPONENTS
    ========================================================================== */
 export const GradientBackground = styled.div`
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse 60% 40% at 10% 20%, rgba(126, 184, 201, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 90% 80%, rgba(74, 158, 173, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse 60% 40% at 10% 0%, rgba(181, 86, 58, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 90% 100%, rgba(212, 196, 176, 0.15) 0%, transparent 50%);
   pointer-events: none;
 `;
 
@@ -319,7 +382,13 @@ export const GradientBackground = styled.div`
    ========================================================================== */
 export const AnimateOnScroll = styled.div`
   opacity: 0;
-  animation: ${slideUp} 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: ${slideUp} 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: ${props => props.$delay || '0s'};
+`;
+
+export const FadeIn = styled.div`
+  opacity: 0;
+  animation: ${fadeIn} 0.6s ease forwards;
   animation-delay: ${props => props.$delay || '0s'};
 `;
 
@@ -342,25 +411,27 @@ export const ProfileImage = styled.div`
   &::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -6px;
+    border: 1px solid ${tokens.colors.paperBorder};
     border-radius: ${tokens.radius.md};
-    border: 1px solid ${tokens.colors.slateLight};
     transform: translate(6px, 6px);
-    z-index: -1;
   }
   
   &::after {
     content: '';
     position: absolute;
     inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(181, 86, 58, 0.08) 0%,
+      transparent 50%
+    );
     border-radius: ${tokens.radius.md};
-    border: 1px solid ${tokens.colors.ice};
-    opacity: 0;
-    transition: opacity ${tokens.transitions.base};
+    pointer-events: none;
   }
   
-  &:hover::after {
-    opacity: 1;
+  &:hover img {
+    transform: scale(1.02);
   }
 `;
 
@@ -372,21 +443,22 @@ export const TimelineItem = styled.div`
     content: '';
     position: absolute;
     left: 0;
-    top: 6px;
-    width: 8px;
-    height: 8px;
-    background: ${tokens.colors.ice};
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: ${tokens.colors.rust};
     border-radius: 50%;
+    border: 2px solid ${tokens.colors.paper};
   }
   
   &::after {
     content: '';
     position: absolute;
-    left: 3px;
-    top: 18px;
+    left: 4px;
+    top: 22px;
     width: 2px;
-    height: calc(100% - 10px);
-    background: ${tokens.colors.slateLight};
+    height: calc(100% - 14px);
+    background: ${tokens.colors.paperBorder};
   }
   
   &:last-child::after {
@@ -400,17 +472,17 @@ export const StatBox = styled.div`
   .stat-value {
     font-family: ${tokens.fonts.display};
     font-size: 2.5rem;
-    font-weight: 700;
-    color: ${tokens.colors.silver};
+    font-weight: 400;
+    color: ${tokens.colors.charcoal};
     line-height: 1;
-    margin-bottom: ${tokens.spacing[1]};
+    margin-bottom: ${tokens.spacing[2]};
   }
   
   .stat-label {
     font-family: ${tokens.fonts.mono};
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: ${tokens.colors.textMuted};
   }
 `;
