@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import styled from 'styled-components';
-import { Menu, X } from 'lucide-react';
+import { AiOutlineMail, AiFillLinkedin } from 'react-icons/ai';
+import { BsGithub } from 'react-icons/bs';
 import { tokens } from './Styled';
 
-/* ==========================================================================
-   HEADER / NAVIGATION
-   Warm Paper Theme
-   ========================================================================== */
 
-const HeaderWrapper = styled.header`
+const StyledNavbar = styled(Navbar)`
   position: fixed;
   top: 0;
   left: 0;
@@ -17,38 +18,66 @@ const HeaderWrapper = styled.header`
   transition: all ${tokens.transitions.base};
   background: ${props => props.$scrolled 
     ? 'rgba(247, 243, 237, 0.95)' 
-    : 'transparent'};
+    : 'transparent'} !important;
   border-bottom: 1px solid ${props => props.$scrolled 
     ? tokens.colors.paperBorder 
     : 'transparent'};
   backdrop-filter: ${props => props.$scrolled ? 'blur(10px)' : 'none'};
-`;
+  padding: 0 !important;
 
-const HeaderInner = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 ${tokens.spacing[6]};
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-  @media (max-width: 768px) {
-    padding: 0 ${tokens.spacing[4]};
-    height: 64px;
+  .navbar-toggler {
+    border: none;
+    padding: ${tokens.spacing[2]};
+    
+    &:focus {
+      box-shadow: none;
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232d2d2d' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    &:hover .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23B5563A' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+
+  .navbar-collapse {
+    @media (max-width: 768px) {
+      background: ${tokens.colors.paper};
+      padding: ${tokens.spacing[4]};
+      border-top: 1px solid ${tokens.colors.paperBorder};
+      margin-top: ${tokens.spacing[2]};
+    }
   }
 `;
 
-const Logo = styled.a`
+const NavbarInner = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 ${tokens.spacing[6]};
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  
+  @media (max-width: 768px) {
+    padding: 0 ${tokens.spacing[4]};
+    min-height: 64px;
+  }
+`;
+
+const Logo = styled(NavLink)`
   font-family: ${tokens.fonts.display};
   font-size: 1.25rem;
   font-weight: 400;
-  color: ${tokens.colors.charcoal};
-  text-decoration: none;
+  color: ${tokens.colors.charcoal} !important;
+  text-decoration: none !important;
   transition: color ${tokens.transitions.fast};
   
   &:hover {
-    color: ${tokens.colors.rust};
+    color: ${tokens.colors.rust} !important;
   }
   
   span {
@@ -57,26 +86,25 @@ const Logo = styled.a`
   }
 `;
 
-const Nav = styled.nav`
-  display: flex;
+const StyledNav = styled(Nav)`
   align-items: center;
-  gap: ${tokens.spacing[8]};
+  gap: ${tokens.spacing[6]};
   
   @media (max-width: 768px) {
-    display: none;
+    gap: ${tokens.spacing[2]};
+    flex-direction: column;
+    align-items: stretch;
   }
 `;
 
-const NavLink = styled.a`
+const StyledNavLink = styled(NavLink)`
   font-family: ${tokens.fonts.body};
   font-size: 0.9rem;
   font-weight: 500;
-  color: ${props => props.$active 
-    ? tokens.colors.charcoal 
-    : tokens.colors.textSecondary};
-  text-decoration: none;
+  color: ${tokens.colors.textSecondary} !important;
+  text-decoration: none !important;
   position: relative;
-  padding: ${tokens.spacing[2]} 0;
+  padding: ${tokens.spacing[2]} ${tokens.spacing[1]};
   transition: color ${tokens.transitions.fast};
   
   &::after {
@@ -84,30 +112,105 @@ const NavLink = styled.a`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: ${props => props.$active ? '100%' : '0'};
+    width: 0;
     height: 2px;
     background: ${tokens.colors.rust};
     transition: width ${tokens.transitions.base};
   }
   
   &:hover {
-    color: ${tokens.colors.charcoal};
+    color: ${tokens.colors.charcoal} !important;
     
     &::after {
       width: 100%;
     }
   }
+  
+  &.active {
+    color: ${tokens.colors.charcoal} !important;
+    
+    &::after {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    font-family: ${tokens.fonts.display};
+    font-size: 1.5rem;
+    padding: ${tokens.spacing[3]} 0;
+    border-bottom: 1px solid ${tokens.colors.paperBorder};
+    
+    &::after {
+      display: none;
+    }
+  }
 `;
 
-const ContactButton = styled.a`
+const StyledNavDropdown = styled(NavDropdown)`
+  .nav-link {
+    font-family: ${tokens.fonts.body};
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: ${tokens.colors.textSecondary} !important;
+    padding: ${tokens.spacing[2]} ${tokens.spacing[1]} !important;
+    transition: color ${tokens.transitions.fast};
+    
+    &:hover {
+      color: ${tokens.colors.charcoal} !important;
+    }
+  }
+  
+  .dropdown-menu {
+    background: ${tokens.colors.paper};
+    border: 1px solid ${tokens.colors.paperBorder};
+    border-radius: ${tokens.radius.md};
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: ${tokens.spacing[2]} 0;
+    margin-top: ${tokens.spacing[2]} !important;
+  }
+  
+  .dropdown-item {
+    font-family: ${tokens.fonts.body};
+    font-size: 0.875rem;
+    color: ${tokens.colors.textSecondary};
+    padding: ${tokens.spacing[2]} ${tokens.spacing[4]};
+    transition: all ${tokens.transitions.fast};
+    
+    &:hover {
+      background: ${tokens.colors.paperDark};
+      color: ${tokens.colors.rust};
+    }
+    
+    &.active {
+      background: ${tokens.colors.paperDark};
+      color: ${tokens.colors.rust};
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-link {
+      font-family: ${tokens.fonts.display};
+      font-size: 1.5rem;
+      padding: ${tokens.spacing[3]} 0 !important;
+    }
+    
+    .dropdown-menu {
+      border: none;
+      box-shadow: none;
+      padding-left: ${tokens.spacing[4]};
+    }
+  }
+`;
+
+const ContactButton = styled(NavLink)`
   font-family: ${tokens.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
-  color: ${tokens.colors.paperLight};
+  color: ${tokens.colors.paperLight} !important;
   background: ${tokens.colors.rust};
   padding: ${tokens.spacing[2]} ${tokens.spacing[5]};
   border-radius: ${tokens.radius.sm};
-  text-decoration: none;
+  text-decoration: none !important;
   transition: all ${tokens.transitions.fast};
   
   &:hover {
@@ -115,83 +218,98 @@ const ContactButton = styled.a`
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(181, 86, 58, 0.2);
   }
-`;
-
-const MobileMenuButton = styled.button`
-  display: none;
-  background: none;
-  border: none;
-  color: ${tokens.colors.charcoal};
-  padding: ${tokens.spacing[2]};
-  cursor: pointer;
-  transition: color ${tokens.transitions.fast};
-  
-  &:hover {
-    color: ${tokens.colors.rust};
-  }
   
   @media (max-width: 768px) {
+    text-align: center;
+    padding: ${tokens.spacing[4]} ${tokens.spacing[6]};
+    margin-top: ${tokens.spacing[4]};
+  }
+`;
+
+const ContactDropdown = styled(NavDropdown)`
+  .nav-link {
+    font-family: ${tokens.fonts.body};
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: ${tokens.colors.paperLight} !important;
+    background: ${tokens.colors.rust};
+    padding: ${tokens.spacing[2]} ${tokens.spacing[5]} !important;
+    border-radius: ${tokens.radius.sm};
+    transition: all ${tokens.transitions.fast};
+    
+    &:hover {
+      background: ${tokens.colors.rustDark};
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(181, 86, 58, 0.2);
+    }
+    
+    &::after {
+      margin-left: ${tokens.spacing[2]};
+      vertical-align: middle;
+    }
+  }
+  
+  .dropdown-menu {
+    background: ${tokens.colors.paper};
+    border: 1px solid ${tokens.colors.paperBorder};
+    border-radius: ${tokens.radius.md};
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: ${tokens.spacing[2]} 0;
+    margin-top: ${tokens.spacing[2]} !important;
+    min-width: 180px;
+  }
+  
+  .dropdown-item {
+    font-family: ${tokens.fonts.body};
+    font-size: 0.875rem;
+    color: ${tokens.colors.textSecondary};
+    padding: ${tokens.spacing[3]} ${tokens.spacing[4]};
+    transition: all ${tokens.transitions.fast};
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: ${tokens.spacing[2]};
+    
+    svg {
+      font-size: 1.1rem;
+      color: ${tokens.colors.rust};
+    }
+    
+    &:hover {
+      background: ${tokens.colors.paperDark};
+      color: ${tokens.colors.charcoal};
+      
+      svg {
+        color: ${tokens.colors.rustDark};
+      }
+    }
   }
-`;
-
-const MobileMenu = styled.div`
-  display: none;
   
   @media (max-width: 768px) {
-    display: ${props => props.$open ? 'flex' : 'none'};
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: ${tokens.colors.paper};
-    flex-direction: column;
-    padding: ${tokens.spacing[8]};
-    gap: ${tokens.spacing[6]};
-    border-top: 1px solid ${tokens.colors.paperBorder};
+    width: 100%;
+    margin-top: ${tokens.spacing[4]};
+    
+    .nav-link {
+      text-align: center;
+      padding: ${tokens.spacing[4]} ${tokens.spacing[6]} !important;
+      display: block;
+    }
+    
+    .dropdown-menu {
+      border: none;
+      box-shadow: none;
+      text-align: center;
+      padding: ${tokens.spacing[2]} 0;
+    }
+    
+    .dropdown-item {
+      justify-content: center;
+    }
   }
 `;
 
-const MobileNavLink = styled.a`
-  font-family: ${tokens.fonts.display};
-  font-size: 1.75rem;
-  color: ${props => props.$active 
-    ? tokens.colors.charcoal 
-    : tokens.colors.textSecondary};
-  text-decoration: none;
-  padding: ${tokens.spacing[3]} 0;
-  border-bottom: 1px solid ${tokens.colors.paperBorder};
-  transition: color ${tokens.transitions.fast};
-  
-  &:hover {
-    color: ${tokens.colors.rust};
-  }
-`;
-
-const MobileContactButton = styled.a`
-  font-family: ${tokens.fonts.body};
-  font-size: 1rem;
-  font-weight: 600;
-  color: ${tokens.colors.paperLight};
-  background: ${tokens.colors.rust};
-  padding: ${tokens.spacing[4]} ${tokens.spacing[6]};
-  border-radius: ${tokens.radius.sm};
-  text-decoration: none;
-  text-align: center;
-  margin-top: ${tokens.spacing[4]};
-  transition: all ${tokens.transitions.fast};
-  
-  &:hover {
-    background: ${tokens.colors.rustDark};
-  }
-`;
-
-const Header = ({ currentPage = 'home' }) => {
+const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -203,18 +321,7 @@ const Header = ({ currentPage = 'home' }) => {
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (mobileMenuOpen) {
+    if (expanded) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -222,67 +329,57 @@ const Header = ({ currentPage = 'home' }) => {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [mobileMenuOpen]);
+  }, [expanded]);
 
-  const navItems = [
-    { label: 'Home', href: '/', id: 'home' },
-    { label: 'About', href: '/about', id: 'about' },
-    { label: 'Education', href: '/education', id: 'education' },
-    { label: 'Hobbies', href: '/hobbies', id: 'hobbies' },
-  ];
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  const closeMenu = () => setExpanded(false);
 
   return (
-    <>
-      <HeaderWrapper $scrolled={scrolled || mobileMenuOpen}>
-        <HeaderInner>
-          <Logo href="/">
-            Kyle <span>Sjoberg</span>
-          </Logo>
+    <StyledNavbar 
+      expand="md" 
+      $scrolled={scrolled || expanded}
+      expanded={expanded}
+      onToggle={setExpanded}
+    >
+      <NavbarInner>
+        <Logo to="/" onClick={closeMenu}>
+          Kyle <span>Sjoberg</span>
+        </Logo>
 
-          <Nav>
-            {navItems.map((item) => (
-              <NavLink
-                key={item.id}
-                href={item.href}
-                $active={currentPage === item.id}
-              >
-                {item.label}
-              </NavLink>
-            ))}
-            <ContactButton href="mailto:sjobergky@gmail.com">
-              Contact
-            </ContactButton>
-          </Nav>
-
-          <MobileMenuButton 
-            onClick={toggleMobileMenu}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </MobileMenuButton>
-        </HeaderInner>
-      </HeaderWrapper>
-
-      <MobileMenu $open={mobileMenuOpen}>
-        {navItems.map((item) => (
-          <MobileNavLink
-            key={item.id}
-            href={item.href}
-            $active={currentPage === item.id}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            {item.label}
-          </MobileNavLink>
-        ))}
-        <MobileContactButton href="mailto:sjobergky@gmail.com">
-          Contact
-        </MobileContactButton>
-      </MobileMenu>
-    </>
+        <Navbar.Toggle aria-controls="main-navbar" />
+        
+        <Navbar.Collapse id="main-navbar">
+          <StyledNav className="ms-auto">
+            <StyledNavLink to="/" end onClick={closeMenu}>
+              Home
+            </StyledNavLink>
+            
+            <StyledNavLink to="/about" onClick={closeMenu}>
+              About
+            </StyledNavLink>
+            
+            <StyledNavLink to="/education" onClick={closeMenu}>
+              Education
+            </StyledNavLink>
+            
+            <StyledNavLink to="/hobbies" onClick={closeMenu}>
+              Hobbies
+            </StyledNavLink>
+            
+            <ContactDropdown title="Contact" id="contact-dropdown">
+              <NavDropdown.Item href="mailto:cenatiempo.kyle@gmail.com">
+                <AiOutlineMail /> Email
+              </NavDropdown.Item>
+              <NavDropdown.Item href="https://www.linkedin.com/in/kyle-sjoberg/" target="_blank" rel="noopener noreferrer">
+                <AiFillLinkedin /> LinkedIn
+              </NavDropdown.Item>
+              {/* <NavDropdown.Item href="https://github.com/kylecenatie" target="_blank" rel="noopener noreferrer">
+                <BsGithub /> Github
+              </NavDropdown.Item> */}
+            </ContactDropdown>
+          </StyledNav>
+        </Navbar.Collapse>
+      </NavbarInner>
+    </StyledNavbar>
   );
 };
 
