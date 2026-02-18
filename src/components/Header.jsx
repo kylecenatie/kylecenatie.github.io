@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import styled from 'styled-components';
 import { AiOutlineMail, AiFillLinkedin } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
-import { tokens } from './Styled';
+import { tokens } from './ReusableComponents';
 
 
 const StyledNavbar = styled(Navbar)`

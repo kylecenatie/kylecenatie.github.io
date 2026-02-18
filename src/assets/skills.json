@@ -1,0 +1,36 @@
+[
+  { "name": "JavaScript", "category": "languages" },
+  { "name": "TypeScript", "category": "languages" },
+  { "name": "Python",     "category": "languages" },
+  { "name": "Java",       "category": "languages" },
+  { "name": "C#",         "category": "languages" },
+
+  { "name": "React",      "category": "frontend" },
+  { "name": "Angular",    "category": "frontend" },
+  { "name": "HTML 5",     "category": "frontend" },
+  { "name": "CSS 3",      "category": "frontend" },
+  { "name": "Bootstrap",  "category": "frontend" },
+
+  { "name": "NodeJS",     "category": "backend" },
+  { "name": "Express",    "category": "backend" },
+  { "name": "Spring Boot","category": "backend" },
+  { "name": "GraphQL",    "category": "backend" },
+  { "name": "Flask",    "category": "backend" },
+
+  { "name": "PostgreSQL", "category": "databases" },
+  { "name": "MySQL",      "category": "databases" },
+  { "name": "MongoDB",    "category": "databases" },
+  { "name": "Redis",      "category": "databases" },
+  { "name": "DynamoDB",   "category": "databases" },
+
+  { "name": "AWS",        "category": "infra" },
+  { "name": "Docker",     "category": "infra" },
+  { "name": "Kubernetes", "category": "infra" },
+  { "name": "Nginx", "category": "infra" },
+  { "name": "Terraform",  "category": "infra" },
+
+  { "name": "Git",            "category": "cicd" },
+  { "name": "GitHub Actions", "category": "cicd" },
+  { "name": "Concourse", "category": "cicd" },
+  { "name": "Jenkins",        "category": "cicd" }
+]

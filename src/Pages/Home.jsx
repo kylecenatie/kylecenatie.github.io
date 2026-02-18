@@ -14,7 +14,7 @@ import {
   GradientBackground,
   tokens,
   slideUp,
-} from '../components/Styled';
+} from '../components/ReusableComponents';
 import profileImage from '../images/e05.jpg';
 
 const HeroSection = styled.section`
