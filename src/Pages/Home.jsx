@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import { Github, Linkedin, Mail, MapPin, ArrowDown } from 'lucide-react';
-import { NavLink } from 'react-router';
+import React from 'react';
+import styled from 'styled-components';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import {
   PageWrapper,
   Container,
+  Flex,
   DisplayTitle,
   BodyLarge,
   Label,
@@ -17,44 +17,6 @@ import {
 } from '../components/ReusableComponents';
 import profileImage from '../images/e05.jpg';
 
-/* ==========================================================================
-   CURSOR
-   ========================================================================== */
-const CursorDot = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  background: ${tokens.colors.rust};
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-`;
-
-const CursorRing = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid ${tokens.colors.rust};
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: 
-    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.2s ease;
-  will-change: transform;
-`;
-
-/* ==========================================================================
-   HERO STYLES
-   ========================================================================== */
 const HeroSection = styled.section`
   min-height: 100vh;
   display: flex;
@@ -166,75 +128,13 @@ const LargeProfileImage = styled(ProfileImage)`
   }
 `;
 
-const ScrollIndicator = styled(NavLink)`
-  position: absolute;
-  bottom: ${tokens.spacing[12]};
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: ${tokens.spacing[3]};
-  color: ${tokens.colors.textMuted};
-  text-decoration: none;
-  opacity: 0;
-  animation: ${slideUp} 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 1.4s;
 
-  /* Hide the native cursor only over this element */
-  cursor: none;
-  
-  span {
-    font-family: ${tokens.fonts.mono};
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    transition: color ${tokens.transitions.fast};
-  }
 
-  svg {
-    animation: bounce 2s infinite;
-    transition: color ${tokens.transitions.fast};
-  }
-
-  &:hover span,
-  &:hover svg {
-    color: ${tokens.colors.rust};
-  }
-  
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(6px); }
-    60% { transform: translateY(3px); }
-  }
-  
-  @media (max-width: 768px) { display: none; }
-`;
-
-/* ==========================================================================
-   COMPONENT
-   ========================================================================== */
 const Home = () => {
   const yearsOfExperience = new Date().getFullYear() - 2020;
 
-  const dotRef  = useRef(null);
-  const ringRef = useRef(null);
-  const [cursorVisible, setCursorVisible] = useState(false);
-
-  const handleMouseMove = (e) => {
-    const { clientX: x, clientY: y } = e;
-    dotRef.current.style.left  = `${x}px`;
-    dotRef.current.style.top   = `${y}px`;
-    ringRef.current.style.left = `${x}px`;
-    ringRef.current.style.top  = `${y}px`;
-  };
-
   return (
     <PageWrapper>
-      {/* Cursor — only visible when hovering the ScrollIndicator */}
-      <CursorDot  ref={dotRef}  style={{ opacity: cursorVisible ? 1 : 0 }} />
-      <CursorRing ref={ringRef} style={{ opacity: cursorVisible ? 1 : 0 }} />
-
       <GradientBackground />
       
       <HeroSection>
@@ -293,24 +193,6 @@ const Home = () => {
             </HeroImageWrapper>
           </HeroContent>
         </Container>
-<NextPageLink
-                to={nextTo}
-                onMouseEnter={() => setCursorVisible(true)}
-                onMouseLeave={() => setCursorVisible(false)}
-                onMouseMove={handleMouseMove}
-              >
-                <span>{nextLabel || 'Continue'}</span>
-                <ArrowDown size={16} />
-              </NextPageLink>
-        {/* <ScrollIndicator
-          to="/about"
-          onMouseEnter={() => setCursorVisible(true)}
-          onMouseLeave={() => setCursorVisible(false)}
-          onMouseMove={handleMouseMove}
-        >
-          <span>View About</span>
-          <ArrowDown size={16} />
-        </ScrollIndicator> */}
       </HeroSection>
     </PageWrapper>
   );

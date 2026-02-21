@@ -4,9 +4,6 @@ import { GraduationCap, BookOpen, Trophy, Calendar, MapPin, CheckCircle, Brain, 
 import {
   PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
 } from '../components/ReusableComponents';
-// Hobbies.jsx
-import PageFooter from '../components/PageFooter';
-
 
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
@@ -354,8 +351,7 @@ const Education = () => {
             ))}
           </SkillsGrid>
         </Container>
-      </Section> 
-<PageFooter nextLabel="View Hobbies" nextTo="/hobbies" />
+      </Section>
     </PageWrapper>
   );
 };

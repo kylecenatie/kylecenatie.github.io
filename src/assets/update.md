@@ -8,3 +8,6 @@ Adding new skils:
 - Add a new entry to ICON_MAP below using the skill name as the key
 - Add the skill to skills.json with the matching name + category
 - Key must exactly match the "name" field in skills.json
+
+footer is the attempt. 
+Reverting back to origina;l
