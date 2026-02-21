@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Coffee, MapPin, BookOpen, Mountain, Bike, PawPrint, Flag, ChevronDown } from 'lucide-react';
 import {
   PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
-} from '../components/Styled';
+} from '../components/ReusableComponents';
 
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});

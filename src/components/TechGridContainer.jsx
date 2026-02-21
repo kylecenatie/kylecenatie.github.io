@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { tokens } from './Styled';
+import { tokens } from './ReusableComponents';
 
 const GridWrapper = styled.div`
   display: grid;

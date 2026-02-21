@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { GraduationCap, BookOpen, Trophy, Calendar, MapPin, CheckCircle, Brain, Cloud, Database, Code2 } from 'lucide-react';
 import {
   PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
-} from '../components/Styled';
+} from '../components/ReusableComponents';
 
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});

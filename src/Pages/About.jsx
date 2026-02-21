@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, Linkedin, Mail, MapPin, Briefcase, Calendar } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import {
   PageWrapper,
   Container,
@@ -11,7 +11,6 @@ import {
   Heading3,
   BodyText,
   Label,
-  Card,
   SocialLink,
   AccentLine,
   ProfileImage,
@@ -19,11 +18,11 @@ import {
   GradientBackground,
   AnimateOnScroll,
   tokens,
-} from '../components/Styled';
-import IconGridContainer from '../components/TechGridContainer';
+} from '../components/ReusableComponents';
+import SkillsGrid from '../components/SkillsGrid';
+
 import ExperienceSection from '../components/ExperienceSection';
 import profileImage from '../images/c_gorge.jpg';
-import workHistory from '../assets/work_history.json';
 
 /* ==========================================================================
    HERO SECTION STYLES
@@ -141,12 +140,6 @@ const AboutContent = styled.div`
   }
 `;
 
-
-
-
-
-
-
 /* ==========================================================================
    CTA SECTION
    ========================================================================== */
@@ -181,17 +174,6 @@ const About = () => {
     { icon: Linkedin, href: 'https://www.linkedin.com/in/kyle-sjoberg/', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:sjobergky@gmail.com', label: 'Email' },
   ];
-
-  // Extract year from period string
-  const getYear = (period) => {
-    const match = period.match(/(\d{4})/);
-    return match ? match[1] : '';
-  };
-
-  // Check if position is current
-  const isCurrent = (period) => {
-    return period.toLowerCase().includes('present') || period.toLowerCase().includes('current');
-  };
 
   return (
     <PageWrapper>
@@ -246,31 +228,30 @@ const About = () => {
               <AboutContent>
                 <Heading3 style={{ marginBottom: tokens.spacing[6] }}>About Me</Heading3>
                 <BodyText $muted>
-                  I'm a passionate developer who believes great software should be both 
-                  powerful and beautiful. With over {yearsOfExperience} years of experience, I've helped 
-                  startups and enterprises build products that users love.
+                As a full-stack software engineer, I enjoy turning complex ideas into 
+                scalable, well-designed solutions. Over the past {yearsOfExperience}+ years, 
+                I've worked with small businesses and Fortune 500 companies to build 
+                cloud-native applications that are reliable, maintainable, and user-focused.
                 </BodyText>
-                <BodyText $muted>
-                  When I'm not coding, you'll find me exploring new technologies, 
-                  contributing to open source projects, or sharing knowledge through 
-                  tech talks and mentoring.
-                </BodyText>
-                <BodyText $muted>
-                  I thrive in collaborative environments and believe the best solutions 
-                  come from combining technical expertise with creative problem-solving.
-                </BodyText>
+              <BodyText $muted>
+                I'm driven by continuous learning and a genuine curiosity for how things work — 
+                always seeking challenges that require both technical depth and creative 
+                problem-solving, whether that means exploring new architectures, sharpening 
+                my skills, or building software that makes a real difference.
+              </BodyText>
               </AboutContent>
             </AnimateOnScroll>
             
+        
             <AnimateOnScroll $delay="0.5s">
-              <IconGridContainer />
+              <SkillsGrid />
             </AnimateOnScroll>
           </ContentGrid>
         </Container>
       </HeroSection>
       
-      {/* Experience Section - Horizontal Timeline */}
-  <ExperienceSection />
+      {/* Experience Section */}
+      <ExperienceSection />
       
       {/* Social Links */}
       <Section $tight>
