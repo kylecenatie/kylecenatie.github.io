@@ -22,6 +22,9 @@ import {
 import SkillsGrid from '../components/SkillsGrid';
 
 import ExperienceSection from '../components/ExperienceSection';
+// About.jsx — replace the existing <Section $tight> social block at the bottom
+import PageFooter from '../components/PageFooter';
+
 import profileImage from '../images/c_gorge.jpg';
 
 /* ==========================================================================
@@ -248,7 +251,7 @@ const About = () => {
       {/* Social Links */}
       <Section $tight>
         <Container>
-          <CTASection>
+          {/* <CTASection>
             <SocialLinksRow>
               {socialLinks.map((social, index) => (
                 <SocialLink 
@@ -262,7 +265,8 @@ const About = () => {
                 </SocialLink>
               ))}
             </SocialLinksRow>
-          </CTASection>
+          </CTASection> */}
+          <PageFooter nextLabel="View Education" nextTo="/education" />
         </Container>
       </Section>
     </PageWrapper>

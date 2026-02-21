@@ -4,6 +4,7 @@ import { Coffee, MapPin, BookOpen, Mountain, Bike, PawPrint, Flag, ChevronDown }
 import {
   PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
 } from '../components/ReusableComponents';
+import PageFooter from '../components/PageFooter';
 
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
@@ -223,6 +224,7 @@ const Hobbies = () => {
           </HobbiesGrid>
         </Container>
       </Section>
+      <PageFooter nextLabel="Back Home" nextTo="/" />
     </PageWrapper>
   );
 };

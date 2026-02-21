@@ -133,7 +133,7 @@ const TABS = [
     { id: 'frontend', label: 'Frontend' },
     { id: 'backend', label: 'Backend' },
     { id: 'databases', label: 'Databases' },
-    { id: 'infra', label: 'Infra' },
+    { id: 'cloud', label: 'Cloud' },
     { id: 'cicd', label: 'CI/CD' },
 ];
 

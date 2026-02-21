@@ -145,85 +145,6 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const StyledNavDropdown = styled(NavDropdown)`
-  .nav-link {
-    font-family: ${tokens.fonts.body};
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: ${tokens.colors.textSecondary} !important;
-    padding: ${tokens.spacing[2]} ${tokens.spacing[1]} !important;
-    transition: color ${tokens.transitions.fast};
-    
-    &:hover {
-      color: ${tokens.colors.charcoal} !important;
-    }
-  }
-  
-  .dropdown-menu {
-    background: ${tokens.colors.paper};
-    border: 1px solid ${tokens.colors.paperBorder};
-    border-radius: ${tokens.radius.md};
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding: ${tokens.spacing[2]} 0;
-    margin-top: ${tokens.spacing[2]} !important;
-  }
-  
-  .dropdown-item {
-    font-family: ${tokens.fonts.body};
-    font-size: 0.875rem;
-    color: ${tokens.colors.textSecondary};
-    padding: ${tokens.spacing[2]} ${tokens.spacing[4]};
-    transition: all ${tokens.transitions.fast};
-    
-    &:hover {
-      background: ${tokens.colors.paperDark};
-      color: ${tokens.colors.rust};
-    }
-    
-    &.active {
-      background: ${tokens.colors.paperDark};
-      color: ${tokens.colors.rust};
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .nav-link {
-      font-family: ${tokens.fonts.display};
-      font-size: 1.5rem;
-      padding: ${tokens.spacing[3]} 0 !important;
-    }
-    
-    .dropdown-menu {
-      border: none;
-      box-shadow: none;
-      padding-left: ${tokens.spacing[4]};
-    }
-  }
-`;
-
-const ContactButton = styled(NavLink)`
-  font-family: ${tokens.fonts.body};
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: ${tokens.colors.paperLight} !important;
-  background: ${tokens.colors.rust};
-  padding: ${tokens.spacing[2]} ${tokens.spacing[5]};
-  border-radius: ${tokens.radius.sm};
-  text-decoration: none !important;
-  transition: all ${tokens.transitions.fast};
-  
-  &:hover {
-    background: ${tokens.colors.rustDark};
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(181, 86, 58, 0.2);
-  }
-  
-  @media (max-width: 768px) {
-    text-align: center;
-    padding: ${tokens.spacing[4]} ${tokens.spacing[6]};
-    margin-top: ${tokens.spacing[4]};
-  }
-`;
 
 const ContactDropdown = styled(NavDropdown)`
   .nav-link {
@@ -365,7 +286,7 @@ const Header = () => {
             </StyledNavLink>
             
             <ContactDropdown title="Contact" id="contact-dropdown">
-              <NavDropdown.Item href="mailto:cenatiempo.kyle@gmail.com">
+              <NavDropdown.Item href="mailto:sjobergky@gmail.com">
                 <AiOutlineMail /> Email
               </NavDropdown.Item>
               <NavDropdown.Item href="https://www.linkedin.com/in/kyle-sjoberg/" target="_blank" rel="noopener noreferrer">
