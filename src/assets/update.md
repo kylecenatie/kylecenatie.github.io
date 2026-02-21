@@ -1,3 +1,11 @@
+For deploying. 
+Pull request into main.
+Do a git pull. 
+npm run build. 
+npm run deploy. 
+Published new version to ghpages
+
+
 Skills updates. 
 
 SkillIcon.jsx
