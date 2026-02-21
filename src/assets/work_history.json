@@ -1,38 +1,65 @@
 [
-{
-  "role": "Specialist Software Engineer",
-  "company": "Nationwide",
-  "period": "2025 - Present",
-  "description": "Leading a team of 5 engineers building enterprise observability platforms for 1,000+ production applications"
-},
-{
-  "role": "Senior Software Engineer",
-  "company": "Nationwide",
-  "period": "2022 - 2025",
-  "description": "Architected ML-driven incident classification system with 99% accuracy, reducing triage time by 80%"
-},
-{
-  "role": "Software Engineer",
-  "company": "Nationwide",
-  "period": "2021 - 2022",
-  "description": "Built observability dashboards and led AIOps migration, reducing alert noise by 60%"
-},
-{
-  "role": "Instructor Assistant",
-  "company": "Arizona State University",
-  "period": "2023 - 2025",
-  "description": "Mentored 200+ senior engineering students through capstone projects; delivered lectures on software architecture"
-},
-{
-  "role": "Software Engineer",
-  "company": "Arizona Public Services",
-  "period": "2020 - 2021",
-  "description": "Modernized legacy ASP.NET app to React/MVC; built automated API testing with 100% coverage"
-},
-{
-  "role": "Software Engineer Intern",
-  "company": "SoftPoint",
-  "period": "2019 - 2020",
-  "description": "Developed 3 production features for enterprise point-of-sale platform"
-}
-  ]
+  {
+    "role": "Senior Software Engineer/Tech Lead",
+    "company": "Nationwide",
+    "period": "Since 2025 ",
+    "description": [
+      "Led architecture and development of enterprise observability platform supporting 1,000+ production applications, improving monitoring coverage and system reliability at scale",
+      "Led a team of 5 engineers delivering end-to-end features across frontend, backend, and CI/CD pipelines, enabling faster iteration and higher deployment confidence in a distributed Agile environment",
+      "Defined technical roadmap and architecture standards across multiple product lines, aligning engineering efforts with long-term platform goals",
+      "Drove cross-team alignment on observability best practices, standardizing tooling and instrumentation across engineering organizations"
+    ]
+  },
+  {
+    "role": "Specialist Software Engineer",
+    "company": "Nationwide",
+    "period": "2022 - 2025",
+    "description": [
+      "Designed observability compliance platform (Angular, TypeScript, Spring Boot) that graded application maturity and provided automated remediation",
+      "Architected and deployed production ML system achieving 99% accuracy in automated incident classification, using AWS Lambda, Step Functions, and EventBridge",
+      "Reduced technical debt by automating SaaS platform governance using Python-based Kubernetes CronJobs to enforce reporting and enterprise standards"
+    ]
+  },
+  {
+    "role": "Software Engineer",
+    "company": "Nationwide",
+    "period": "2021 - 2022",
+    "description": [
+      "Built executive-facing observability dashboard (React, Redux, Python/Flask) visualizing degradation patterns across 500+ customer-facing critical applications",
+      "Drove AIOps transformation by migrating from IBM Netcool to BigPanda's ML-driven event correlation platform",
+      "Developed a metadata enrichment pipeline that correlated telemetry across multiple systems to generate real-time application topology views"
+    ]
+  },
+  {
+    "role": "Instructor Assistant",
+    "company": "Arizona State University",
+    "period": "2023 - 2025",
+    "description": [
+      "Mentored 200+ senior engineering students through capstone projects, providing individualized development guidance and technical design reviews",
+      "Delivered guest lectures on containerized cloud architecture covering Docker, Kubernetes, and cloud-native deployment patterns",
+      "Conducted comprehensive review sessions on software architecture and cloud systems, enhancing student understanding of enterprise-grade design principles",
+      "Offered professional insights from corporate enterprise experience, bridging the gap between academic learning and real-world software engineering",
+      "Demonstrated leadership through live lectures and engaging technical discussions, strengthening communication skills across a cohort of 200+ undergraduate seniors"
+    ]
+  },
+  {
+    "role": "Software Engineer",
+    "company": "Arizona Public Services",
+    "period": "2020 - 2021",
+    "description": [
+      "Modernized legacy ASP.NET application by refactoring to MVC architecture (TypeScript, React, C#), improving maintainability and user experience for an enterprise EDI dashboard",
+      "Automated API validation using NUnit, Azure Key Vault, and Azure Pipelines, achieving 100% test coverage across 60+ REST and SOAP services on a daily scheduled run",
+      "Orchestrated the final phase of the SDLC by building an NUnit testing suite that generated automated email reports validating every API consumed by the enterprise"
+    ]
+  },
+  {
+    "role": "Software Engineer Intern",
+    "company": "SoftPoint",
+    "period": "2019 - 2020",
+    "description": [
+      "Contributed to design and development of enterprise point-of-sale software, delivering 3 production ordering features with a focus on performance, security, and usability",
+      "Created and maintained comprehensive technical documentation covering every feature of the project, ensuring compliance with client specifications",
+      "Collaborated cross-functionally with senior engineers to ship bug fixes and performance improvements to a live production system"
+    ]
+  }
+]

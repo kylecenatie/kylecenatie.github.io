@@ -16,6 +16,7 @@
   { "name": "Spring Boot","category": "backend" },
   { "name": "GraphQL",    "category": "backend" },
   { "name": "Flask",    "category": "backend" },
+  { "name": "Apache Maven",    "category": "backend" },
 
   { "name": "PostgreSQL", "category": "databases" },
   { "name": "MySQL",      "category": "databases" },
@@ -23,14 +24,16 @@
   { "name": "Redis",      "category": "databases" },
   { "name": "DynamoDB",   "category": "databases" },
 
-  { "name": "AWS",        "category": "infra" },
-  { "name": "Docker",     "category": "infra" },
-  { "name": "Kubernetes", "category": "infra" },
-  { "name": "Nginx", "category": "infra" },
-  { "name": "Terraform",  "category": "infra" },
+  { "name": "AWS",        "category": "cloud" },
+  { "name": "Docker",     "category": "cloud" },
+  { "name": "Kubernetes", "category": "cloud" },
+  { "name": "Nginx", "category": "cloud" },
+  { "name": "Terraform",  "category": "cloud" },
+  { "name": "Azure",  "category": "cloud" },
 
   { "name": "Git",            "category": "cicd" },
   { "name": "GitHub Actions", "category": "cicd" },
   { "name": "Concourse", "category": "cicd" },
+  { "name": "SonarQube", "category": "cicd" },
   { "name": "Jenkins",        "category": "cicd" }
 ]

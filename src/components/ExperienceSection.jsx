@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { ChevronDown, Calendar } from 'lucide-react';
-import { tokens, AccentLine, Label } from './ReusableComponents';
+import { tokens, AccentLine, Label, Flex } from './ReusableComponents';
 import workHistory from '../assets/work_history.json';
 
 /* ==========================================================================
@@ -84,6 +84,7 @@ const SectionTitle = styled.h2`
   color: ${tokens.colors.charcoal};
   line-height: 1.2;
 `;
+
 
 
 /* ==========================================================================
@@ -271,7 +272,7 @@ const ChevronIcon = styled.div`
    ========================================================================== */
 const AccordionContent = styled.div`
   overflow: hidden;
-  max-height: ${props => props.$isOpen ? '500px' : '0'};
+  max-height: ${props => props.$isOpen ? '600px' : '0'};
   opacity: ${props => props.$isOpen ? 1 : 0};
   transition: all ${tokens.transitions.slow};
 `;
@@ -298,13 +299,34 @@ const ContentDivider = styled.div`
   margin-bottom: ${tokens.spacing[6]};
 `;
 
-const Description = styled.p`
+const DescriptionList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: ${tokens.spacing[3]};
+  max-width: 65ch;
+`;
+
+const DescriptionItem = styled.li`
+  display: flex;
+  align-items: flex-start;
+  gap: ${tokens.spacing[3]};
   font-family: ${tokens.fonts.body};
   font-size: 1rem;
   line-height: 1.7;
   color: ${tokens.colors.textSecondary};
-  margin: 0;
-  max-width: 65ch;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: ${tokens.colors.rust};
+    flex-shrink: 0;
+    margin-top: 0.55em;
+  }
 `;
 
 const MobilePeriod = styled.div`
@@ -353,7 +375,7 @@ const ExperienceSection = () => {
             <Label $accent>Professional Work History</Label>
             <AccentLine />
           </Eyebrow>
-          <SectionTitle>Career Journey</SectionTitle>
+            <SectionTitle>Career Journey</SectionTitle>
         </SectionHeader>
 
         <AccordionContainer>
@@ -397,7 +419,11 @@ const ExperienceSection = () => {
                 >
                   <ContentInner $isOpen={isOpen}>
                     <ContentDivider />
-                    <Description>{exp.description}</Description>
+                    <DescriptionList>
+                      {exp.description.map((item, i) => (
+                        <DescriptionItem key={i}>{item}</DescriptionItem>
+                      ))}
+                    </DescriptionList>
                     <MobilePeriod>
                       <Calendar />
                       {exp.period}
@@ -413,4 +439,4 @@ const ExperienceSection = () => {
   );
 };
 
-export default ExperienceSection;       
+export default ExperienceSection;

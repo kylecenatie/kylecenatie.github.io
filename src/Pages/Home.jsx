@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, Linkedin, Mail, MapPin, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import {
   PageWrapper,
   Container,
