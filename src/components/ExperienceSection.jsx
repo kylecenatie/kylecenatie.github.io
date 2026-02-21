@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { ChevronDown, Calendar } from 'lucide-react';
-import { tokens, AccentLine, Label, Flex } from './ReusableComponents';
+import { tokens, AccentLine, Label } from './ReusableComponents';
 import workHistory from '../assets/work_history.json';
 
 /* ==========================================================================
@@ -85,25 +85,6 @@ const SectionTitle = styled.h2`
   line-height: 1.2;
 `;
 
-const HeaderDecoration = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${tokens.spacing[3]};
-  margin-top: ${tokens.spacing[4]};
-  
-  @media (max-width: 640px) {
-    display: none;
-  }
-`;
-
-const DecorativeSquare = styled.div`
-  width: 8px;
-  height: 8px;
-  background: ${props => props.$filled ? tokens.colors.rust : 'transparent'};
-  border: 2px solid ${tokens.colors.rust};
-  transform: rotate(45deg);
-  opacity: ${props => props.$opacity || 1};
-`;
 
 /* ==========================================================================
    ACCORDION STYLES
@@ -373,11 +354,6 @@ const ExperienceSection = () => {
             <AccentLine />
           </Eyebrow>
           <SectionTitle>Career Journey</SectionTitle>
-          <HeaderDecoration>
-            <DecorativeSquare $filled $opacity={1} />
-            <DecorativeSquare $opacity={0.6} />
-            <DecorativeSquare $opacity={0.3} />
-          </HeaderDecoration>
         </SectionHeader>
 
         <AccordionContainer>
