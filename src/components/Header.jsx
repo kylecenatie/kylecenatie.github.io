@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router'; 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';  
 import styled from 'styled-components';
 import { AiOutlineMail, AiFillLinkedin } from 'react-icons/ai';
-import { BsGithub } from 'react-icons/bs';
 import { tokens } from './ReusableComponents';
 
 

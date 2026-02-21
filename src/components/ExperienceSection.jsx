@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { ChevronDown, Calendar } from 'lucide-react';
+import { tokens, AccentLine, Label } from './ReusableComponents';
 import workHistory from '../assets/work_history.json';
 
 /* ==========================================================================
@@ -30,12 +31,11 @@ const pulseGlow = keyframes`
    SECTION STYLES
    ========================================================================== */
 const ExperienceWrapper = styled.section`
-  background: var(--color-paper-dark);
-  padding: var(--space-24) 0;
+  background: ${tokens.colors.paperDark};
+  padding: ${tokens.spacing[24]} 0;
   position: relative;
   overflow: hidden;
   
-  /* Subtle diagonal texture */
   &::before {
     content: '';
     position: absolute;
@@ -53,59 +53,38 @@ const ExperienceWrapper = styled.section`
 
 const Container = styled.div`
   width: 100%;
-  max-width: var(--max-width-content);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 ${tokens.spacing[6]};
   
   @media (max-width: 768px) {
-    padding: 0 var(--space-4);
+    padding: 0 ${tokens.spacing[4]};
   }
 `;
 
 const SectionHeader = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-12);
+  text-align: center;
+  margin-bottom: ${tokens.spacing[12]};
 `;
 
-const AccentLine = styled.div`
-  width: 40px;
-  height: 3px;
-  background: var(--color-rust);
-  border-radius: 2px;
+const Eyebrow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${tokens.spacing[4]};
+  margin-bottom: ${tokens.spacing[6]};
 `;
 
 const SectionTitle = styled.h2`
-  font-family: var(--font-display);
-  font-size: var(--text-3xl);
+  font-family: ${tokens.fonts.display};
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 400;
-  color: var(--color-charcoal);
-  
-  @media (max-width: 768px) {
-    font-size: var(--text-2xl);
-  }
+  color: ${tokens.colors.charcoal};
+  line-height: 1.2;
 `;
 
-const HeaderDecoration = styled.div`
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-left: auto;
-  
-  @media (max-width: 640px) {
-    display: none;
-  }
-`;
-
-const DecorativeSquare = styled.div`
-  width: 8px;
-  height: 8px;
-  background: ${props => props.$filled ? 'var(--color-rust)' : 'transparent'};
-  border: 2px solid var(--color-rust);
-  transform: rotate(45deg);
-  opacity: ${props => props.$opacity || 1};
-`;
 
 /* ==========================================================================
    ACCORDION STYLES
@@ -113,17 +92,19 @@ const DecorativeSquare = styled.div`
 const AccordionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: ${tokens.spacing[3]};
   position: relative;
   z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
 `;
 
 const AccordionItem = styled.div`
-  background: var(--color-paper-light);
-  border: 2px solid ${props => props.$isOpen ? 'var(--color-rust)' : 'var(--color-paper-border)'};
-  border-radius: var(--radius-lg);
+  background: ${tokens.colors.paperLight};
+  border: 2px solid ${props => props.$isOpen ? tokens.colors.rust : tokens.colors.paperBorder};
+  border-radius: ${tokens.radius.lg};
   overflow: hidden;
-  transition: all var(--transition-slow);
+  transition: all ${tokens.transitions.slow};
   
   ${props => props.$isOpen && css`
     box-shadow: 
@@ -133,7 +114,7 @@ const AccordionItem = styled.div`
   `}
   
   &:hover {
-    border-color: ${props => props.$isOpen ? 'var(--color-rust)' : 'var(--color-rust-light)'};
+    border-color: ${props => props.$isOpen ? tokens.colors.rust : tokens.colors.rustLight};
   }
 `;
 
@@ -142,18 +123,18 @@ const AccordionHeader = styled.button`
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  gap: var(--space-5);
-  padding: var(--space-6) var(--space-8);
+  gap: ${tokens.spacing[5]};
+  padding: ${tokens.spacing[6]} ${tokens.spacing[8]};
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: all var(--transition-base);
+  transition: all ${tokens.transitions.base};
   
   @media (max-width: 768px) {
     grid-template-columns: auto 1fr auto;
-    gap: var(--space-4);
-    padding: var(--space-5);
+    gap: ${tokens.spacing[4]};
+    padding: ${tokens.spacing[5]};
   }
   
   &:hover {
@@ -162,21 +143,20 @@ const AccordionHeader = styled.button`
 `;
 
 const IndexNumber = styled.div`
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  font-family: ${tokens.fonts.mono};
+  font-size: ${props => props.$current ? '0.7rem' : '0.7rem'};
   font-weight: 600;
-  color: ${props => props.$current ? 'var(--color-rust)' : 'var(--color-text-muted)'};
+  color: ${props => props.$current ? tokens.colors.rust : tokens.colors.textMuted};
   letter-spacing: 0.1em;
-  
-  /* Bold number styling */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 2px solid ${props => props.$current ? 'var(--color-rust)' : 'var(--color-paper-border)'};
-  border-radius: var(--radius-sm);
+  border: 2px solid ${props => props.$current ? tokens.colors.rust : tokens.colors.paperBorder};
+  border-radius: ${tokens.radius.sm};
   background: ${props => props.$current ? 'rgba(181, 86, 58, 0.08)' : 'transparent'};
+  flex-shrink: 0;
   
   ${props => props.$current && css`
     animation: ${pulseGlow} 3s infinite;
@@ -186,24 +166,24 @@ const IndexNumber = styled.div`
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: ${tokens.spacing[1]};
   min-width: 0;
 `;
 
 const RoleTitle = styled.h3`
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-family: ${tokens.fonts.display};
+  font-size: 1.25rem;
   font-weight: 400;
-  color: var(--color-charcoal);
+  color: ${tokens.colors.charcoal};
   line-height: 1.2;
   margin: 0;
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: ${tokens.spacing[3]};
   flex-wrap: wrap;
   
   @media (max-width: 640px) {
-    font-size: var(--text-lg);
+    font-size: 1.125rem;
   }
 `;
 
@@ -211,13 +191,13 @@ const CurrentBadge = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-family: var(--font-mono);
+  font-family: ${tokens.fonts.mono};
   font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 600;
-  color: var(--color-paper-light);
-  background: linear-gradient(135deg, var(--color-rust), var(--color-rust-light));
+  color: ${tokens.colors.paperLight};
+  background: linear-gradient(135deg, ${tokens.colors.rust}, ${tokens.colors.rustLight});
   padding: 4px 10px;
   border-radius: 100px;
   
@@ -225,40 +205,40 @@ const CurrentBadge = styled.span`
     content: '';
     width: 6px;
     height: 6px;
-    background: var(--color-paper-light);
+    background: ${tokens.colors.paperLight};
     border-radius: 50%;
     animation: ${pulseGlow} 2s infinite;
   }
 `;
 
 const CompanyName = styled.span`
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-rust);
+  font-family: ${tokens.fonts.body};
+  font-size: 1rem;
+  color: ${tokens.colors.rust};
   font-weight: 500;
   letter-spacing: -0.01em;
   
   @media (max-width: 640px) {
-    font-size: var(--text-sm);
+    font-size: 0.875rem;
   }
 `;
 
 const PeriodDisplay = styled.div`
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  gap: ${tokens.spacing[2]};
+  font-family: ${tokens.fonts.mono};
+  font-size: 0.875rem;
+  color: ${tokens.colors.textMuted};
   white-space: nowrap;
-  padding: var(--space-2) var(--space-4);
-  background: var(--color-paper-dark);
-  border-radius: var(--radius-md);
+  padding: ${tokens.spacing[2]} ${tokens.spacing[4]};
+  background: ${tokens.colors.paperDark};
+  border-radius: ${tokens.radius.md};
   
   svg {
     width: 14px;
     height: 14px;
-    color: var(--color-text-muted);
+    color: ${tokens.colors.textMuted};
   }
   
   @media (max-width: 768px) {
@@ -273,15 +253,16 @@ const ChevronIcon = styled.div`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: ${props => props.$isOpen ? 'var(--color-rust)' : 'var(--color-paper-dark)'};
-  transition: all var(--transition-base);
+  background: ${props => props.$isOpen ? tokens.colors.rust : tokens.colors.paperDark};
+  transition: all ${tokens.transitions.base};
+  flex-shrink: 0;
   
   svg {
     width: 18px;
     height: 18px;
-    color: ${props => props.$isOpen ? 'var(--color-paper-light)' : 'var(--color-text-muted)'};
+    color: ${props => props.$isOpen ? tokens.colors.paperLight : tokens.colors.textMuted};
     transform: rotate(${props => props.$isOpen ? '180deg' : '0deg'});
-    transition: transform var(--transition-base);
+    transition: transform ${tokens.transitions.base};
   }
 `;
 
@@ -292,17 +273,17 @@ const AccordionContent = styled.div`
   overflow: hidden;
   max-height: ${props => props.$isOpen ? '500px' : '0'};
   opacity: ${props => props.$isOpen ? 1 : 0};
-  transition: all var(--transition-slow);
+  transition: all ${tokens.transitions.slow};
 `;
 
 const ContentInner = styled.div`
-  padding: 0 var(--space-8) var(--space-8);
-  padding-left: calc(36px + var(--space-8) + var(--space-5));
-  animation: ${props => props.$isOpen ? slideIn : 'none'} 0.3s ease-out;
+  padding: 0 ${tokens.spacing[8]} ${tokens.spacing[8]};
+  padding-left: calc(36px + ${tokens.spacing[8]} + ${tokens.spacing[5]});
+  animation: ${props => props.$isOpen ? css`${slideIn} 0.3s ease-out` : 'none'};
   
   @media (max-width: 768px) {
-    padding: 0 var(--space-5) var(--space-6);
-    padding-left: var(--space-5);
+    padding: 0 ${tokens.spacing[5]} ${tokens.spacing[6]};
+    padding-left: ${tokens.spacing[5]};
   }
 `;
 
@@ -310,20 +291,20 @@ const ContentDivider = styled.div`
   height: 1px;
   background: linear-gradient(
     90deg,
-    var(--color-rust) 0%,
-    var(--color-paper-border) 50%,
+    ${tokens.colors.rust} 0%,
+    ${tokens.colors.paperBorder} 50%,
     transparent 100%
   );
-  margin-bottom: var(--space-6);
+  margin-bottom: ${tokens.spacing[6]};
 `;
 
 const Description = styled.p`
-  font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-family: ${tokens.fonts.body};
+  font-size: 1rem;
   line-height: 1.7;
-  color: var(--color-text-secondary);
+  color: ${tokens.colors.textSecondary};
   margin: 0;
-  max-width: var(--max-width-prose);
+  max-width: 65ch;
 `;
 
 const MobilePeriod = styled.div`
@@ -332,13 +313,13 @@ const MobilePeriod = styled.div`
   @media (max-width: 768px) {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    margin-top: var(--space-4);
-    padding-top: var(--space-4);
-    border-top: 1px dashed var(--color-paper-border);
+    gap: ${tokens.spacing[2]};
+    font-family: ${tokens.fonts.mono};
+    font-size: 0.75rem;
+    color: ${tokens.colors.textMuted};
+    margin-top: ${tokens.spacing[4]};
+    padding-top: ${tokens.spacing[4]};
+    border-top: 1px dashed ${tokens.colors.paperBorder};
     
     svg {
       width: 12px;
@@ -367,13 +348,12 @@ const ExperienceSection = () => {
     <ExperienceWrapper>
       <Container>
         <SectionHeader>
-          <AccentLine />
+          <Eyebrow>
+            <AccentLine />
+            <Label $accent>Professional Work History</Label>
+            <AccentLine />
+          </Eyebrow>
           <SectionTitle>Career Journey</SectionTitle>
-          <HeaderDecoration>
-            <DecorativeSquare $filled $opacity={1} />
-            <DecorativeSquare $opacity={0.6} />
-            <DecorativeSquare $opacity={0.3} />
-          </HeaderDecoration>
         </SectionHeader>
 
         <AccordionContainer>
@@ -433,4 +413,4 @@ const ExperienceSection = () => {
   );
 };
 
-export default ExperienceSection;
+export default ExperienceSection;       
