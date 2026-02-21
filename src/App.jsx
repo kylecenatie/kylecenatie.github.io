@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router';  // ← changed from 'react-router-dom'
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Header from './components/Header';
@@ -8,11 +8,10 @@ import Hobbies from './Pages/Hobbies';
 import Education from './Pages/Education';
 import Solitare from './Pages/Solitare';
 
-
 const App = () => {
   return (
     <BrowserRouter>
-<Header />
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />

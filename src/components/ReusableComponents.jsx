@@ -399,22 +399,16 @@ export const ProfileImage = styled.div`
   position: relative;
   width: ${props => props.$size || '200px'};
   height: ${props => props.$size || '200px'};
+  border: 3px solid ${tokens.colors.charcoal};
+  border-radius: 14px;
   
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: ${tokens.radius.md};
+    border-radius: 10px;
+    display: block;
     transition: all ${tokens.transitions.base};
-  }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border: 1px solid ${tokens.colors.paperBorder};
-    border-radius: ${tokens.radius.md};
-    transform: translate(6px, 6px);
   }
   
   &::after {
@@ -426,7 +420,7 @@ export const ProfileImage = styled.div`
       rgba(181, 86, 58, 0.08) 0%,
       transparent 50%
     );
-    border-radius: ${tokens.radius.md};
+    border-radius: 10px;
     pointer-events: none;
   }
   
@@ -434,7 +428,6 @@ export const ProfileImage = styled.div`
     transform: scale(1.02);
   }
 `;
-
 export const TimelineItem = styled.div`
   position: relative;
   padding-left: ${tokens.spacing[8]};
