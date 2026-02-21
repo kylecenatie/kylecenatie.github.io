@@ -159,10 +159,10 @@ const Home = () => {
               
               <Description>
                 <BodyLarge $muted $prose>
-                  I'm a full-stack software engineer with {yearsOfExperience}+ years 
-                  of experience building scalable, cloud-native applications from concept 
-                  to production. I work across the stack—from architecture and DevOps to 
-                  clean, maintainable code and intuitive user interfaces.
+                  I'm a full-stack software engineer with {yearsOfExperience}+ years of
+                  experience building scalable, cloud-native applications from concept to production. 
+                  I work across the entire stack—from system architecture and DevOps to writing clean, 
+                  maintainable code and crafting intuitive user interfaces.
                 </BodyLarge>
                 
                 <LocationBadge>

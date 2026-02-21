@@ -228,23 +228,21 @@ const About = () => {
               <AboutContent>
                 <Heading3 style={{ marginBottom: tokens.spacing[6] }}>About Me</Heading3>
                 <BodyText $muted>
-                  I'm a passionate developer who believes great software should be both 
-                  powerful and beautiful. With over {yearsOfExperience} years of experience, I've helped 
-                  startups and enterprises build products that users love.
+                As a full-stack software engineer, I enjoy turning complex ideas into 
+                scalable, well-designed solutions. Over the past {yearsOfExperience}+ years, 
+                I've worked with small businesses and Fortune 500 companies to build 
+                cloud-native applications that are reliable, maintainable, and user-focused.
                 </BodyText>
-                <BodyText $muted>
-                  When I'm not coding, you'll find me exploring new technologies, 
-                  contributing to open source projects, or sharing knowledge through 
-                  tech talks and mentoring.
-                </BodyText>
-                <BodyText $muted>
-                  I thrive in collaborative environments and believe the best solutions 
-                  come from combining technical expertise with creative problem-solving.
-                </BodyText>
+              <BodyText $muted>
+                I'm driven by continuous learning and a genuine curiosity for how things work — 
+                always seeking challenges that require both technical depth and creative 
+                problem-solving, whether that means exploring new architectures, sharpening 
+                my skills, or building software that makes a real difference.
+              </BodyText>
               </AboutContent>
             </AnimateOnScroll>
             
-            {/* ── Skills grid replaces IconGridContainer ── */}
+        
             <AnimateOnScroll $delay="0.5s">
               <SkillsGrid />
             </AnimateOnScroll>

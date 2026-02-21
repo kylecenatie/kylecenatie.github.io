@@ -129,52 +129,52 @@ const SkillName = styled.span`
    To add a new category: add an entry here + use the matching id in skills.json
    ========================================================================== */
 const TABS = [
-  { id: 'languages', label: 'Languages' },
-  { id: 'frontend',  label: 'Frontend'  },
-  { id: 'backend',   label: 'Backend'   },
-  { id: 'databases', label: 'Databases' },
-  { id: 'infra',     label: 'Infra'     },
-  { id: 'cicd',      label: 'CI/CD'     },
+    { id: 'languages', label: 'Languages' },
+    { id: 'frontend', label: 'Frontend' },
+    { id: 'backend', label: 'Backend' },
+    { id: 'databases', label: 'Databases' },
+    { id: 'infra', label: 'Infra' },
+    { id: 'cicd', label: 'CI/CD' },
 ];
 
 /* ==========================================================================
    COMPONENT
    ========================================================================== */
 const SkillsGrid = () => {
-  const [activeTab, setActiveTab] = useState('languages');
+    const [activeTab, setActiveTab] = useState('languages');
 
-  const visible = skillsData.filter(s => s.category === activeTab);
+    const visible = skillsData.filter(s => s.category === activeTab);
 
-  return (
-    <Wrapper>
-      <Header>
-        <SectionTitle>Tech Stack</SectionTitle>
-      </Header>
+    return (
+        <Wrapper>
+            <Header>
+                <SectionTitle>Tech Stack</SectionTitle>
+            </Header>
 
-      <TabBar>
-        {TABS.map(tab => (
-          <Tab
-            key={tab.id}
-            $active={activeTab === tab.id}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </Tab>
-        ))}
-      </TabBar>
+            <TabBar>
+                {TABS.map(tab => (
+                    <Tab
+                        key={tab.id}
+                        $active={activeTab === tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                    >
+                        {tab.label}
+                    </Tab>
+                ))}
+            </TabBar>
 
-      <Grid>
-        {visible.map(skill => (
-          <Tile key={`${activeTab}-${skill.name}`}>
-            <IconBox>
-              <SkillIcon name={skill.name} />
-            </IconBox>
-            <SkillName>{skill.name}</SkillName>
-          </Tile>
-        ))}
-      </Grid>
-    </Wrapper>
-  );
+            <Grid>
+                {visible.map(skill => (
+                    <Tile key={`${activeTab}-${skill.name}`}>
+                        <IconBox>
+                            <SkillIcon name={skill.name} />
+                        </IconBox>
+                        <SkillName>{skill.name}</SkillName>
+                    </Tile>
+                ))}
+            </Grid>
+        </Wrapper>
+    );
 };
 
 export default SkillsGrid;
