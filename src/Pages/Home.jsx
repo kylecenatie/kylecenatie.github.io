@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, Linkedin, Mail, MapPin, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { NavLink } from 'react-router';
 import {
   PageWrapper,
   Container,
-  Flex,
   DisplayTitle,
   BodyLarge,
   Label,
@@ -19,17 +18,14 @@ import {
 import profileImage from '../images/e05.jpg';
 
 
-const ViewAboutSection = styled.section`
-  padding: ${tokens.spacing[16]} 0 ${tokens.spacing[20]};
-  display: flex;
-  justify-content: center;
-`;
 
 const ViewAboutLink = styled(NavLink)`
+  position: absolute;
+  bottom: ${tokens.spacing[8]};
+  right: ${tokens.spacing[8]};
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: ${tokens.spacing[4]};
+  gap: ${tokens.spacing[3]};
   text-decoration: none !important;
   color: ${tokens.colors.textMuted} !important;
   transition: color ${tokens.transitions.base};
@@ -37,11 +33,21 @@ const ViewAboutLink = styled(NavLink)`
   &:hover {
     color: ${tokens.colors.rust} !important;
 
-    .about-line { width: 60px; background: ${tokens.colors.rust}; }
-    .about-arrow { transform: translateY(5px); opacity: 1; }
+    svg {
+      animation: bounce 0.6s ease infinite;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(0); }
+    50%       { transform: translateX(5px); }
+  }
+
+  @media (max-width: 768px) {
+    right: ${tokens.spacing[4]};
+    bottom: ${tokens.spacing[4]};
   }
 `;
-
 const AboutLabel = styled.span`
   font-family: ${tokens.fonts.mono};
   font-size: 0.7rem;
@@ -49,23 +55,6 @@ const AboutLabel = styled.span`
   letter-spacing: 0.15em;
 `;
 
-const AboutLine = styled.div`
-  width: 30px;
-  height: 1px;
-  background: ${tokens.colors.paperBorder};
-  transition: all ${tokens.transitions.base};
-`;
-
-const AboutArrow = styled.div`
-  opacity: 0.4;
-  transition: transform ${tokens.transitions.base}, opacity ${tokens.transitions.base};
-  animation: nudge 2.5s ease-in-out infinite;
-
-  @keyframes nudge {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(4px); }
-  }
-`;
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -242,14 +231,11 @@ const Home = () => {
               </ImageContainer>
             </HeroImageWrapper>
           </HeroContent>
-          <ViewAboutLink to="/about" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: tokens.spacing[3], marginTop: tokens.spacing[8] }}>
-            <AboutLabel>View About</AboutLabel>
-            {/* <AboutLine className="about-line" /> */}
-            <AboutArrow className="about-arrow">
-              <ArrowDown size={20} />
-            </AboutArrow>
-          </ViewAboutLink>
 
+          <ViewAboutLink to="/about">
+            <AboutLabel>View About</AboutLabel>
+            <ArrowRight size={16} />
+          </ViewAboutLink>
         </Container>
       </HeroSection>
     </PageWrapper>

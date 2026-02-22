@@ -23,6 +23,7 @@ import SkillsGrid from '../components/SkillsGrid';
 
 import ExperienceSection from '../components/ExperienceSection';
 import profileImage from '../images/c_gorge.jpg';
+import PageFooter from '../components/PageFooter';
 
 /* ==========================================================================
    HERO SECTION STYLES
@@ -246,7 +247,7 @@ const About = () => {
       <ExperienceSection />
       
       {/* Social Links */}
-      <Section $tight>
+      {/* <Section $tight>
         <Container>
           <CTASection>
             <SocialLinksRow>
@@ -264,7 +265,8 @@ const About = () => {
             </SocialLinksRow>
           </CTASection>
         </Container>
-      </Section>
+      </Section> */}
+      <PageFooter nextLabel={"VIew Education"} nextTo={'/education'}/>
     </PageWrapper>
   );
 };
