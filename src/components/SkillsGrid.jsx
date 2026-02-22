@@ -4,19 +4,14 @@ import { tokens } from './ReusableComponents';
 import SkillIcon from './SkillIcon';
 import skillsData from '../assets/skills.json';
 
-/* ==========================================================================
-   ANIMATIONS
-   ========================================================================== */
+
 const fadeSlideIn = keyframes`
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
 `;
 
-/* ==========================================================================
-   STYLED COMPONENTS
-   ========================================================================== */
-const Wrapper = styled.div``;
 
+const Wrapper = styled.div``;
 const Header = styled.div`
   display: flex;
   align-items: baseline;
@@ -124,57 +119,52 @@ const SkillName = styled.span`
   }
 `;
 
-/* ==========================================================================
-   TAB DEFINITIONS
-   To add a new category: add an entry here + use the matching id in skills.json
-   ========================================================================== */
+
 const TABS = [
-    { id: 'languages', label: 'Languages' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' },
-    { id: 'databases', label: 'Databases' },
-    { id: 'cloud', label: 'Cloud' },
-    { id: 'cicd', label: 'CI/CD' },
+  { id: 'languages', label: 'Languages' },
+  { id: 'frontend', label: 'Frontend' },
+  { id: 'backend', label: 'Backend' },
+  { id: 'databases', label: 'Databases' },
+  { id: 'cloud', label: 'Cloud' },
+  { id: 'cicd', label: 'CI/CD' },
 ];
 
-/* ==========================================================================
-   COMPONENT
-   ========================================================================== */
+
 const SkillsGrid = () => {
-    const [activeTab, setActiveTab] = useState('languages');
+  const [activeTab, setActiveTab] = useState('languages');
 
-    const visible = skillsData.filter(s => s.category === activeTab);
+  const visible = skillsData.filter(s => s.category === activeTab);
 
-    return (
-        <Wrapper>
-            <Header>
-                <SectionTitle>Tech Stack</SectionTitle>
-            </Header>
+  return (
+    <Wrapper>
+      <Header>
+        <SectionTitle>Tech Stack</SectionTitle>
+      </Header>
 
-            <TabBar>
-                {TABS.map(tab => (
-                    <Tab
-                        key={tab.id}
-                        $active={activeTab === tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                    >
-                        {tab.label}
-                    </Tab>
-                ))}
-            </TabBar>
+      <TabBar>
+        {TABS.map(tab => (
+          <Tab
+            key={tab.id}
+            $active={activeTab === tab.id}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.label}
+          </Tab>
+        ))}
+      </TabBar>
 
-            <Grid>
-                {visible.map(skill => (
-                    <Tile key={`${activeTab}-${skill.name}`}>
-                        <IconBox>
-                            <SkillIcon name={skill.name} />
-                        </IconBox>
-                        <SkillName>{skill.name}</SkillName>
-                    </Tile>
-                ))}
-            </Grid>
-        </Wrapper>
-    );
+      <Grid>
+        {visible.map(skill => (
+          <Tile key={`${activeTab}-${skill.name}`}>
+            <IconBox>
+              <SkillIcon name={skill.name} />
+            </IconBox>
+            <SkillName>{skill.name}</SkillName>
+          </Tile>
+        ))}
+      </Grid>
+    </Wrapper>
+  );
 };
 
 export default SkillsGrid;

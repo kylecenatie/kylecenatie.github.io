@@ -1,33 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import {
   PageWrapper,
   Container,
   Section,
   Flex,
   Heading1,
-  Heading2,
   Heading3,
   BodyText,
   Label,
-  SocialLink,
   AccentLine,
   ProfileImage,
-  StatBox,
   GradientBackground,
   AnimateOnScroll,
   tokens,
 } from '../components/ReusableComponents';
 import SkillsGrid from '../components/SkillsGrid';
-
 import ExperienceSection from '../components/ExperienceSection';
 import profileImage from '../images/c_gorge.jpg';
 import PageFooter from '../components/PageFooter';
 
-/* ==========================================================================
-   HERO SECTION STYLES
-   ========================================================================== */
+
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
 `;
@@ -138,27 +131,12 @@ const AboutContent = styled.div`
   }
 `;
 
-/* ==========================================================================
-   CTA SECTION
-   ========================================================================== */
-const CTASection = styled.div`
-  text-align: center;
-  padding: ${tokens.spacing[1]} 0;
-`;
 
-const SocialLinksRow = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: ${tokens.spacing[4]};
-`;
 
-/* ==========================================================================
-   COMPONENT
-   ========================================================================== */
 const About = () => {
   const yearsOfExperience = new Date().getFullYear() - 2020;
   const roles = ['Full-Stack Developer', 'Problem Solver', 'Creative Thinker', 'Leader', 'Mentor'];
-  
+
   const stats = [
     { value: '3', label: 'Production Apps' },
     { value: '10', label: 'Automation Scripts' },
@@ -166,18 +144,11 @@ const About = () => {
     { value: `${yearsOfExperience}+`, label: 'Yrs Experience' },
     { value: '∞', label: 'Coffee' },
   ];
-  
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com/kylecenatie', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/kyle-sjoberg/', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:sjobergky@gmail.com', label: 'Email' },
-  ];
+
 
   return (
     <PageWrapper>
       <GradientBackground />
-      
-      {/* Hero Section */}
       <HeroSection>
         <Container>
           <HeroGrid>
@@ -188,7 +159,7 @@ const About = () => {
                 </ProfileImage>
               </AnimateOnScroll>
             </HeroImageCol>
-            
+
             <div>
               <AnimateOnScroll $delay="0.1s">
                 <Flex $align="center" $gap={tokens.spacing[4]} style={{ marginBottom: tokens.spacing[4] }}>
@@ -200,7 +171,7 @@ const About = () => {
                   {roles.map((role, index) => (<Role key={index}>{role}</Role>))}
                 </RolesList>
               </AnimateOnScroll>
-              
+
               <AnimateOnScroll $delay="0.2s">
                 <StatsRow>
                   {stats.map((stat, index) => (
@@ -213,60 +184,37 @@ const About = () => {
               </AnimateOnScroll>
             </div>
           </HeroGrid>
-          
+
           <ContentDivider />
-          
+
           <ContentGrid>
             <AnimateOnScroll $delay="0.4s">
               <AboutContent>
                 <Heading3 style={{ marginBottom: tokens.spacing[6] }}>About Me</Heading3>
                 <BodyText $muted>
-                As a full-stack software engineer, I enjoy turning complex ideas into 
-                scalable, well-designed solutions. Over the past {yearsOfExperience}+ years, 
-                I've worked with small businesses and Fortune 500 companies to build 
-                cloud-native applications that are reliable, maintainable, and user-focused.
+                  As a full-stack software engineer, I enjoy turning complex ideas into
+                  scalable, well-designed solutions. Over the past {yearsOfExperience}+ years,
+                  I've worked with small businesses and Fortune 500 companies to build
+                  cloud-native applications that are reliable, maintainable, and user-focused.
                 </BodyText>
-              <BodyText $muted>
-                I'm driven by continuous learning and a genuine curiosity for how things work — 
-                always seeking challenges that require both technical depth and creative 
-                problem-solving, whether that means exploring new architectures, sharpening 
-                my skills, or building software that makes a real difference.
-              </BodyText>
+                <BodyText $muted>
+                  I'm driven by continuous learning and a genuine curiosity for how things work —
+                  always seeking challenges that require both technical depth and creative
+                  problem-solving, whether that means exploring new architectures, sharpening
+                  my skills, or building software that makes a real difference.
+                </BodyText>
               </AboutContent>
             </AnimateOnScroll>
-            
-        
+
+
             <AnimateOnScroll $delay="0.5s">
               <SkillsGrid />
             </AnimateOnScroll>
           </ContentGrid>
         </Container>
       </HeroSection>
-      
-      {/* Experience Section */}
       <ExperienceSection />
-      
-      {/* Social Links */}
-      {/* <Section $tight>
-        <Container>
-          <CTASection>
-            <SocialLinksRow>
-              {socialLinks.map((social, index) => (
-                <SocialLink 
-                  key={index} 
-                  href={social.href} 
-                  target={social.href.startsWith('mailto') ? undefined : '_blank'}
-                  rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  aria-label={social.label}
-                >
-                  <social.icon size={18} />
-                </SocialLink>
-              ))}
-            </SocialLinksRow>
-          </CTASection>
-        </Container>
-      </Section> */}
-      <PageFooter nextLabel={"VIew Education"} nextTo={'/education'}/>
+      <PageFooter nextLabel={"VIew Education"} nextTo={'/education'} />
     </PageWrapper>
   );
 };

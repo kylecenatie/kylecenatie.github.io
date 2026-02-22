@@ -375,7 +375,7 @@ const ExperienceSection = () => {
             <Label $accent>Professional Work History</Label>
             <AccentLine />
           </Eyebrow>
-            <SectionTitle>Career Journey</SectionTitle>
+          <SectionTitle>Career Journey</SectionTitle>
         </SectionHeader>
 
         <AccordionContainer>
