@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, ArrowDown } from 'lucide-react';
+import { NavLink } from 'react-router';
 import {
   PageWrapper,
   Container,
@@ -16,6 +17,55 @@ import {
   slideUp,
 } from '../components/ReusableComponents';
 import profileImage from '../images/e05.jpg';
+
+
+const ViewAboutSection = styled.section`
+  padding: ${tokens.spacing[16]} 0 ${tokens.spacing[20]};
+  display: flex;
+  justify-content: center;
+`;
+
+const ViewAboutLink = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${tokens.spacing[4]};
+  text-decoration: none !important;
+  color: ${tokens.colors.textMuted} !important;
+  transition: color ${tokens.transitions.base};
+
+  &:hover {
+    color: ${tokens.colors.rust} !important;
+
+    .about-line { width: 60px; background: ${tokens.colors.rust}; }
+    .about-arrow { transform: translateY(5px); opacity: 1; }
+  }
+`;
+
+const AboutLabel = styled.span`
+  font-family: ${tokens.fonts.mono};
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+`;
+
+const AboutLine = styled.div`
+  width: 30px;
+  height: 1px;
+  background: ${tokens.colors.paperBorder};
+  transition: all ${tokens.transitions.base};
+`;
+
+const AboutArrow = styled.div`
+  opacity: 0.4;
+  transition: transform ${tokens.transitions.base}, opacity ${tokens.transitions.base};
+  animation: nudge 2.5s ease-in-out infinite;
+
+  @keyframes nudge {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(4px); }
+  }
+`;
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -136,7 +186,7 @@ const Home = () => {
   return (
     <PageWrapper>
       <GradientBackground />
-      
+
       <HeroSection>
         <Container>
           <HeroContent>
@@ -145,32 +195,32 @@ const Home = () => {
                 <AccentLine />
                 <Label $accent>Software Engineer</Label>
               </Eyebrow>
-              
+
               <TitleWrapper>
                 <DisplayTitle>
                   Kyle<br />
                   <em>Sjoberg</em>
                 </DisplayTitle>
               </TitleWrapper>
-              
+
               <Subtitle>
                 Full Stack Developer with Innovative Mindset
               </Subtitle>
-              
+
               <Description>
                 <BodyLarge $muted $prose>
                   I'm a full-stack software engineer with {yearsOfExperience}+ years of
-                  experience building scalable, cloud-native applications from concept to production. 
-                  I work across the entire stack—from system architecture and DevOps to writing clean, 
+                  experience building scalable, cloud-native applications from concept to production.
+                  I work across the entire stack—from system architecture and DevOps to writing clean,
                   maintainable code and crafting intuitive user interfaces.
                 </BodyLarge>
-                
+
                 <LocationBadge>
                   <MapPin size={14} />
                   <Label>Seattle, Washington</Label>
                 </LocationBadge>
               </Description>
-              
+
               <SocialLinks>
                 <SocialLink href="https://github.com/kylecenatie" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github size={18} />
@@ -183,7 +233,7 @@ const Home = () => {
                 </SocialLink>
               </SocialLinks>
             </HeroText>
-            
+
             <HeroImageWrapper>
               <ImageContainer>
                 <LargeProfileImage>
@@ -192,6 +242,14 @@ const Home = () => {
               </ImageContainer>
             </HeroImageWrapper>
           </HeroContent>
+          <ViewAboutLink to="/about" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: tokens.spacing[3], marginTop: tokens.spacing[8] }}>
+            <AboutLabel>View About</AboutLabel>
+            {/* <AboutLine className="about-line" /> */}
+            <AboutArrow className="about-arrow">
+              <ArrowDown size={20} />
+            </AboutArrow>
+          </ViewAboutLink>
+
         </Container>
       </HeroSection>
     </PageWrapper>

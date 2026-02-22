@@ -18,8 +18,9 @@ const FooterWrapper = styled(Section)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${tokens.spacing[8]};
-  padding-bottom: ${tokens.spacing[12]};
+  gap: ${tokens.spacing[4]};
+  padding-top: ${tokens.spacing[6]};
+  padding-bottom: ${tokens.spacing[6]};
 `;
 
 const NextPageLink = styled(NavLink)`

@@ -70,46 +70,14 @@ const Role = styled.span`
   }
 `;
 
-const LocationStatus = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${tokens.spacing[6]};
-  margin-top: ${tokens.spacing[8]};
-  padding-top: ${tokens.spacing[6]};
-  border-top: 1px solid ${tokens.colors.paperBorder};
-`;
-
-const StatusItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${tokens.spacing[2]};
-  color: ${tokens.colors.textSecondary};
-  font-size: 0.875rem;
-  
-  svg { color: ${props => props.$green ? tokens.colors.rust : tokens.colors.textMuted}; }
-`;
-
-const StatusDot = styled.span`
-  width: 6px;
-  height: 6px;
-  background: #4a9f6e;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-  
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-`;
-
 const StatsRow = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: ${tokens.spacing[8]};
-  padding: ${tokens.spacing[10]} 0;
+  gap: ${tokens.spacing[3]};
+  padding: ${tokens.spacing[5]} 0;
   border-top: 1px solid ${tokens.colors.paperBorder};
   border-bottom: 1px solid ${tokens.colors.paperBorder};
-  margin: ${tokens.spacing[12]} 0;
+  margin-top: ${tokens.spacing[8]};
   
   @media (max-width: 968px) {
     grid-template-columns: repeat(3, 1fr);
@@ -117,15 +85,44 @@ const StatsRow = styled.div`
   
   @media (max-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: ${tokens.spacing[6]};
+    gap: ${tokens.spacing[4]};
     text-align: center;
   }
+`;
+
+const CompactStatBox = styled.div`
+  text-align: left;
+  
+  .stat-value {
+    font-family: ${tokens.fonts.display};
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: ${tokens.colors.charcoal};
+    line-height: 1;
+    margin-bottom: ${tokens.spacing[1]};
+  }
+  
+  .stat-label {
+    font-family: ${tokens.fonts.mono};
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: ${tokens.colors.textMuted};
+  }
+`;
+
+const ContentDivider = styled.hr`
+  border: none;
+  height: 1px;
+  background: ${tokens.colors.paperBorder};
+  margin: ${tokens.spacing[12]} 0 0 0;
 `;
 
 const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: ${tokens.spacing[16]};
+  margin-top: ${tokens.spacing[10]};
   
   @media (max-width: 968px) {
     grid-template-columns: 1fr;
@@ -164,9 +161,9 @@ const About = () => {
   const stats = [
     { value: '3', label: 'Production Apps' },
     { value: '10', label: 'Automation Scripts' },
-    { value: '30+', label: 'Individual Projects' },
-    { value: `${yearsOfExperience}+`, label: 'Years Experience' },
-    { value: '∞', label: 'Coffee Consumed' },
+    { value: '30+', label: 'Projects' },
+    { value: `${yearsOfExperience}+`, label: 'Yrs Experience' },
+    { value: '∞', label: 'Coffee' },
   ];
   
   const socialLinks = [
@@ -204,24 +201,19 @@ const About = () => {
               </AnimateOnScroll>
               
               <AnimateOnScroll $delay="0.2s">
-                <LocationStatus>
-                  <StatusItem><MapPin size={14} />Seattle, WA</StatusItem>
-                  <StatusItem $green><StatusDot />Available for projects</StatusItem>
-                </LocationStatus>
+                <StatsRow>
+                  {stats.map((stat, index) => (
+                    <CompactStatBox key={index}>
+                      <div className="stat-value">{stat.value}</div>
+                      <div className="stat-label">{stat.label}</div>
+                    </CompactStatBox>
+                  ))}
+                </StatsRow>
               </AnimateOnScroll>
             </div>
           </HeroGrid>
           
-          <AnimateOnScroll $delay="0.3s">
-            <StatsRow>
-              {stats.map((stat, index) => (
-                <StatBox key={index}>
-                  <div className="stat-value">{stat.value}</div>
-                  <div className="stat-label">{stat.label}</div>
-                </StatBox>
-              ))}
-            </StatsRow>
-          </AnimateOnScroll>
+          <ContentDivider />
           
           <ContentGrid>
             <AnimateOnScroll $delay="0.4s">
