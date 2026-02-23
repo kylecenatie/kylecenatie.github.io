@@ -12,6 +12,7 @@ const bounce = keyframes`
 
 const FooterWrapper = styled.div`
   display: flex;
+  background: ${tokens.colors.charcoalLight};
   justify-content: center;
   padding: ${tokens.spacing[6]} 0;
   border-top: 1px solid ${tokens.colors.paperBorder};
@@ -20,6 +21,7 @@ const FooterWrapper = styled.div`
 
 const NextPageLink = styled(NavLink)`
   position: absolute;
+  
   right: ${tokens.spacing[8]};
   top: 50%;
   transform: translateY(-50%);
@@ -27,7 +29,7 @@ const NextPageLink = styled(NavLink)`
   align-items: center;
   gap: ${tokens.spacing[3]};
   text-decoration: none !important;
-  color: ${tokens.colors.textMuted} !important;
+  color: ${tokens.colors.paper} !important;
   transition: color ${tokens.transitions.base};
 
   span {
@@ -66,11 +68,20 @@ const FooterInner = styled.div`
   align-items: center;
   gap: ${tokens.spacing[4]};
 `;
+const FooterSocialLink = styled(SocialLink)`
+  color: ${tokens.colors.paper};
+  border-color: ${tokens.colors.paper};
+
+  &:hover {
+    color: ${tokens.colors.rustLight};
+    border-color: ${tokens.colors.rustLight};
+  }
+`;
 
 const SocialLinksRow = styled.div`
   display: flex;
   justify-content: center;
-  gap: ${tokens.spacing[4]};
+  gap: ${tokens.spacing[6]};
 `;
 
 const socialLinks = [
@@ -85,7 +96,7 @@ const PageFooter = ({ nextLabel, nextTo }) => (
       <FooterInner>
         <SocialLinksRow>
           {socialLinks.map((s) => (
-            <SocialLink
+            <FooterSocialLink
               key={s.label}
               href={s.href}
               target={s.href.startsWith('mailto') ? undefined : '_blank'}
@@ -93,7 +104,7 @@ const PageFooter = ({ nextLabel, nextTo }) => (
               aria-label={s.label}
             >
               <s.icon size={18} />
-            </SocialLink>
+            </FooterSocialLink>
           ))}
         </SocialLinksRow>
       </FooterInner>
