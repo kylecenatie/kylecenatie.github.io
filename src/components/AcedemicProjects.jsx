@@ -108,31 +108,63 @@ const OutcomeText = styled.p`
   line-height: 1.6;
 `;
 
-const AcademicProjects = () => (
-    <div>
-        <SectionHeader>
-            <AccentLine $width="40px" />
-            <Heading2>Academic Projects</Heading2>
-        </SectionHeader>
-        <SectionSubtitle>
-            Hands-on projects from graduate and undergraduate coursework, applying theory to real problems.
-        </SectionSubtitle>
+const TechStack = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${tokens.spacing[2]};
+  margin-top: ${tokens.spacing[2]};
+`;
 
-        <Grid>
-            {projectsData.map((project, i) => (
-                <ProjectCard key={i} $hoverable>
-                    <ProjectNumber>Project {String(i + 1).padStart(2, '0')}</ProjectNumber>
-                    <ProjectTitle>{project.title}</ProjectTitle>
-                    <ProjectDescription>{project.description}</ProjectDescription>
-                    <OutcomeBox>
-                        <OutcomeLabel>🏆 Key Outcome</OutcomeLabel>
-                        <OutcomeText>{project.outcome}</OutcomeText>
-                    </OutcomeBox>
-                </ProjectCard>
+const TechTag = styled.span`
+  font-family: ${tokens.fonts.mono};
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: ${tokens.spacing[1]} ${tokens.spacing[3]};
+  border-radius: ${tokens.radius.sm};
+  background: rgba(181, 86, 58, 0.1);
+  color: ${tokens.colors.rust};
+  border: 1px solid rgba(181, 86, 58, 0.25);
+  transition: all ${tokens.transitions.fast};
+
+  &:hover {
+    background: rgba(181, 86, 58, 0.18);
+    border-color: ${tokens.colors.rust};
+  }
+`;
+
+/* ==========================================================================
+   COMPONENT
+   ========================================================================== */
+const AcademicProjects = () => (
+  <div>
+    <SectionHeader>
+      <AccentLine $width="40px" />
+      <Heading2>Academic Projects</Heading2>
+    </SectionHeader>
+    <SectionSubtitle>
+      Hands-on projects from graduate and undergraduate coursework, applying theory to real problems.
+    </SectionSubtitle>
+
+    <Grid>
+      {projectsData.map((project, i) => (
+        <ProjectCard key={i} $hoverable>
+          <ProjectNumber>Project {String(i + 1).padStart(2, '0')}</ProjectNumber>
+          <ProjectTitle>{project.title}</ProjectTitle>
+          <ProjectDescription>{project.description}</ProjectDescription>
+          <OutcomeBox>
+            <OutcomeLabel>🏆 Key Outcome</OutcomeLabel>
+            <OutcomeText>{project.outcome}</OutcomeText>
+          </OutcomeBox>
+          <TechStack>
+            {project.tech.map((t, j) => (
+              <TechTag key={j}>{t}</TechTag>
             ))}
-        </Grid>
-    </div>
+          </TechStack>
+        </ProjectCard>
+      ))}
+    </Grid>
+  </div>
 );
 
 export default AcademicProjects;
-
