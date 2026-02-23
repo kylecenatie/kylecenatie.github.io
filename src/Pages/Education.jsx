@@ -4,7 +4,8 @@ import { GraduationCap, BookOpen, Trophy, Calendar, MapPin, CheckCircle, Brain, 
 import {
   PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
 } from '../components/ReusableComponents';
-
+import PageFooter from '../components/PageFooter';
+import AcademicProjects from '../components/AcedemicProjects';
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
   text-align: center;
@@ -204,62 +205,24 @@ const CourseMeta = styled.div`
   color: ${tokens.colors.textMuted};
 `;
 
-const SkillsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: ${tokens.spacing[6]};
-`;
-
-const SkillCategory = styled(Card)`
-  padding: ${tokens.spacing[6]};
-`;
-
-const CategoryHeader = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${tokens.spacing[3]};
-  margin-bottom: ${tokens.spacing[5]};
-  svg { color: ${tokens.colors.rust}; }
-`;
-
-const CategoryTitle = styled.h4`
-  font-family: ${tokens.fonts.body};
-  font-size: 1rem;
-  font-weight: 600;
-  color: ${tokens.colors.charcoal};
-`;
-
-const SkillsList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${tokens.spacing[2]};
-`;
-
 const Education = () => {
   const stats = [{ value: '2', label: 'Degrees' }, { value: '25+', label: 'Courses' }, { value: '3.5', label: 'GPA' }];
-  
+
   const education = [
     { type: "Master's Degree", title: 'M.S. in Computer Science', institution: 'Arizona State University', location: 'Tempe, AZ', period: '2022 - 2025', gpa: '3.4', description: 'Specialized in Machine Learning and Software Engineering with focus on scalable systems.', achievements: ['Augmented Intelligence', 'System Design Architecture', 'Big Data', 'IA for Capstone'] },
     { type: "Bachelor's Degree", title: 'B.S. in Software Engineering', institution: 'Arizona State University', location: 'Tempe, AZ', period: '2018 - 2022', gpa: '3.5', description: 'Comprehensive foundation in software development and project management.', achievements: ['Cum Laude graduate', 'Agile methodologies', 'Design Patterns', 'Industry internships'] }
   ];
-  
+
   const courses = [
     { name: 'Advanced React Patterns', provider: 'Epic React', progress: 100, completed: true, duration: '40 hours' },
     { name: 'System Design Interview', provider: 'Educative', progress: 85, completed: false, duration: '30 hours' },
     { name: 'Docker & Kubernetes', provider: 'Udemy', progress: 90, completed: false, duration: '25 hours' }
   ];
-  
-  const skillCategories = [
-    { name: 'Programming Languages', icon: Brain, skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C#'] },
-    { name: 'Frameworks', icon: Code2, skills: ['React', 'Angular', 'Node.js', 'Express', "Spring Boot", 'Flask'] },
-    { name: 'Cloud & DevOps', icon: Cloud, skills: ['AWS', 'GCP', 'Docker', 'Kubernetes', 'Jenkins'] },
-    { name: 'Databases', icon: Database, skills: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB'] }
-  ];
+
 
   return (
     <PageWrapper>
       <GradientBackground />
-      
       <HeroSection>
         <Container>
           <AnimateOnScroll>
@@ -275,7 +238,7 @@ const Education = () => {
               </BodyLarge>
             </HeroIntro>
           </AnimateOnScroll>
-          
+
           <AnimateOnScroll $delay="0.2s">
             <StatsRow>
               {stats.map((stat, i) => (<StatBox key={i} $center><div className="stat-value">{stat.value}</div><div className="stat-label">{stat.label}</div></StatBox>))}
@@ -283,12 +246,12 @@ const Education = () => {
           </AnimateOnScroll>
         </Container>
       </HeroSection>
-      
+
       <Section $tight>
         <Container>
           <SectionHeader><AccentLine $width="40px" /><Heading2>Formal Education</Heading2></SectionHeader>
           <SectionSubtitle>Strong academic foundation with hands-on experience.</SectionSubtitle>
-          
+
           <EducationGrid>
             {education.map((edu, i) => (
               <AnimateOnScroll key={i} $delay={`${0.1 * i}s`}>
@@ -311,12 +274,12 @@ const Education = () => {
           </EducationGrid>
         </Container>
       </Section>
-      
+
       <CoursesSection>
         <Container>
           <SectionHeader><AccentLine $width="40px" /><Heading2>Continuous Learning</Heading2></SectionHeader>
           <SectionSubtitle>Ongoing courses to stay current with evolving technologies.</SectionSubtitle>
-          
+
           <CoursesGrid>
             {courses.map((course, i) => (
               <AnimateOnScroll key={i} $delay={`${0.1 * i}s`}>
@@ -334,24 +297,14 @@ const Education = () => {
           </CoursesGrid>
         </Container>
       </CoursesSection>
-      
+
       <Section>
         <Container>
-          <SectionHeader><AccentLine $width="40px" /><Heading2>Skills Acquired</Heading2></SectionHeader>
-          <SectionSubtitle>Technical expertise from education and hands-on experience.</SectionSubtitle>
-          
-          <SkillsGrid>
-            {skillCategories.map((cat, i) => (
-              <AnimateOnScroll key={i} $delay={`${0.1 * i}s`}>
-                <SkillCategory $hoverable>
-                  <CategoryHeader><cat.icon size={20} /><CategoryTitle>{cat.name}</CategoryTitle></CategoryHeader>
-                  <SkillsList>{cat.skills.map((s, j) => (<Tag key={j}>{s}</Tag>))}</SkillsList>
-                </SkillCategory>
-              </AnimateOnScroll>
-            ))}
-          </SkillsGrid>
+          <AcademicProjects />
         </Container>
       </Section>
+      <PageFooter nextLabel={"VIew Hobbies"} nextTo={'/hobbies'} />
+
     </PageWrapper>
   );
 };

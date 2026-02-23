@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router'; 
+import { NavLink } from 'react-router';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';  
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import styled from 'styled-components';
 import { AiOutlineMail, AiFillLinkedin } from 'react-icons/ai';
 import { tokens } from './ReusableComponents';
@@ -15,11 +15,11 @@ const StyledNavbar = styled(Navbar)`
   right: 0;
   z-index: 100;
   transition: all ${tokens.transitions.base};
-  background: ${props => props.$scrolled 
-    ? 'rgba(247, 243, 237, 0.95)' 
+  background: ${props => props.$scrolled
+    ? 'rgba(247, 243, 237, 0.95)'
     : 'transparent'} !important;
-  border-bottom: 1px solid ${props => props.$scrolled 
-    ? tokens.colors.paperBorder 
+  border-bottom: 1px solid ${props => props.$scrolled
+    ? tokens.colors.paperBorder
     : 'transparent'};
   backdrop-filter: ${props => props.$scrolled ? 'blur(10px)' : 'none'};
   padding: 0 !important;
@@ -254,8 +254,8 @@ const Header = () => {
   const closeMenu = () => setExpanded(false);
 
   return (
-    <StyledNavbar 
-      expand="md" 
+    <StyledNavbar
+      expand="md"
       $scrolled={scrolled || expanded}
       expanded={expanded}
       onToggle={setExpanded}
@@ -266,25 +266,25 @@ const Header = () => {
         </Logo>
 
         <Navbar.Toggle aria-controls="main-navbar" />
-        
+
         <Navbar.Collapse id="main-navbar">
           <StyledNav className="ms-auto">
             <StyledNavLink to="/" end onClick={closeMenu}>
               Home
             </StyledNavLink>
-            
+
             <StyledNavLink to="/about" onClick={closeMenu}>
               About
             </StyledNavLink>
-            
+
             <StyledNavLink to="/education" onClick={closeMenu}>
               Education
             </StyledNavLink>
-            
+
             <StyledNavLink to="/hobbies" onClick={closeMenu}>
               Hobbies
             </StyledNavLink>
-            
+
             <ContactDropdown title="Contact" id="contact-dropdown">
               <NavDropdown.Item href="mailto:sjobergky@gmail.com">
                 <AiOutlineMail /> Email

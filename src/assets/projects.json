@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Census Income Data Visualization & Predictive Modeling",
+    "description": "Analyzed 32,561 rows of U.S. Census Bureau data to build income-based demographic profiles, producing 5 multivariate visualizations across variables including age, occupation, education, gender, and relationship status.",
+    "outcome": "Delivered actionable marketing profiles segmented by the $50,000 income threshold, enabling UVW College to identify and target high-potential enrollment demographics.",
+    "tech": ["Python", "Pandas", "Seaborn", "Matplotlib"]
+  },
+  {
+    "title": "Neural Network for Collision Prediction",
+    "description": "Designed and trained a custom PyTorch neural network to predict robot collisions in a simulated environment, covering the full ML pipeline — data collection via sensor readings, DataLoader implementation, custom feedforward architecture, and backpropagation training.",
+    "outcome": "Produced a trained model that enabled a simulated robot to navigate its environment autonomously, seeking goals while avoiding collisions based on real-time sensor input.",
+    "tech": ["Python", "PyTorch", "scikit-learn", "PyGame"]
+  },
+  {
+    "title": "SmartHome Gesture Control Application",
+    "description": "Built a full-stack gesture recognition system — an Android mobile app for recording and uploading 17 SmartHome gestures to a local Flask server, paired with a CNN-based classifier using cosine similarity to recognize gestures across numeric and device-control categories.",
+    "outcome": "Delivered a working end-to-end gesture control pipeline from mobile capture to ML classification, accurately predicting gesture labels across a 17-class output space.",
+    "tech": ["Python", "TensorFlow", "Keras", "OpenCV", "Flask", "Android Studio"]
+  },
+  {
+    "title": "Automated Conference Session Scheduler",
+    "description": "Built an optimization-based scheduling system for The Conference Exchange to automatically assign hundreds of conference sessions across rooms, timeslots, and days — handling speaker conflicts, plenary blackouts, topic clustering, room capacity, and equipment constraints.",
+    "outcome": "Delivered a working scheduler with CSV output benchmarked against a manually created schedule from an experienced meeting planner, demonstrating measurable reduction in scheduling conflicts.",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "Firebase"]
+  }
+]

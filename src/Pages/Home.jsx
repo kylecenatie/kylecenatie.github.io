@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { NavLink } from 'react-router';
 import {
   PageWrapper,
   Container,
-  Flex,
   DisplayTitle,
   BodyLarge,
   Label,
@@ -16,6 +16,45 @@ import {
   slideUp,
 } from '../components/ReusableComponents';
 import profileImage from '../images/e05.jpg';
+
+
+
+const ViewAboutLink = styled(NavLink)`
+  position: absolute;
+  bottom: ${tokens.spacing[8]};
+  right: ${tokens.spacing[8]};
+  display: flex;
+  align-items: center;
+  gap: ${tokens.spacing[3]};
+  text-decoration: none !important;
+  color: ${tokens.colors.textMuted} !important;
+  transition: color ${tokens.transitions.base};
+
+  &:hover {
+    color: ${tokens.colors.rust} !important;
+
+    svg {
+      animation: bounce 0.6s ease infinite;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(0); }
+    50%       { transform: translateX(5px); }
+  }
+
+  @media (max-width: 768px) {
+    right: ${tokens.spacing[4]};
+    bottom: ${tokens.spacing[4]};
+  }
+`;
+const AboutLabel = styled.span`
+  font-family: ${tokens.fonts.mono};
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+`;
+
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -136,7 +175,7 @@ const Home = () => {
   return (
     <PageWrapper>
       <GradientBackground />
-      
+
       <HeroSection>
         <Container>
           <HeroContent>
@@ -145,32 +184,32 @@ const Home = () => {
                 <AccentLine />
                 <Label $accent>Software Engineer</Label>
               </Eyebrow>
-              
+
               <TitleWrapper>
                 <DisplayTitle>
                   Kyle<br />
                   <em>Sjoberg</em>
                 </DisplayTitle>
               </TitleWrapper>
-              
+
               <Subtitle>
                 Full Stack Developer with Innovative Mindset
               </Subtitle>
-              
+
               <Description>
                 <BodyLarge $muted $prose>
                   I'm a full-stack software engineer with {yearsOfExperience}+ years of
-                  experience building scalable, cloud-native applications from concept to production. 
-                  I work across the entire stack—from system architecture and DevOps to writing clean, 
+                  experience building scalable, cloud-native applications from concept to production.
+                  I work across the entire stack—from system architecture and DevOps to writing clean,
                   maintainable code and crafting intuitive user interfaces.
                 </BodyLarge>
-                
+
                 <LocationBadge>
                   <MapPin size={14} />
                   <Label>Seattle, Washington</Label>
                 </LocationBadge>
               </Description>
-              
+
               <SocialLinks>
                 <SocialLink href="https://github.com/kylecenatie" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github size={18} />
@@ -183,7 +222,7 @@ const Home = () => {
                 </SocialLink>
               </SocialLinks>
             </HeroText>
-            
+
             <HeroImageWrapper>
               <ImageContainer>
                 <LargeProfileImage>
@@ -192,6 +231,11 @@ const Home = () => {
               </ImageContainer>
             </HeroImageWrapper>
           </HeroContent>
+
+          <ViewAboutLink to="/about">
+            <AboutLabel>View About</AboutLabel>
+            <ArrowRight size={16} />
+          </ViewAboutLink>
         </Container>
       </HeroSection>
     </PageWrapper>

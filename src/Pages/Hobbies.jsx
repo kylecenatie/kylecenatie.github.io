@@ -4,7 +4,7 @@ import { Coffee, MapPin, BookOpen, Mountain, Bike, PawPrint, Flag, ChevronDown }
 import {
   PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
 } from '../components/ReusableComponents';
-
+import PageFooter from '../components/PageFooter';
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
   text-align: center;
@@ -167,7 +167,7 @@ const Hobbies = () => {
   return (
     <PageWrapper>
       <GradientBackground />
-      
+
       <HeroSection>
         <Container>
           <AnimateOnScroll>
@@ -179,21 +179,21 @@ const Hobbies = () => {
               </Flex>
               <Heading1 style={{ marginBottom: tokens.spacing[6] }}>My Passions</Heading1>
               <BodyLarge $muted $prose style={{ margin: '0 auto' }}>
-                Beyond the professional realm, these creative pursuits fuel my innovation, 
+                Beyond the professional realm, these creative pursuits fuel my innovation,
                 teach me resilience, and bring unique perspectives to everything I do.
               </BodyLarge>
             </HeroIntro>
           </AnimateOnScroll>
         </Container>
       </HeroSection>
-      
+
       <Section $tight>
         <Container>
           <HobbiesGrid>
             {hobbies.map((hobby, index) => {
               const Icon = hobby.icon;
               const isExpanded = expandedHobby === hobby.id;
-              
+
               return (
                 <AnimateOnScroll key={hobby.id} $delay={`${0.05 * index}s`}>
                   <HobbyCard $expanded={isExpanded} onClick={() => setExpandedHobby(isExpanded ? null : hobby.id)}>
@@ -205,7 +205,7 @@ const Hobbies = () => {
                       </CardContent>
                       <ExpandIcon $expanded={isExpanded}><ChevronDown size={18} /></ExpandIcon>
                     </CardHeader>
-                    
+
                     <ExpandedContent $expanded={isExpanded}>
                       <ExpandedInner>
                         <SkillsLabel>Skills & Places</SkillsLabel>
@@ -223,6 +223,7 @@ const Hobbies = () => {
           </HobbiesGrid>
         </Container>
       </Section>
+      <PageFooter nextLabel={"Back Home"} nextTo={'/'} />
     </PageWrapper>
   );
 };
