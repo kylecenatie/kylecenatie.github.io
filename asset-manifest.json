@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.6c71831e.css",
-    "main.js": "/static/js/main.b394b081.js",
+    "main.js": "/static/js/main.4deb2f7b.js",
+    "static/media/asu-seal.png": "/static/media/asu-seal.8d91f9eecfcf3866876d.png",
+    "static/media/sparky.png": "/static/media/sparky.e3f627e418bbc11af960.png",
     "static/media/c_gorge.jpg": "/static/media/c_gorge.49d6ea324fcd4c6cffc3.jpg",
     "static/media/e05.jpg": "/static/media/e05.720bacd4e4c268f8c26f.jpg",
     "index.html": "/index.html",
     "main.6c71831e.css.map": "/static/css/main.6c71831e.css.map",
-    "main.b394b081.js.map": "/static/js/main.b394b081.js.map"
+    "main.4deb2f7b.js.map": "/static/js/main.4deb2f7b.js.map"
   },
   "entrypoints": [
     "static/css/main.6c71831e.css",
-    "static/js/main.b394b081.js"
+    "static/js/main.4deb2f7b.js"
   ]
 }
