@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Masters Degree",
+    "title": "M.S. in Computer Science",
+    "institution": "Arizona State University",
+    "location": "Tempe, AZ",
+    "period": "2022 - 2025",
+    "gpa": "3.4",
+    "description": "Specialized in Machine Learning and Software Engineering with focus on scalable systems.",
+    "achievements": ["Augmented Intelligence", "System Design Architecture", "Big Data", "IA for Capstone"]
+  },
+  {
+    "type": "Bachelors Degree",
+    "title": "B.S. in Software Engineering",
+    "institution": "Arizona State University",
+    "location": "Tempe, AZ",
+    "period": "2018 - 2022",
+    "gpa": "3.5",
+    "description": "Comprehensive foundation in software development and project management.",
+    "achievements": ["Cum Laude graduate", "Agile methodologies", "Design Patterns", "Industry internships"]
+  }
+]

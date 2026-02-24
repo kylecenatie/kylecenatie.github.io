@@ -211,7 +211,7 @@ const Hobbies = () => {
                         <SkillsLabel>Skills & Places</SkillsLabel>
                         <SkillsList>{hobby.skills.map((s, i) => (<Tag key={i}>{s}</Tag>))}</SkillsList>
                         <AchievementBox>
-                          <AchievementLabel><span>🏆</span> Achievement</AchievementLabel>
+                          <AchievementLabel>Achievement</AchievementLabel>
                           <AchievementText>{hobby.achievement}</AchievementText>
                         </AchievementBox>
                       </ExpandedInner>

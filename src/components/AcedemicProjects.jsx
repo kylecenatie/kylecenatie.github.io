@@ -153,7 +153,7 @@ const AcademicProjects = () => (
           <ProjectTitle>{project.title}</ProjectTitle>
           <ProjectDescription>{project.description}</ProjectDescription>
           <OutcomeBox>
-            <OutcomeLabel>🏆 Key Outcome</OutcomeLabel>
+            <OutcomeLabel>Key Outcome</OutcomeLabel>
             <OutcomeText>{project.outcome}</OutcomeText>
           </OutcomeBox>
           <TechStack>

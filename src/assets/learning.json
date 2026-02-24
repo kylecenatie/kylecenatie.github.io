@@ -1,0 +1,5 @@
+[
+  { "name": "Advanced React Patterns", "provider": "Epic React", "progress": 100, "completed": true,  "duration": "40 hours" },
+  { "name": "System Design Interview", "provider": "Educative",  "progress": 85,  "completed": false, "duration": "30 hours" },
+  { "name": "Docker & Kubernetes",     "provider": "Udemy",      "progress": 90,  "completed": false, "duration": "25 hours" }
+]
