@@ -6,7 +6,7 @@
     "location": "Tempe, AZ",
     "period": "2022 - 2025",
     "gpa": "3.4",
-    "description": "Specialized in Machine Learning and Software Engineering with focus on scalable systems.",
+    "description": "Focused on Machine Learning, Big Data systems, and Augmented Intelligence — exploring how data-driven techniques can be applied to build smarter, more adaptive software.",
     "achievements": ["Augmented Intelligence", "System Design Architecture", "Big Data", "IA for Capstone"]
   },
   {
@@ -16,7 +16,7 @@
     "location": "Tempe, AZ",
     "period": "2018 - 2022",
     "gpa": "3.5",
-    "description": "Comprehensive foundation in software development and project management.",
+    "description": "Built a strong foundation in software design concepts, algorithms, and the full SDLC — with a specialization in mobile and web application development.",
     "achievements": ["Cum Laude graduate", "Agile methodologies", "Design Patterns", "Industry internships"]
   }
 ]

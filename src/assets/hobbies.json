@@ -1,55 +1,58 @@
 [
     {
         "id": "1",
-        "title": "Golf",
+        "title": "Golfing",
         "icon": "Golf",
-        "description": "Most difficult sport I have ever played",
+        "description": "Chasing pars and celebrating bogeys with equal grace",
         "skills": [
             "Patience",
-            "Strategy",
+            "Strategic Thinking",
+            "Consistency",
             "Course Management",
-            "Mental Game"
+            "Mental Fortitude"
         ],
-        "achievement": "Best score 79"
+        "achievement": "Shot a 79 — I will break par one day... I hope!"
     },
     {
         "id": "2",
         "title": "Mountain Biking",
         "icon": "Bike",
-        "description": "Downhill mountain trails include cuts and bruises",
+        "description": "Sending trails from Arizona desert to Pacific Northwest mountains",
         "skills": [
+            "Technical Descents",
             "AZ Desert Trails",
-            "WA Mountain trails",
-            "Galbraith Mtn",
-            "Tiger Mtn"
+            "Bike Maintenance",
+            "WA Mountain Trails",
+            "Risk Assessment"
         ],
-        "achievement": "Have not broken any bones... so far."
+        "achievement": "Zero broken bones — knock on wood"
     },
     {
         "id": "3",
         "title": "Camping & Hiking",
         "icon": "Camp",
-        "description": "Finding peace and challenge in nature's landscapes",
+        "description": "Unplugging in the backcountry whenever possible",
         "skills": [
             "Navigation",
-            "Wilderness Safety",
-            "Backpacking",
-            "Camping"
+            "Leave No Trace",
+            "Trip Planning",
+            "Gear Selection",
+            "Wilderness Safety"
         ],
-        "achievement": "San Gorgonio CA in 5 Days"
+        "achievement": "Summited San Gorgonio — highest peak in Southern California"
     },
     {
         "id": "4",
         "title": "Coffee Enthusiast",
         "icon": "Coffee",
-        "description": "The best way to start the morning",
+        "description": "Precision brewing and espresso craft — equal parts science and morning ritual",
         "skills": [
-            "Black Coffee",
-            "Barista Skills",
             "Pour Over",
-            "Brewing Methods"
+            "Espresso",
+            "Latte Art",
+            "Bean Origins"
         ],
-        "achievement": "Make some cool latte art. "
+        "achievement": "Dialed in a consistent pour-over and can pull a respectable flat white"
     },
     {
         "id": "5",
@@ -57,62 +60,64 @@
         "icon": "Travel",
         "description": "Documenting adventures around the world",
         "skills": [
-            "Storytelling",
-            "Cultural Research",
+            "Budget Planning",
+            "Cultural Immersion",
             "Photography",
-            "Planning"
+            "Storytelling"
         ],
-        "achievement": "Visited 25+ countries"
+        "achievement": "Visited 20+ countries"
     },
     {
         "id": "6",
         "title": "Pet Owner",
         "icon": "Pet",
-        "description": "Proud parent to furry companions",
+        "description": "Best coworker I've ever had — no complaints, just zoomies",
         "skills": [
-            "Dog Training",
-            "Trail Running",
-            "Patience"
+            "Positive Reinforcement",
+            "Trail Companionship",
+            "Patience",
+            "Off Leash Hiking"
         ],
-        "achievement": "Best hiking buddy"
+        "achievement": "Has never once complained about a meeting running long"
     },
     {
         "id": "7",
         "title": "Racquetball",
         "icon": "Racquet",
-        "description": "Most difficult sport I have ever played",
+        "description": "The sport that looks easy until you play someone who's good",
         "skills": [
-            "Patience",
-            "Strategy",
-            "Course Management",
-            "Mental Game"
+            "Shot Placement",
+            "Court Positioning",
+            "Reaction Time",
+            "Serve Strategy",
+            "Consistency"
         ],
-        "achievement": "Best score 79"
+        "achievement": "Intermediate league champion — elite league has other opinions"
     },
     {
         "id": "8",
         "title": "Disc Golf",
         "icon": "Disc",
-        "description": "Most difficult sport I have ever played",
+        "description": "Nature walk with a competitive twist",
         "skills": [
-            "Patience",
-            "Strategy",
-            "Course Management",
-            "Mental Game"
+            "Disc Selection",
+            "Shot Shaping",
+            "Wind Analysis",
+            "Distance Drives"
         ],
-        "achievement": "Best score 79"
+        "achievement": "Can throw consistent 300ft forehand drives"
     },
-        {
-        "id": "8",
+    {
+        "id": "9",
         "title": "Board Games",
         "icon": "BGame",
-        "description": "Most difficult sport I have ever played",
+        "description": "Bringing analog fun back — one game night at a time",
         "skills": [
-            "Patience",
-            "Strategy",
-            "Course Management",
-            "Mental Game"
+            "Strategic Thinking",
+            "Pattern Recognition",
+            "Probability Analysis",
+            "Negotiation"
         ],
-        "achievement": "Best score 79"
+        "achievement": "Can you even call it a game if it doesn't last 3 hours?"
     }
 ]
