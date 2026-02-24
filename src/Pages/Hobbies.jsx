@@ -1,106 +1,172 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Coffee, MapPin, BookOpen, Mountain, Bike, PawPrint, Flag, ChevronDown } from 'lucide-react';
+import styled, { keyframes } from 'styled-components';
+import { ChevronDown } from 'lucide-react';
 import {
-  PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
+  PageWrapper, Container, Section, Flex, Heading1, BodyLarge, Label, AccentLine, Tag, GradientBackground, AnimateOnScroll, tokens,
 } from '../components/ReusableComponents';
 import PageFooter from '../components/PageFooter';
+import hobbies from '../assets/hobbies.json';
+import Icons from '../components/Icons';
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
   text-align: center;
   padding-bottom: 20px;
-  
 `;
 
 const HeroIntro = styled.div`
   max-width: 650px;
-  
   margin: 0 auto;
 `;
 
+/* ==========================================================================
+   GRID
+   ========================================================================== */
 const HobbiesGrid = styled.div`
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
   gap: ${tokens.spacing[6]};
-  
+
   @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 640px) { grid-template-columns: 1fr; }
+  @media (max-width: 640px)  { grid-template-columns: 1fr; }
+`;
+
+/* ==========================================================================
+   CARD
+   ========================================================================== */
+const shimmer = keyframes`
+  from { background-position: -200% center; }
+  to   { background-position:  200% center; }
 `;
 
 const HobbyCard = styled.article`
   background: ${tokens.colors.paperLight};
   border: 1px solid ${tokens.colors.paperBorder};
-  border-radius: ${tokens.radius.md};
+  border-radius: ${tokens.radius.lg};
   overflow: hidden;
-  transition: all ${tokens.transitions.base};
   cursor: pointer;
-  
-  &:hover {
-    border-color: ${tokens.colors.accentSubtle};
-    box-shadow: 0 4px 20px rgba(45, 42, 38, 0.08);
-    transform: translateY(-2px);
+  transition: border-color ${tokens.transitions.base},
+              box-shadow    ${tokens.transitions.base},
+              transform     ${tokens.transitions.base};
+
+  /* top accent bar */
+  &::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      ${tokens.colors.rust}      0%,
+      ${tokens.colors.rustLight} 50%,
+      ${tokens.colors.rust}      100%
+    );
+    background-size: 200% auto;
+    opacity: 0;
+    transition: opacity ${tokens.transitions.base};
   }
-  
+
+  &:hover {
+    border-color: rgba(181, 86, 58, 0.3);
+    box-shadow: 0 6px 24px rgba(45, 42, 38, 0.09);
+    transform: translateY(-2px);
+
+    &::before {
+      opacity: 1;
+      animation: ${shimmer} 2.5s linear infinite;
+    }
+  }
+
   ${props => props.$expanded && `
     border-color: ${tokens.colors.rust};
+    &::before { opacity: 1; }
   `}
 `;
 
+/* ==========================================================================
+   CARD HEADER  — icon vertically centered on left
+   ========================================================================== */
 const CardHeader = styled.div`
-  padding: ${tokens.spacing[6]};
+  padding: ${tokens.spacing[5]} ${tokens.spacing[6]};
   display: flex;
-  align-items: flex-start;
+  align-items: center;   /* ← vertically centers icon with title + description */
   gap: ${tokens.spacing[4]};
 `;
 
 const IconWrapper = styled.div`
-
-  width: 48px;
-  height: 48px;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(181, 86, 58, 0.1);
-  border: 1px solid rgba(181, 86, 58, 0.15);
-  border-radius: ${tokens.radius.sm};
-  flex-shrink: 0;
-  
-  svg { color: ${tokens.colors.rust}; }
+  background: rgba(181, 86, 58, 0.08);
+  border: 1px solid rgba(181, 86, 58, 0.18);
+  border-radius: ${tokens.radius.md};
+  color: ${tokens.colors.rust};
+  transition: background ${tokens.transitions.fast},
+              border-color ${tokens.transitions.fast};
+
+  ${HobbyCard}:hover & {
+    background: rgba(181, 86, 58, 0.14);
+    border-color: rgba(181, 86, 58, 0.32);
+  }
 `;
 
 const CardContent = styled.div`
-
   flex: 1;
   min-width: 0;
 `;
 
 const HobbyTitle = styled.h3`
   font-family: ${tokens.fonts.display};
-  font-size: 1.25rem;
+  font-size: 1.175rem;
   font-weight: 400;
   color: ${tokens.colors.charcoal};
-  margin-bottom: ${tokens.spacing[2]};
+  margin: 0 0 ${tokens.spacing[2]};
+  padding-bottom: ${tokens.spacing[2]};
+  line-height: 1.25;
+  border-bottom: 1px solid ${tokens.colors.paperBorder};
 `;
 
 const HobbyDescription = styled.p`
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: ${tokens.colors.textSecondary};
-  line-height: 1.6;
+  line-height: 1.55;
+  margin: 0;
 `;
 
-const ExpandIcon = styled.div`
-  color: ${tokens.colors.textMuted};
-  transition: transform ${tokens.transitions.base};
-  ${props => props.$expanded && `transform: rotate(180deg);`}
+const ChevronBtn = styled.div`
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: ${props => props.$expanded
+    ? tokens.colors.rust
+    : tokens.colors.paperDark};
+  color: ${props => props.$expanded
+    ? tokens.colors.paperLight
+    : tokens.colors.textMuted};
+  transition: background ${tokens.transitions.base},
+              color       ${tokens.transitions.base},
+              transform   ${tokens.transitions.base};
+  transform: ${props => props.$expanded ? 'rotate(180deg)' : 'rotate(0deg)'};
 `;
 
+/* ==========================================================================
+   EXPANDED PANEL
+   ========================================================================== */
 const ExpandedContent = styled.div`
   max-height: ${props => props.$expanded ? '400px' : '0'};
-  opacity: ${props => props.$expanded ? '1' : '0'};
+  opacity:    ${props => props.$expanded ? '1'    : '0'};
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 400ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity    300ms ease;
 `;
 
 const ExpandedInner = styled.div`
@@ -111,11 +177,11 @@ const ExpandedInner = styled.div`
 
 const SkillsLabel = styled.p`
   font-family: ${tokens.fonts.mono};
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: ${tokens.colors.textMuted};
-  margin-bottom: ${tokens.spacing[3]};
+  margin: 0 0 ${tokens.spacing[3]};
 `;
 
 const SkillsList = styled.div`
@@ -128,6 +194,7 @@ const SkillsList = styled.div`
 const AchievementBox = styled.div`
   background: ${tokens.colors.paperDark};
   border: 1px solid ${tokens.colors.paperBorder};
+  border-left: 3px solid ${tokens.colors.rust};
   border-radius: ${tokens.radius.sm};
   padding: ${tokens.spacing[4]};
 `;
@@ -138,31 +205,20 @@ const AchievementLabel = styled.p`
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: ${tokens.colors.rust};
-  margin-bottom: ${tokens.spacing[2]};
-  display: flex;
-  align-items: center;
-  gap: ${tokens.spacing[2]};
+  margin: 0 0 ${tokens.spacing[2]};
 `;
 
 const AchievementText = styled.p`
   font-size: 0.875rem;
   color: ${tokens.colors.textSecondary};
+  margin: 0;
 `;
 
-
-
+/* ==========================================================================
+   COMPONENT
+   ========================================================================== */
 const Hobbies = () => {
   const [expandedHobby, setExpandedHobby] = useState(null);
-
-  const hobbies = [
-    { id: 1, title: 'Golfing', icon: Flag, description: 'Most difficult sport I have ever played', skills: ['Patience', 'Strategy', 'Course Management', 'Mental Game'], achievement: 'Best score 79' },
-    { id: 2, title: 'Mountain Biking', icon: Bike, description: 'Downhill mountain trails include cuts and bruises', skills: ['AZ Desert Trails', 'WA Mountain trails', 'Galbraith Mtn', 'Tiger Mtn'], achievement: 'Have not broken any bones... so far.' },
-    { id: 3, title: 'Camping & Hiking', icon: Mountain, description: "Finding peace and challenge in nature's landscapes", skills: ['Navigation', 'Wilderness Safety', 'Backpacking', 'Camping'], achievement: 'San Gorgonio, CA in 5 Days' },
-    { id: 4, title: 'Coffee Enthusiast', icon: Coffee, description: 'The best way to start the morning', skills: ['Black Coffee', 'Barista Skills', 'Pour Over', 'Brewing Methods'], achievement: 'Make some cool latte art' },
-    { id: 5, title: 'Travel', icon: MapPin, description: 'Documenting adventures around the world', skills: ['Storytelling', 'Cultural Research', 'Photography', 'Planning'], achievement: 'Visited 25+ countries' },
-    { id: 6, title: 'Pet Owner', icon: PawPrint, description: 'Proud parent to furry companions', skills: ['Dog Training', 'Trail Running', 'Patience'], achievement: 'Best hiking buddy' }
-  ];
-
 
   return (
     <PageWrapper>
@@ -172,7 +228,8 @@ const Hobbies = () => {
         <Container>
           <AnimateOnScroll>
             <HeroIntro>
-              <Flex $align="center" $justify="center" $gap={tokens.spacing[4]} style={{ marginBottom: tokens.spacing[6] }}>
+              <Flex $align="center" $justify="center" $gap={tokens.spacing[4]}
+                    style={{ marginBottom: tokens.spacing[6] }}>
                 <AccentLine />
                 <Label $accent>Beyond Code</Label>
                 <AccentLine />
@@ -191,27 +248,37 @@ const Hobbies = () => {
         <Container>
           <HobbiesGrid>
             {hobbies.map((hobby, index) => {
-              const Icon = hobby.icon;
               const isExpanded = expandedHobby === hobby.id;
 
               return (
                 <AnimateOnScroll key={hobby.id} $delay={`${0.05 * index}s`}>
-                  <HobbyCard $expanded={isExpanded} onClick={() => setExpandedHobby(isExpanded ? null : hobby.id)}>
+                  <HobbyCard
+                    $expanded={isExpanded}
+                    onClick={() => setExpandedHobby(isExpanded ? null : hobby.id)}
+                  >
                     <CardHeader>
-                      <IconWrapper><Icon size={22} /></IconWrapper>
+                      <IconWrapper>
+                        <Icons name={hobby.icon} />
+                      </IconWrapper>
+
                       <CardContent>
                         <HobbyTitle>{hobby.title}</HobbyTitle>
                         <HobbyDescription>{hobby.description}</HobbyDescription>
                       </CardContent>
-                      <ExpandIcon $expanded={isExpanded}><ChevronDown size={18} /></ExpandIcon>
+
+                      <ChevronBtn $expanded={isExpanded}>
+                        <ChevronDown size={15} />
+                      </ChevronBtn>
                     </CardHeader>
 
                     <ExpandedContent $expanded={isExpanded}>
                       <ExpandedInner>
-                        <SkillsLabel>Skills & Places</SkillsLabel>
-                        <SkillsList>{hobby.skills.map((s, i) => (<Tag key={i}>{s}</Tag>))}</SkillsList>
+                        <SkillsLabel>Skills &amp; Highlights</SkillsLabel>
+                        <SkillsList>
+                          {hobby.skills.map((s, i) => <Tag key={i}>{s}</Tag>)}
+                        </SkillsList>
                         <AchievementBox>
-                          <AchievementLabel><span>🏆</span> Achievement</AchievementLabel>
+                          <AchievementLabel>Achievement</AchievementLabel>
                           <AchievementText>{hobby.achievement}</AchievementText>
                         </AchievementBox>
                       </ExpandedInner>
@@ -223,7 +290,8 @@ const Hobbies = () => {
           </HobbiesGrid>
         </Container>
       </Section>
-      <PageFooter nextLabel={"Back Home"} nextTo={'/'} />
+
+      <PageFooter nextLabel="Back Home" nextTo="/" />
     </PageWrapper>
   );
 };

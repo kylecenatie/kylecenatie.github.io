@@ -1,0 +1,123 @@
+[
+    {
+        "id": "1",
+        "title": "Golfing",
+        "icon": "Golf",
+        "description": "Chasing pars and celebrating bogeys with equal grace",
+        "skills": [
+            "Patience",
+            "Strategic Thinking",
+            "Consistency",
+            "Course Management",
+            "Mental Fortitude"
+        ],
+        "achievement": "Shot a 79 — I will break par one day... I hope!"
+    },
+    {
+        "id": "2",
+        "title": "Mountain Biking",
+        "icon": "Bike",
+        "description": "Sending trails from Arizona desert to Pacific Northwest mountains",
+        "skills": [
+            "Technical Descents",
+            "AZ Desert Trails",
+            "Bike Maintenance",
+            "WA Mountain Trails",
+            "Risk Assessment"
+        ],
+        "achievement": "Zero broken bones — knock on wood"
+    },
+    {
+        "id": "3",
+        "title": "Camping & Hiking",
+        "icon": "Camp",
+        "description": "Unplugging in the backcountry whenever possible",
+        "skills": [
+            "Navigation",
+            "Leave No Trace",
+            "Trip Planning",
+            "Gear Selection",
+            "Wilderness Safety"
+        ],
+        "achievement": "Summited San Gorgonio — highest peak in Southern California"
+    },
+    {
+        "id": "4",
+        "title": "Coffee Enthusiast",
+        "icon": "Coffee",
+        "description": "Precision brewing and espresso craft — equal parts science and morning ritual",
+        "skills": [
+            "Pour Over",
+            "Espresso",
+            "Latte Art",
+            "Bean Origins"
+        ],
+        "achievement": "Dialed in a consistent pour-over and can pull a respectable flat white"
+    },
+    {
+        "id": "5",
+        "title": "Travel",
+        "icon": "Travel",
+        "description": "Documenting adventures around the world",
+        "skills": [
+            "Budget Planning",
+            "Cultural Immersion",
+            "Photography",
+            "Storytelling"
+        ],
+        "achievement": "Visited 20+ countries"
+    },
+    {
+        "id": "6",
+        "title": "Pet Owner",
+        "icon": "Pet",
+        "description": "Best coworker I've ever had — no complaints, just zoomies",
+        "skills": [
+            "Positive Reinforcement",
+            "Trail Companionship",
+            "Patience",
+            "Off Leash Hiking"
+        ],
+        "achievement": "Has never once complained about a meeting running long"
+    },
+    {
+        "id": "7",
+        "title": "Racquetball",
+        "icon": "Racquet",
+        "description": "The sport that looks easy until you play someone who's good",
+        "skills": [
+            "Shot Placement",
+            "Court Positioning",
+            "Reaction Time",
+            "Serve Strategy",
+            "Consistency"
+        ],
+        "achievement": "Intermediate league champion — elite league has other opinions"
+    },
+    {
+        "id": "8",
+        "title": "Disc Golf",
+        "icon": "Disc",
+        "description": "Nature walk with a competitive twist",
+        "skills": [
+            "Disc Selection",
+            "Shot Shaping",
+            "Wind Analysis",
+            "Distance Drives"
+        ],
+        "achievement": "Can throw consistent 300ft forehand drives"
+    },
+    {
+        "id": "9",
+        "title": "Board Games",
+        "icon": "BGame",
+        "description": "Bringing analog fun back — one game night at a time",
+        "skills": [
+            "Strategic Thinking",
+            "Pattern Recognition",
+            "Probability Analysis",
+            "Negotiation"
+        ],
+        "achievement": "Can you even call it a game if it doesn't last 3 hours?"
+    }
+]

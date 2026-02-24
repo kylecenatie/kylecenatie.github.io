@@ -1,0 +1,115 @@
+[
+        {
+        "name": "Amazon Web Services (AWS) - Master Amazon Cloud Platform",
+        "provider": "Udemy",
+        "progress": 70,
+        "completed": false,
+        "duration": "40 hours"
+    },
+    {
+        "name": "Advanced React Patterns",
+        "provider": "Epic React",
+        "progress": 100,
+        "completed": true,
+        "duration": "40 hours"
+    },
+    {
+        "name": "System Design Interview",
+        "provider": "Educative",
+        "progress": 85,
+        "completed": false,
+        "duration": "30 hours"
+    },
+    {
+        "name": "AWS EKS Kubernetes - Masterclass | DevOps, Microservices",
+        "provider": "Udemy",
+        "progress": 40,
+        "completed": true,
+        "duration": "25 hours"
+    },
+        {
+        "name": "Docker & Kubernetes",
+        "provider": "Udemy",
+        "progress": 90,
+        "completed": false,
+        "duration": "25 hours"
+    },
+    {
+        "name": "Azure API Management & Serveless Integration Services Track",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "25 hours"
+    },
+    {
+        "name": "React - The Complete Guide (incl. Next.js, Redux)",
+        "provider": "Epic React",
+        "progress": 100,
+        "completed": true,
+        "duration": "40 hours"
+    },
+    {
+        "name": "React, NodeJS, Express & MongoDB - The MERN Fullstack Guide",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "60 hours"
+    },
+
+    {
+        "name": "gRPC [C#] Master Class: Build Modern API & Microservices",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "20 hours"
+    },
+    {
+        "name": "ASP.NET Core API. From scrath to Master + Azure Deployment",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "45 hours"
+    },
+    {
+        "name": "How to Write Bulletproof Mult-Threaded C# Code",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "20 hours"
+    },
+       {
+        "name": "The Complete JavaScript Course: From Zero to Expert",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "50 hours"
+    },
+    {
+        "name": "Web Developer Bootcamp",
+        "provider": "Epic React",
+        "progress": 100,
+        "completed": true,
+        "duration": "40 hours"
+    },
+    {
+        "name": "Complete C# Masterclass",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "130 hours"
+    },
+       {
+        "name": "C Programming For Beginners - Master the C Language",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "30 hours"
+    },
+    {
+        "name": "Learn Python Programming MasterClass",
+        "provider": "Udemy",
+        "progress": 100,
+        "completed": true,
+        "duration": "40 hours"
+    }
+]

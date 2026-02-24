@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GraduationCap, BookOpen, Trophy, Calendar, MapPin, CheckCircle, Brain, Cloud, Database, Code2 } from 'lucide-react';
 import {
-  PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
+  PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge,
+  Label, Card, AccentLine, StatBox, GradientBackground, AnimateOnScroll, tokens,
 } from '../components/ReusableComponents';
 import PageFooter from '../components/PageFooter';
 import AcademicProjects from '../components/AcedemicProjects';
+import DegreeCard from '../components/DegreeCard';
+import courses from '../assets/learning.json';
+import education from '../assets/education.json';
+/* ─────────────────────────────────────────────
+   HERO / STATS
+───────────────────────────────────────────── */
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
   text-align: center;
@@ -26,10 +32,13 @@ const StatsRow = styled.div`
   padding: ${tokens.spacing[5]} 0;
   border-top: 1px solid ${tokens.colors.paperBorder};
   border-bottom: 1px solid ${tokens.colors.paperBorder};
-  
+
   @media (max-width: 640px) { grid-template-columns: 1fr; gap: ${tokens.spacing[4]}; }
 `;
 
+/* ─────────────────────────────────────────────
+   EDUCATION GRID
+───────────────────────────────────────────── */
 const SectionHeader = styled.div`
   display: flex;
   align-items: center;
@@ -47,94 +56,13 @@ const EducationGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: ${tokens.spacing[8]};
-  
+
   @media (max-width: 968px) { grid-template-columns: 1fr; }
 `;
 
-const DegreeCard = styled(Card)`
-  padding: ${tokens.spacing[10]};
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: ${tokens.colors.rust};
-  }
-`;
-
-const DegreeType = styled.span`
-  display: inline-block;
-  font-family: ${tokens.fonts.mono};
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: ${tokens.colors.rust};
-  background: rgba(181, 86, 58, 0.1);
-  border: 1px solid rgba(181, 86, 58, 0.2);
-  padding: ${tokens.spacing[1]} ${tokens.spacing[3]};
-  border-radius: ${tokens.radius.sm};
-  margin-bottom: ${tokens.spacing[4]};
-`;
-
-const DegreeTitle = styled.h3`
-  font-family: ${tokens.fonts.display};
-  font-size: 1.375rem;
-  font-weight: 400;
-  color: ${tokens.colors.charcoal};
-  margin-bottom: ${tokens.spacing[2]};
-`;
-
-const Institution = styled.p`
-  font-size: 1rem;
-  color: ${tokens.colors.rust};
-  font-weight: 500;
-  margin-bottom: ${tokens.spacing[4]};
-`;
-
-const MetaRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${tokens.spacing[4]};
-  margin-bottom: ${tokens.spacing[6]};
-  padding-bottom: ${tokens.spacing[4]};
-  border-bottom: 1px solid ${tokens.colors.paperBorder};
-`;
-
-const MetaItem = styled.span`
-  display: flex;
-  align-items: center;
-  gap: ${tokens.spacing[1]};
-  font-size: 0.8rem;
-  color: ${tokens.colors.textMuted};
-  svg { width: 12px; height: 12px; }
-`;
-
-const Description = styled.p`
-  font-size: 0.9375rem;
-  color: ${tokens.colors.textSecondary};
-  line-height: 1.7;
-  margin-bottom: ${tokens.spacing[6]};
-`;
-
-const AchievementsList = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: ${tokens.spacing[3]};
-`;
-
-const AchievementItem = styled.li`
-  display: flex;
-  align-items: flex-start;
-  gap: ${tokens.spacing[2]};
-  font-size: 0.875rem;
-  color: ${tokens.colors.textSecondary};
-  svg { color: ${tokens.colors.rust}; flex-shrink: 0; margin-top: 2px; }
-`;
-
+/* ─────────────────────────────────────────────
+   CONTINUOUS LEARNING
+───────────────────────────────────────────── */
 const CoursesSection = styled(Section)`
   background: ${tokens.colors.paperDark};
 `;
@@ -205,108 +133,119 @@ const CourseMeta = styled.div`
   color: ${tokens.colors.textMuted};
 `;
 
-const Education = () => {
-  const stats = [{ value: '2', label: 'Degrees' }, { value: '25+', label: 'Courses' }, { value: '3.5', label: 'GPA' }];
-
-  const education = [
-    { type: "Master's Degree", title: 'M.S. in Computer Science', institution: 'Arizona State University', location: 'Tempe, AZ', period: '2022 - 2025', gpa: '3.4', description: 'Specialized in Machine Learning and Software Engineering with focus on scalable systems.', achievements: ['Augmented Intelligence', 'System Design Architecture', 'Big Data', 'IA for Capstone'] },
-    { type: "Bachelor's Degree", title: 'B.S. in Software Engineering', institution: 'Arizona State University', location: 'Tempe, AZ', period: '2018 - 2022', gpa: '3.5', description: 'Comprehensive foundation in software development and project management.', achievements: ['Cum Laude graduate', 'Agile methodologies', 'Design Patterns', 'Industry internships'] }
-  ];
-
-  const courses = [
-    { name: 'Advanced React Patterns', provider: 'Epic React', progress: 100, completed: true, duration: '40 hours' },
-    { name: 'System Design Interview', provider: 'Educative', progress: 85, completed: false, duration: '30 hours' },
-    { name: 'Docker & Kubernetes', provider: 'Udemy', progress: 90, completed: false, duration: '25 hours' }
-  ];
+/* ─────────────────────────────────────────────
+   PAGE DATA
+───────────────────────────────────────────── */
+const stats = [
+  { value: '2',   label: 'Degrees' },
+  { value: '25+', label: 'Courses' },
+  { value: '3.5', label: 'GPA'     },
+];
 
 
-  return (
-    <PageWrapper>
-      <GradientBackground />
-      <HeroSection>
-        <Container>
-          <AnimateOnScroll>
-            <HeroIntro>
-              <Flex $align="center" $justify="center" $gap={tokens.spacing[4]} style={{ marginBottom: tokens.spacing[6] }}>
-                <AccentLine />
-                <Label $accent>Education</Label>
-                <AccentLine />
-              </Flex>
-              <Heading1 style={{ marginBottom: tokens.spacing[6] }}>Education & Learning</Heading1>
-              <BodyLarge $muted $prose style={{ margin: '0 auto' }}>
-                My educational journey reflects a commitment to lifelong learning and staying at the forefront of technology.
-              </BodyLarge>
-            </HeroIntro>
-          </AnimateOnScroll>
+/* ─────────────────────────────────────────────
+   COMPONENT
+───────────────────────────────────────────── */
+const Education = () => (
+  <PageWrapper>
+    <GradientBackground />
 
-          <AnimateOnScroll $delay="0.2s">
-            <StatsRow>
-              {stats.map((stat, i) => (<StatBox key={i} $center><div className="stat-value">{stat.value}</div><div className="stat-label">{stat.label}</div></StatBox>))}
-            </StatsRow>
-          </AnimateOnScroll>
-        </Container>
-      </HeroSection>
+    {/* ── HERO ── */}
+    <HeroSection>
+      <Container>
+        <AnimateOnScroll>
+          <HeroIntro>
+            <Flex $align="center" $justify="center" $gap={tokens.spacing[4]} style={{ marginBottom: tokens.spacing[6] }}>
+              <AccentLine />
+              <Label $accent>Education</Label>
+              <AccentLine />
+            </Flex>
+            <Heading1 style={{ marginBottom: tokens.spacing[6] }}>Education &amp; Learning</Heading1>
+            <BodyLarge $muted $prose style={{ margin: '0 auto' }}>
+              My educational journey reflects a commitment to lifelong learning and staying at the forefront of technology.
+            </BodyLarge>
+          </HeroIntro>
+        </AnimateOnScroll>
 
-      <Section $tight>
-        <Container>
-          <SectionHeader><AccentLine $width="40px" /><Heading2>Formal Education</Heading2></SectionHeader>
-          <SectionSubtitle>Strong academic foundation with hands-on experience.</SectionSubtitle>
-
-          <EducationGrid>
-            {education.map((edu, i) => (
-              <AnimateOnScroll key={i} $delay={`${0.1 * i}s`}>
-                <DegreeCard $hoverable>
-                  <DegreeType>{edu.type}</DegreeType>
-                  <DegreeTitle>{edu.title}</DegreeTitle>
-                  <Institution>{edu.institution}</Institution>
-                  <MetaRow>
-                    <MetaItem><MapPin />{edu.location}</MetaItem>
-                    <MetaItem><Calendar />{edu.period}</MetaItem>
-                    <MetaItem><Trophy />GPA: {edu.gpa}</MetaItem>
-                  </MetaRow>
-                  <Description>{edu.description}</Description>
-                  <AchievementsList>
-                    {edu.achievements.map((a, j) => (<AchievementItem key={j}><CheckCircle size={14} />{a}</AchievementItem>))}
-                  </AchievementsList>
-                </DegreeCard>
-              </AnimateOnScroll>
+        <AnimateOnScroll $delay="0.2s">
+          <StatsRow>
+            {stats.map((stat, i) => (
+              <StatBox key={i} $center>
+                <div className="stat-value">{stat.value}</div>
+                <div className="stat-label">{stat.label}</div>
+              </StatBox>
             ))}
-          </EducationGrid>
-        </Container>
-      </Section>
+          </StatsRow>
+        </AnimateOnScroll>
+      </Container>
+    </HeroSection>
 
-      <CoursesSection>
-        <Container>
-          <SectionHeader><AccentLine $width="40px" /><Heading2>Continuous Learning</Heading2></SectionHeader>
-          <SectionSubtitle>Ongoing courses to stay current with evolving technologies.</SectionSubtitle>
+    {/* ── FORMAL EDUCATION ── */}
+    <Section $tight>
+      <Container>
+        <SectionHeader>
+          <AccentLine $width="40px" />
+          <Heading2>Formal Education</Heading2>
+        </SectionHeader>
+        <SectionSubtitle>Strong academic foundation with hands-on experience.</SectionSubtitle>
 
-          <CoursesGrid>
-            {courses.map((course, i) => (
-              <AnimateOnScroll key={i} $delay={`${0.1 * i}s`}>
-                <CourseCard $hoverable>
-                  <CourseHeader>
-                    <CourseTitle>{course.name}</CourseTitle>
-                    <StatusBadge $completed={course.completed}>{course.completed ? 'Completed' : 'In Progress'}</StatusBadge>
-                  </CourseHeader>
-                  <Provider>{course.provider}</Provider>
-                  <ProgressBar><ProgressFill $progress={course.progress} /></ProgressBar>
-                  <CourseMeta><span>{course.progress}% Complete</span><span>{course.duration}</span></CourseMeta>
-                </CourseCard>
-              </AnimateOnScroll>
-            ))}
-          </CoursesGrid>
-        </Container>
-      </CoursesSection>
+        <EducationGrid>
+          {education.map((edu, i) => (
+            <AnimateOnScroll key={i} $delay={`${0.1 * i}s`}>
+              <DegreeCard edu={edu} animDelay={`${0.15 + 0.1 * i}s`} />
+            </AnimateOnScroll>
+          ))}
+        </EducationGrid>
+      </Container>
+    </Section>
+{/* ── ACADEMIC PROJECTS ── */}
+    <CoursesSection>
+      <Container>
+        <AcademicProjects />
+      </Container>
+    </CoursesSection>
 
-      <Section>
-        <Container>
-          <AcademicProjects />
-        </Container>
-      </Section>
-      <PageFooter nextLabel={"VIew Hobbies"} nextTo={'/hobbies'} />
+    {/* ── CONTINUOUS LEARNING ── */}
+    <Section>
+      <Container>
+        <SectionHeader>
+          <AccentLine $width="40px" />
+          <Heading2>Continuous Learning</Heading2>
+        </SectionHeader>
+        <SectionSubtitle>Ongoing courses to stay current with evolving technologies.</SectionSubtitle>
 
-    </PageWrapper>
-  );
-};
+        <CoursesGrid>
+          {courses.map((course, i) => (
+            <AnimateOnScroll key={i} $delay={`${0.1 * i}s`}>
+              <CourseCard $hoverable>
+                <CourseHeader>
+                  <CourseTitle>{course.name}</CourseTitle>
+                  <StatusBadge $completed={course.completed}>
+                    {course.completed ? 'Completed' : 'In Progress'}
+                  </StatusBadge>
+                </CourseHeader>
+                <Provider>{course.provider}</Provider>
+                <ProgressBar><ProgressFill $progress={course.progress} /></ProgressBar>
+                <CourseMeta>
+                  <span>{course.progress}% Complete</span>
+                  <span>{course.duration}</span>
+                </CourseMeta>
+              </CourseCard>
+            </AnimateOnScroll>
+          ))}
+        </CoursesGrid>
+      </Container>
+    </Section>
+
+    {/* ── ACADEMIC PROJECTS ── */}
+    {/* <Section>
+      <Container>
+        <AcademicProjects />
+      </Container>
+    </Section> */}
+
+    <PageFooter nextLabel="View Hobbies" nextTo="/hobbies" />
+  </PageWrapper>
+);
 
 export default Education;
