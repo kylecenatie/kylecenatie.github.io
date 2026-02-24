@@ -29,6 +29,15 @@ import { GiCampingTent } from "react-icons/gi";
 import { LuTent } from "react-icons/lu";
 import { LuTentTree } from "react-icons/lu";
 import { FaChess } from "react-icons/fa";
+import { FaTv } from "react-icons/fa6";
+import { PiPersonSimpleSnowboardFill } from "react-icons/pi";
+import { PiSoccerBallFill } from "react-icons/pi";
+import { ImTv } from "react-icons/im";
+
+import { TbDiscGolf } from "react-icons/tb";
+
+
+
 
 
 
@@ -96,7 +105,10 @@ const ICON_MAP = {
   'Pet': <FaPaw size={32} />,
   'Racquet': <MdSportsTennis size={32} />,
   'Disc': <GiDiscGolfBasket size={32} />,
-  'BGame': <FaChess size={32} />
+  'BGame': <FaChess size={32} />,
+  'TV': <ImTv size={32} />,
+  "Snow": <PiPersonSimpleSnowboardFill size={32} />,
+  "Soccer": <PiSoccerBallFill size={32} />
 };
 
 const Icons = ({ name }) =>

@@ -119,5 +119,45 @@
             "Negotiation"
         ],
         "achievement": "Can you even call it a game if it doesn't last 3 hours?"
+    }, {
+        "id": "10",
+        "title": "Soccer",
+        "icon": "Soccer",
+        "description": "90 minutes of running for one goal that may or may not go in",
+        "skills": [
+            "Positioning",
+            "Team Communication",
+            "Endurance",
+            "Tactical Awareness",
+            "Set Pieces"
+        ],
+        "achievement": "The older I get, the better I was"
+    },
+    {
+        "id": "11",
+        "title": "Snowboarding",
+        "icon": "Snow",
+        "description": "Best excuse to be on a mountain in winter",
+        "skills": [
+            "Carving",
+            "Park Riding",
+            "Powder Days",
+            "Backcountry"
+        ],
+        "achievement": "Survived a powder day at Crystal Mountain with zero visibility"
+    },
+    {
+        "id": "12",
+        "title": "Watching the Wife's Favorite TV Shows",
+        "icon": "TV",
+        "description": "Turns out some of them are actually good. Don't tell her I said that.",
+        "skills": [
+            "Active Listening",
+            "Emotional Support",
+            "Plot Retention",
+            "Snack Procurement",
+            "Keeping Opinions to Myself"
+        ],
+        "achievement": "Can summarize every Real Housewives franchise from memory"
     }
 ]

@@ -7,13 +7,6 @@
         "duration": "40 hours"
     },
     {
-        "name": "Advanced React Patterns",
-        "provider": "Epic React",
-        "progress": 100,
-        "completed": true,
-        "duration": "40 hours"
-    },
-    {
         "name": "System Design Interview",
         "provider": "Educative",
         "progress": 85,
@@ -24,9 +17,10 @@
         "name": "AWS EKS Kubernetes - Masterclass | DevOps, Microservices",
         "provider": "Udemy",
         "progress": 40,
-        "completed": true,
+        "completed": false,
         "duration": "25 hours"
     },
+    
         {
         "name": "Docker & Kubernetes",
         "provider": "Udemy",
@@ -40,6 +34,13 @@
         "progress": 100,
         "completed": true,
         "duration": "25 hours"
+    },
+     {
+        "name": "Advanced React Patterns",
+        "provider": "Epic React",
+        "progress": 100,
+        "completed": true,
+        "duration": "40 hours"
     },
     {
         "name": "React - The Complete Guide (incl. Next.js, Redux)",
