@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Coffee, MapPin, BookOpen, Mountain, Bike, PawPrint, Flag, ChevronDown } from 'lucide-react';
+import { Coffee, MapPin, BookOpen, Mountain, Bike, PawPrint, Flag, ChevronDown, TentTree } from 'lucide-react';
 import {
   PageWrapper, Container, Section, Flex, Heading1, Heading2, BodyLarge, Label, Card, AccentLine, Tag, StatBox, GradientBackground, AnimateOnScroll, tokens,
 } from '../components/ReusableComponents';
 import PageFooter from '../components/PageFooter';
+import hobbies from '../assets/hobbies.json'
+import Icons from '../components/Icons';
 const HeroSection = styled(Section)`
   padding-top: calc(72px + ${tokens.spacing[16]});
   text-align: center;
@@ -57,8 +59,8 @@ const CardHeader = styled.div`
 
 const IconWrapper = styled.div`
 
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,14 +156,6 @@ const AchievementText = styled.p`
 const Hobbies = () => {
   const [expandedHobby, setExpandedHobby] = useState(null);
 
-  const hobbies = [
-    { id: 1, title: 'Golfing', icon: Flag, description: 'Most difficult sport I have ever played', skills: ['Patience', 'Strategy', 'Course Management', 'Mental Game'], achievement: 'Best score 79' },
-    { id: 2, title: 'Mountain Biking', icon: Bike, description: 'Downhill mountain trails include cuts and bruises', skills: ['AZ Desert Trails', 'WA Mountain trails', 'Galbraith Mtn', 'Tiger Mtn'], achievement: 'Have not broken any bones... so far.' },
-    { id: 3, title: 'Camping & Hiking', icon: Mountain, description: "Finding peace and challenge in nature's landscapes", skills: ['Navigation', 'Wilderness Safety', 'Backpacking', 'Camping'], achievement: 'San Gorgonio, CA in 5 Days' },
-    { id: 4, title: 'Coffee Enthusiast', icon: Coffee, description: 'The best way to start the morning', skills: ['Black Coffee', 'Barista Skills', 'Pour Over', 'Brewing Methods'], achievement: 'Make some cool latte art' },
-    { id: 5, title: 'Travel', icon: MapPin, description: 'Documenting adventures around the world', skills: ['Storytelling', 'Cultural Research', 'Photography', 'Planning'], achievement: 'Visited 25+ countries' },
-    { id: 6, title: 'Pet Owner', icon: PawPrint, description: 'Proud parent to furry companions', skills: ['Dog Training', 'Trail Running', 'Patience'], achievement: 'Best hiking buddy' }
-  ];
 
 
   return (
@@ -191,14 +185,15 @@ const Hobbies = () => {
         <Container>
           <HobbiesGrid>
             {hobbies.map((hobby, index) => {
-              const Icon = hobby.icon;
+      
               const isExpanded = expandedHobby === hobby.id;
 
               return (
                 <AnimateOnScroll key={hobby.id} $delay={`${0.05 * index}s`}>
                   <HobbyCard $expanded={isExpanded} onClick={() => setExpandedHobby(isExpanded ? null : hobby.id)}>
                     <CardHeader>
-                      <IconWrapper><Icon size={22} /></IconWrapper>
+                      {/* <IconWrapper><Icon size={22} /></IconWrapper> */}
+                      <IconWrapper> <Icons name={hobby.icon} /></IconWrapper>
                       <CardContent>
                         <HobbyTitle>{hobby.title}</HobbyTitle>
                         <HobbyDescription>{hobby.description}</HobbyDescription>

@@ -1,8 +1,8 @@
 [
     {
         "id": "1",
-        "title": "'Golfing",
-        "icon": "Flag",
+        "title": "Golf",
+        "icon": "Golf",
         "description": "Most difficult sport I have ever played",
         "skills": [
             "Patience",
@@ -16,7 +16,7 @@
         "id": "2",
         "title": "Mountain Biking",
         "icon": "Bike",
-        "description": "'Downhill mountain trails include cuts and bruises",
+        "description": "Downhill mountain trails include cuts and bruises",
         "skills": [
             "AZ Desert Trails",
             "WA Mountain trails",
@@ -28,7 +28,7 @@
     {
         "id": "3",
         "title": "Camping & Hiking",
-        "icon": "Mountain",
+        "icon": "Camp",
         "description": "Finding peace and challenge in nature's landscapes",
         "skills": [
             "Navigation",
@@ -42,20 +42,20 @@
         "id": "4",
         "title": "Coffee Enthusiast",
         "icon": "Coffee",
-        "description": "'The best way to start the morning",
+        "description": "The best way to start the morning",
         "skills": [
             "Black Coffee",
             "Barista Skills",
             "Pour Over",
             "Brewing Methods"
         ],
-        "achievement": "'Make some cool latte art. "
+        "achievement": "Make some cool latte art. "
     },
     {
         "id": "5",
         "title": "Travel",
-        "icon": "MapPi",
-        "description": "'Documenting adventures around the world",
+        "icon": "Travel",
+        "description": "Documenting adventures around the world",
         "skills": [
             "Storytelling",
             "Cultural Research",
@@ -66,8 +66,8 @@
     },
     {
         "id": "6",
-        "title": "'Pet Owner",
-        "icon": "PawPrint",
+        "title": "Pet Owner",
+        "icon": "Pet",
         "description": "Proud parent to furry companions",
         "skills": [
             "Dog Training",
@@ -75,5 +75,44 @@
             "Patience"
         ],
         "achievement": "Best hiking buddy"
+    },
+    {
+        "id": "7",
+        "title": "Racquetball",
+        "icon": "Racquet",
+        "description": "Most difficult sport I have ever played",
+        "skills": [
+            "Patience",
+            "Strategy",
+            "Course Management",
+            "Mental Game"
+        ],
+        "achievement": "Best score 79"
+    },
+    {
+        "id": "8",
+        "title": "Disc Golf",
+        "icon": "Disc",
+        "description": "Most difficult sport I have ever played",
+        "skills": [
+            "Patience",
+            "Strategy",
+            "Course Management",
+            "Mental Game"
+        ],
+        "achievement": "Best score 79"
+    },
+        {
+        "id": "8",
+        "title": "Board Games",
+        "icon": "BGame",
+        "description": "Most difficult sport I have ever played",
+        "skills": [
+            "Patience",
+            "Strategy",
+            "Course Management",
+            "Mental Game"
+        ],
+        "achievement": "Best score 79"
     }
 ]

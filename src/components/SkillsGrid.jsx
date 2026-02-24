@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { tokens } from './ReusableComponents';
-import SkillIcon from './SkillIcon';
+import Icons from './Icons';
 import skillsData from '../assets/skills.json';
 
 
@@ -157,7 +157,7 @@ const SkillsGrid = () => {
         {visible.map(skill => (
           <Tile key={`${activeTab}-${skill.name}`}>
             <IconBox>
-              <SkillIcon name={skill.name} />
+              <Icons name={skill.name} />
             </IconBox>
             <SkillName>{skill.name}</SkillName>
           </Tile>
