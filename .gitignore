@@ -21,3 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 we-example.json
 temp.txt
+.env
