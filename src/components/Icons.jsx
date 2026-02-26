@@ -12,41 +12,29 @@ import {
   SiTerraform, SiNginx, SiGithubactions, SiSonarqube, SiApachemaven
 } from 'react-icons/si';
 import { PiFileCSharp } from "react-icons/pi";
-import { DiCsharp } from "react-icons/di";
+// import { DiCsharp } from "react-icons/di";
 import { VscAzure } from "react-icons/vsc";
 import { MdGolfCourse } from "react-icons/md";
 import { MdDirectionsBike } from "react-icons/md";
 import { PiCoffeeDuotone } from "react-icons/pi";
-import { FaCampground } from "react-icons/fa6";
+// import { FaCampground } from "react-icons/fa6";
 import { SlPlane } from "react-icons/sl";
 import { FaPaw } from "react-icons/fa";
-import { FaTableTennisPaddleBall } from "react-icons/fa6";
-import { PiRacquetDuotone } from "react-icons/pi";
-import { GiTennisRacket } from "react-icons/gi";
+// import { FaTableTennisPaddleBall } from "react-icons/fa6";
+// import { PiRacquetDuotone } from "react-icons/pi";
+// import { GiTennisRacket } from "react-icons/gi";
 import { GiDiscGolfBasket } from "react-icons/gi";
 import { MdSportsTennis } from "react-icons/md";
-import { GiCampingTent } from "react-icons/gi";
-import { LuTent } from "react-icons/lu";
+// import { GiCampingTent } from "react-icons/gi";
+// import { LuTent } from "react-icons/lu";
 import { LuTentTree } from "react-icons/lu";
 import { FaChess } from "react-icons/fa";
-import { FaTv } from "react-icons/fa6";
+// import { FaTv } from "react-icons/fa6";
 import { PiPersonSimpleSnowboardFill } from "react-icons/pi";
 import { PiSoccerBallFill } from "react-icons/pi";
 import { ImTv } from "react-icons/im";
 
-import { TbDiscGolf } from "react-icons/tb";
-
-
-
-
-
-
-
-
-
-
-
-
+// import { TbDiscGolf } from "react-icons/tb";
 
 const ICON_MAP = {
   // Languages
