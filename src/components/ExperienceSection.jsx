@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { ChevronDown, Calendar } from 'lucide-react';
-import { tokens, AccentLine, Label, Flex } from './ReusableComponents';
+import { tokens, AccentLine, Label } from './ReusableComponents';
 import workHistory from '../assets/work_history.json';
 
 /* ==========================================================================
